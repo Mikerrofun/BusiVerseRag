@@ -197,6 +197,14 @@ def main() -> None:
         n = text.count(frag)
         check(f"фрагмент {frag!r}", n, "0", n == 0)
 
+    # В исходном PDF «Переменная часть (% или KPI)» стоит левее «Ключевые KPI»
+    # (сверено по координатам x). Проверяем, что порядок одинаков во всех
+    # кадровых матрицах.
+    matrix = [l for l in lines if l.startswith("|Роль|Кол-во")]
+    bad_order = [l for l in matrix if l.find("Переменная") > l.find("Ключевые")]
+    check("кадровых матриц", len(matrix), "15", len(matrix) == 15)
+    check("порядок колонок в кадровых матрицах", len(bad_order), "0", not bad_order)
+
     print()
     if empty_first_lines:
         print(f"Строки с пустой первой ячейкой ({len(empty_first_lines)}):")

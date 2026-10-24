@@ -99,6 +99,25 @@ PICTURE_TABLES: list[str] = [
 ]
 
 
+# В исходном PDF порядок колонок кадровой матрицы — «Переменная часть
+# (% или KPI)», затем «Ключевые KPI» (сверено по координатам x в PDF).
+# В двух расплющенных OCR-блоках эти колонки оказались переставлены.
+MATRIX_BLOCKS = {0, 10}
+
+
+def swap_matrix_columns(table: str) -> str:
+    """Меняет местами колонки 5 и 6 в таблице кадровой матрицы."""
+    out: list[str] = []
+    for line in table.split("\n"):
+        cells = split_row(line)
+        if len(cells) == 7 and not is_separator(cells):
+            cells[4], cells[5] = cells[5], cells[4]
+            out.append("|" + "|".join(cells) + "|")
+        else:
+            out.append(line)
+    return "\n".join(out)
+
+
 def replace_picture_blocks(text: str) -> str:
     """Заменяет 11 блоков <!-- Start of picture text --> на нормальные таблицы."""
     pattern = re.compile(
@@ -111,7 +130,16 @@ def replace_picture_blocks(text: str) -> str:
             f"picture-блоков найдено {len(found)}, ожидалось {len(PICTURE_TABLES)}"
         )
     it = iter(PICTURE_TABLES)
-    return pattern.sub(lambda _m: next(it), text)
+    seen = 0
+
+    def repl(_m: re.Match) -> str:
+        nonlocal seen
+        table = next(it)
+        idx = seen
+        seen += 1
+        return swap_matrix_columns(table) if idx in MATRIX_BLOCKS else table
+
+    return pattern.sub(repl, text)
 
 
 # --------------------------------------------------------------------------
