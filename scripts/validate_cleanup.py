@@ -27,6 +27,17 @@ NICHE_HEADINGS = [
     "## 10. ОНЛАЙН",
 ]
 
+# Фрагменты, которые остаются, если OCR-блок собран неправильно.
+SCRAMBLED_FRAGMENTS = [
+    "|Роль Владелец/",
+    "|Ответственный SOP 5. Контро|",
+    "Кол-во График",
+    "Оклад, ₽ Пере",
+    "менная часть или KPI",
+    "Этапы отбора Испытательный",
+    "Испытательный срок обучение",
+]
+
 
 def split_row(line: str) -> list[str]:
     s = line.strip()
@@ -116,8 +127,9 @@ def main() -> None:
     )
 
     # 6. Структура
+    # 287 H2 в исходнике + 15 заголовков SOP, которым добавили «##» = 302.
     h2 = len(re.findall(r"^## ", text, re.M))
-    check("заголовки H2", h2, "287", h2 == 287)
+    check("заголовки H2", h2, "302", h2 == 302)
 
     niches = sum(1 for h in NICHE_HEADINGS if h in text)
     check("ниши", niches, "10", niches == 10)
@@ -145,6 +157,26 @@ def main() -> None:
         "0",
         text.count("## Чек-лист сотрудника на день") == 0,
     )
+
+    # 8. Дефекты, найденные при проверке результата (план их не перечислял)
+    check("символы замены U+FFFD", text.count("\ufffd"), "0", text.count("\ufffd") == 0)
+
+    sop_plain = len(re.findall(r"^SOP \d+\.", text, re.M))
+    check("заголовки SOP без '##'", sop_plain, "0", sop_plain == 0)
+    sop_h2 = len(re.findall(r"^## SOP \d+\.", text, re.M))
+    check("заголовки SOP с '##'", sop_h2, "52", sop_h2 == 52)
+
+    dangling = text.count("Шаги (нумерованные, через )")
+    check("висячий предлог в шапке шагов", dangling, "0", dangling == 0)
+
+    # Пробел после слэша — след снятого <br>. «X / Y» с пробелами до и после
+    # слэша оставляем: это осознанный разделитель.
+    slash = len(re.findall(r"[^\s/]/ [^\s/]", text))
+    check("пробел после слэша", slash, "0", slash == 0)
+
+    for frag in SCRAMBLED_FRAGMENTS:
+        n = text.count(frag)
+        check(f"фрагмент {frag!r}", n, "0", n == 0)
 
     print()
     if empty_first_lines:
