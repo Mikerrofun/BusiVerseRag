@@ -180,6 +180,9 @@ CYR_LAT_EXCEPTIONS = ["ЮKassa"]
 CYR = "А-Яа-яЁё"
 LAT = "A-Za-z"
 
+# Домен («hh.ru») начинается со строчной буквы, но фразы не продолжает.
+DOMAIN_LIKE = re.compile(r"^[a-z]{2,}\.[a-z]{2,}")
+
 
 def fix_cyr_lat_glue(text: str) -> str:
     placeholders: dict[str, str] = {}
@@ -411,7 +414,11 @@ def merge_table_rows(rows: list[list[str]]) -> list[list[str]]:
             # Пустая первая ячейка — продолжение либо предыдущей строки,
             # либо следующей. Если хотя бы одна ячейка начинается со
             # строчной буквы, тире или слэша, строка продолжает предыдущую.
-            if any(c[:1].islower() or c[:1] in "—–-/" for c in r if c.strip()):
+            if any(
+                (c[:1].islower() and not DOMAIN_LIKE.match(c)) or c[:1] in "—–-/"
+                for c in r
+                if c.strip()
+            ):
                 cur.append(r)
             else:
                 groups.append(cur)
@@ -571,46 +578,43 @@ def separate_adjacent_tables(text: str) -> str:
 # Шаг 8. Блоки, которые план не перечислил (найдены при проверке результата)
 # --------------------------------------------------------------------------
 
-# Найм кофейни: OCR вклеил в каждую ячейку строки «Владелец/управляющий»
-# название колонки, а сама строка выпала из таблицы — перед ней пустая
-# строка, после неё осиротевший разделитель.
-COFFEE_HIRING_LABELS = [
-    "Роль",
-    "Обязательные требования (документы, медкнижка, опыт, навыки)",
-    "Каналы найма",
-    "Этапы отбора",
-    "Испытательный срок и обучение",
-    "Типичные причины ухода",
-]
-
-
-def fix_coffee_hiring_row(text: str) -> str:
+# Строка, в каждую ячейку которой OCR вклеил название колонки. Такая строка
+# обычно ещё и выпала из таблицы: перед ней пустая строка, после неё
+# осиротевший разделитель. Снимаем префиксы-названия и возвращаем строку
+# в таблицу. Встречается дважды: найм кофейни и цепочка поставок маникюра.
+def fix_label_glued_rows(text: str) -> str:
     lines = text.split("\n")
     out: list[str] = []
     fixed = 0
     i = 0
     while i < len(lines):
         line = lines[i]
-        if line.startswith("|Роль Владелец/"):
-            cells = split_row(line)
-            if len(cells) != len(COFFEE_HIRING_LABELS):
-                fail(f"найм кофейни: {len(cells)} ячеек, ожидалось {len(COFFEE_HIRING_LABELS)}")
-            cleaned: list[str] = []
-            for cell, label in zip(cells, COFFEE_HIRING_LABELS):
-                if not cell.startswith(label):
-                    fail(f"найм кофейни: ячейка не начинается с {label!r}: {cell[:70]!r}")
-                cleaned.append(cell[len(label) :].strip())
-            if out and out[-1] == "":
-                out.pop()
-            out.append("|" + "|".join(cleaned) + "|")
-            if i + 1 < len(lines) and is_separator(split_row(lines[i + 1])):
-                i += 1
-            fixed += 1
-        else:
+        handled = False
+        if line.startswith("|") and out and out[-1] == "":
+            start = len(out) - 2
+            while start >= 0 and out[start].startswith("|"):
+                start -= 1
+            start += 1
+            if start <= len(out) - 3:
+                labels = split_row(out[start])
+                cells = split_row(line)
+                if (
+                    len(cells) == len(labels)
+                    and all(lb for lb in labels)
+                    and all(c.startswith(lb + " ") for c, lb in zip(cells, labels))
+                ):
+                    cleaned = [c[len(lb) :].strip() for c, lb in zip(cells, labels)]
+                    out.pop()
+                    out.append("|" + "|".join(cleaned) + "|")
+                    if i + 1 < len(lines) and is_separator(split_row(lines[i + 1])):
+                        i += 1
+                    fixed += 1
+                    handled = True
+        if not handled:
             out.append(line)
         i += 1
-    if fixed != 1:
-        fail(f"найм кофейни: исправлено строк {fixed}, ожидалась 1")
+    if fixed != 2:
+        fail(f"строк с вклеенными названиями колонок: {fixed}, ожидалось 2")
     return "\n".join(out)
 
 
@@ -671,10 +675,82 @@ def fix_online_store_matrix(text: str) -> str:
     return text
 
 
+# Онлайн-школа, 7.8: шапка разорвана на три строки, разделитель оказался
+# в середине, а слова склеены («Чтопроверяют», «Какподготовиться»).
+SCRAMBLED_HEADER = re.compile(
+    r"\|Контролирующий\|\|\|Санкция \(статья КоАП, суммы по ИП/\|\|\n"
+    r"\|---\|---\|---\|---\|---\|\n"
+    r"\|орган\|Чтопроверяют\|Норма\|юрлицам\)\|Какподготовиться\|\n"
+)
+SCRAMBLED_HEADER_FIXED = (
+    "|Контролирующий орган|Что проверяют|Норма|"
+    "Санкция (статья КоАП, суммы по ИП/юрлицам)|Как подготовиться|\n"
+    "|---|---|---|---|---|\n"
+)
+
+
+def fix_scrambled_header(text: str) -> str:
+    text, n = SCRAMBLED_HEADER.subn(lambda _m: SCRAMBLED_HEADER_FIXED, text)
+    if n != 1:
+        fail(f"онлайн-школа 7.8: шапок исправлено {n}, ожидалась 1")
+    return text
+
+
+# Строка, у которой OCR разорвал подпись и продолжил каждую ячейку во второй
+# строке: «Онлайн-школа программирования» + ««Байт»», «Практика клиентки» +
+# «Ольги Кусковой». Склеиваем обратно. Признак: подпись обрывается на букве,
+# вторая строка начинается с заглавной, и минимум две ячейки тоже обрываются
+# на букве и продолжаются со строчной.
+def merge_split_rows(text: str) -> str:
+    lines = text.split("\n")
+    out: list[str] = []
+    merged = 0
+    i = 0
+    while i < len(lines):
+        a = lines[i]
+        b = lines[i + 1] if i + 1 < len(lines) else ""
+        if (
+            a.startswith("|")
+            and b.startswith("|")
+            and not is_separator(split_row(a))
+            and not is_separator(split_row(b))
+        ):
+            ca, cb = split_row(a), split_row(b)
+            if len(ca) == len(cb) and len(ca) >= 3:
+                label_cont = (
+                    ca[0][-1:].isalpha()
+                    and (cb[0][:1].isupper() or cb[0][:1] in "«\"")
+                )
+                cell_cont = sum(
+                    1
+                    for x, y in zip(ca[1:], cb[1:])
+                    if x and y and x[-1:].isalpha() and y[:1].islower()
+                )
+                if label_cont and cell_cont >= 2:
+                    out.append(
+                        "|"
+                        + "|".join(
+                            (x + " " + y).strip() if x and y else (x or y)
+                            for x, y in zip(ca, cb)
+                        )
+                        + "|"
+                    )
+                    merged += 1
+                    i += 2
+                    continue
+        out.append(a)
+        i += 1
+    if merged != 2:
+        fail(f"разорванных строк: склеено {merged}, ожидалось 2")
+    return "\n".join(out)
+
+
 def fix_ocr_blocks(text: str) -> str:
-    text = fix_coffee_hiring_row(text)
+    text = fix_label_glued_rows(text)
     text = fix_auto_sop5(text)
     text = fix_online_store_matrix(text)
+    text = fix_scrambled_header(text)
+    text = merge_split_rows(text)
     return text
 
 
@@ -781,6 +857,62 @@ POST_FIXES: list[tuple[str, str, str]] = [
         "Удаленнографик, по закрепленным клиентам",
         "Удалённый график, по закрепленным клиентам",
         "склейка: удалённый график",
+    ),
+    # Остатки OCR-мусора: обрывки слов, попавшие в чужую ячейку.
+    (
+        "помеенияи щ брендирование",
+        "помещения и брендирование",
+        "мусор: подготовка помещения",
+    ),
+    (
+        "|Оптовый контракт без асчёталогистикии р возватов р|",
+        "|Оптовый контракт без расчёта логистики и возвратов|",
+        "мусор: оптовый контракт",
+    ),
+    (
+        "комплекта; й расходны и ручной инструмент",
+        "комплекта; расходный и ручной инструмент",
+        "мусор: расходный инструмент",
+    ),
+    (
+        "до ё оформления расчта",
+        "до оформления расчёта",
+        "мусор: оформление расчёта",
+    ),
+    (
+        "подключение 1 д юридического лица",
+        "подключение 1 договора юридического лица",
+        "мусор: договор юрлица",
+    ),
+    (
+        "Ориентир рр подключения",
+        "Ориентир подключения",
+        "мусор: ориентир подключения",
+    ),
+    (
+        "оформление асчётовиналичие р обязательной информации",
+        "оформление расчётов и наличие обязательной информации",
+        "мусор: оформление расчётов",
+    ),
+    (
+        "портфолио с й результатами кампани.",
+        "портфолио с результатами кампаний.",
+        "мусор: портфолио с результатами",
+    ),
+    (
+        "для б ольшинства",
+        "для большинства",
+        "мусор: для большинства",
+    ),
+    (
+        "|типографии «Печатный двор»",
+        "|Типографии «Печатный двор»",
+        "регистр: типографии",
+    ),
+    (
+        "расхождение ; р рд",
+        "расхождение",
+        "мусор: расхождение",
     ),
 ]
 
