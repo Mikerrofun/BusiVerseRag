@@ -1,0 +1,42 @@
+{
+  "name": "busiverserag",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx scripts/database/migrate.ts",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "db:seed": "tsx scripts/database/insert-example.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mikerrofun/BusiVerseRag.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mikerrofun/BusiVerseRag/issues"
+  },
+  "homepage": "https://github.com/Mikerrofun/BusiVerseRag#readme",
+  "dependencies": {
+    "@neon/config": "^1.9.4",
+    "@neon/env": "^1.6.5",
+    "@neondatabase/serverless": "^1.2.0",
+    "dotenv": "^18.0.9",
+    "drizzle-orm": "^0.45.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "drizzle-kit": "^0.31.11",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
