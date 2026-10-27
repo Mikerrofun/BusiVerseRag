@@ -112,8 +112,12 @@ neon status           # Статус проекта
 
 ## Документация
 
-- [План RAG-системы](docs/plan/01-rag-plan.md)
-- [Схема БД](docs/db/schema.md)
+### Планы и архитектура
+- [План RAG-системы](docs/plan/01-rag-plan.md) — главный план разработки
+- [Архитектура БД](docs/feature/database-architecture.md) — **детальное описание БД и retrieval pipeline**
+- [Схема БД](docs/db/schema.md) — справочник по таблицам и индексам
+
+### Планы работ
 - [План очистки текста](docs/plan/02-text-cleanup-plan.md)
 
 ## Технологии
