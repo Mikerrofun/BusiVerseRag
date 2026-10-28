@@ -1,0 +1,25 @@
+{
+  "chunk_id": "auto_service-5.7",
+  "business_type": "auto_service",
+  "block": "offline",
+  "section_code": "5.7",
+  "section_title": "5.7. Реестр ловушек",
+  "block_title": null,
+  "heading_path": [
+    "5. ОФЛАЙН — АВТОСЕРВИС (2 поста)",
+    "5.7. Реестр ловушек"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 2183,
+  "text": "## 5.7. Реестр ловушек\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 2184,
+  "token_count": 28,
+  "content_hash": "4e32bcf03a4948146da9b6e7ae38f2ec6bfa2ec87950f139f8be44913a8f489d"
+}

@@ -1,0 +1,25 @@
+{
+  "chunk_id": "smm_agency-8.1",
+  "business_type": "smm_agency",
+  "block": "online",
+  "section_code": "8.1",
+  "section_title": "8.1. Паспорт формата",
+  "block_title": null,
+  "heading_path": [
+    "8. ОНЛАЙН — SMM / МАРКЕТИНГОВОЕ АГЕНТСТВО",
+    "8.1. Паспорт формата"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 3141,
+  "text": "## 8.1. Паспорт формата\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 3144,
+  "token_count": 27,
+  "content_hash": "39857fd567c120b824460a561c6a90158a3a3cca4604f7c80b777d60e04b3fda"
+}

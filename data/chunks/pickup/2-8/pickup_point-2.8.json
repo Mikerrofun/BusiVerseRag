@@ -1,0 +1,25 @@
+{
+  "chunk_id": "pickup_point-2.8",
+  "business_type": "pickup_point",
+  "block": "offline",
+  "section_code": "2.8",
+  "section_title": "2.8. Проверки и штрафы",
+  "block_title": null,
+  "heading_path": [
+    "2. ОФЛАЙН — ПУНКТ ВЫДАЧИ ЗАКАЗОВ (ПВЗ) МАРКЕТПЛЕЙСА",
+    "2.8. Проверки и штрафы"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 943,
+  "text": "## 2.8. Проверки и штрафы\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 944,
+  "token_count": 28,
+  "content_hash": "78e727663c78369207bd5fb20602a9203254bdca74e3dd15a93941d7294c1181"
+}

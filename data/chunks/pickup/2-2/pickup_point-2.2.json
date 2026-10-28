@@ -1,0 +1,25 @@
+{
+  "chunk_id": "pickup_point-2.2",
+  "business_type": "pickup_point",
+  "block": "offline",
+  "section_code": "2.2",
+  "section_title": "2.2. Реальные кейсы (публикации за последние 12 месяцев)",
+  "block_title": null,
+  "heading_path": [
+    "2. ОФЛАЙН — ПУНКТ ВЫДАЧИ ЗАКАЗОВ (ПВЗ) МАРКЕТПЛЕЙСА",
+    "2.2. Реальные кейсы (публикации за последние 12 месяцев)"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 550,
+  "text": "## 2.2. Реальные кейсы (публикации за последние 12 месяцев)\n\n\n\nСодержит блоки:\n- Сеть ПВЗ Ozon, Wildberries и Яндекс Маркета — Кирилл, Череповец\n- Совмещённый ПВЗ Wildberries и Ozon — Магда, Выборгский район Санкт-Петербурга\n- Совмещённый ПВЗ Wildberries и Ozon — Елена, Песочный\n- ПВЗ Wildberries — владелец не указан, Москва\n- Рыночный фон\n- Примеры смены стратегии (pivot)\n- Типовые сценарии закрытия в первые 6–12 месяцев",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 551,
+  "token_count": 145,
+  "content_hash": "797e85eae28448e607d2782271ac06522f6befe4a931224419e9255d4ef8975c"
+}

@@ -1,0 +1,25 @@
+{
+  "chunk_id": "manicure_studio-4.8",
+  "business_type": "manicure_studio",
+  "block": "offline",
+  "section_code": "4.8",
+  "section_title": "4.8. Проверки и штрафы",
+  "block_title": null,
+  "heading_path": [
+    "4. ОФЛАЙН — МАНИКЮРНАЯ СТУДИЯ",
+    "4.8. Проверки и штрафы"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 1811,
+  "text": "## 4.8. Проверки и штрафы\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 1812,
+  "token_count": 28,
+  "content_hash": "b5609de1c9b8b104f6bfe72966584b04710bdde802dc0286819761d9b9266e5b"
+}

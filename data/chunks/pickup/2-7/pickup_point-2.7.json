@@ -1,0 +1,25 @@
+{
+  "chunk_id": "pickup_point-2.7",
+  "business_type": "pickup_point",
+  "block": "offline",
+  "section_code": "2.7",
+  "section_title": "2.7. Реестр ловушек",
+  "block_title": null,
+  "heading_path": [
+    "2. ОФЛАЙН — ПУНКТ ВЫДАЧИ ЗАКАЗОВ (ПВЗ) МАРКЕТПЛЕЙСА",
+    "2.7. Реестр ловушек"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 927,
+  "text": "## 2.7. Реестр ловушек\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 928,
+  "token_count": 28,
+  "content_hash": "bec301f8995987d915d57f56ebf9d90f8b1600a5342e6399d2a6e8787a0ac783"
+}

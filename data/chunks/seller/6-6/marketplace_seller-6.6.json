@@ -1,0 +1,25 @@
+{
+  "chunk_id": "marketplace_seller-6.6",
+  "business_type": "marketplace_seller",
+  "block": "online",
+  "section_code": "6.6",
+  "section_title": "6.6. Рабочие регламенты (SOP)",
+  "block_title": null,
+  "heading_path": [
+    "6. ОНЛАЙН — СЕЛЛЕР НА МАРКЕТПЛЕЙСЕ",
+    "6.6. Рабочие регламенты (SOP)"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 2567,
+  "text": "## 6.6. Рабочие регламенты (SOP)\n\n\n\nСодержит блоки:\n- SOP 1. Выбор товара и поставщика\n- SOP 2. Приёмка и контроль качества партии\n- SOP 3. Создание и актуализация карточки товара\n- SOP 4. Пополнение запасов и поставка\n- SOP 5. Ежедневный контроль заказов, возвратов и отзывов\n- SOP 6. Сверка выплат и юнит-экономики\n- Чек-лист сотрудника на смену/день\n- Матрица сбоев",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 2568,
+  "token_count": 132,
+  "content_hash": "c61c886cf01f676712cc48fb1155b2e68863e0218e2015bd25d08b1771331097"
+}

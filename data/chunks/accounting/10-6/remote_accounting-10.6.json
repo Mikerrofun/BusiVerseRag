@@ -1,0 +1,25 @@
+{
+  "chunk_id": "remote_accounting-10.6",
+  "business_type": "remote_accounting",
+  "block": "online",
+  "section_code": "10.6",
+  "section_title": "10.6. Рабочие регламенты (SOP)",
+  "block_title": null,
+  "heading_path": [
+    "10. ОНЛАЙН — УДАЛЁННАЯ БУХГАЛТЕРИЯ (бухгалтерский аутсорсинг для малого бизнеса)",
+    "10.6. Рабочие регламенты (SOP)"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 4283,
+  "text": "## 10.6. Рабочие регламенты (SOP)\n\n\n\nСодержит блоки:\n- SOP 1. Подключение клиента и заключение договора\n- SOP 2. Получение и контроль первичных документов\n- SOP 3. Учет и подготовка отчетности\n- SOP 4. ЭДО, электронная подпись и доступы\n- SOP 5. Выполнение требований 115-ФЗ\n- SOP 6. Обработка жалобы, ошибки или пропуска срока\n- Чек-лист сотрудника на смену/день\n- Матрица сбоев",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 4284,
+  "token_count": 129,
+  "content_hash": "27c76cff942a2ff7df2ad51f2d96bb3ec7b2ede1089b267a4380654d3a303fdf"
+}

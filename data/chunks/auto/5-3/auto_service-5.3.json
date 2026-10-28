@@ -1,0 +1,25 @@
+{
+  "chunk_id": "auto_service-5.3",
+  "business_type": "auto_service",
+  "block": "offline",
+  "section_code": "5.3",
+  "section_title": "5.3. Финансовая модель",
+  "block_title": null,
+  "heading_path": [
+    "5. ОФЛАЙН — АВТОСЕРВИС (2 поста)",
+    "5.3. Финансовая модель"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 1930,
+  "text": "## 5.3. Финансовая модель\n\nВ офлайнмоделях учтены депозит по аренде, эквайринг, вывоз мусора и подписка на онлайн-кассу.\n\nСодержит блоки:\n- Лист «Автосервис (2 поста)»\n- Скрытые расходы\n- Отраслевые бенчмарки",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 1933,
+  "token_count": 80,
+  "content_hash": "3ac4fc981edf330014f51f8366a96cdef93dca640590a21ed8193a4b2aa416ff"
+}

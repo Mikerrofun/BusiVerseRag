@@ -1,0 +1,25 @@
+{
+  "chunk_id": "global-B0.2",
+  "business_type": "global",
+  "block": "global",
+  "section_code": "B0.2",
+  "section_title": "B0.2. Маркировка интернет-рекламы: ст. 18.1 Закона о рекламе и ст. 14.3 КоАП",
+  "block_title": null,
+  "heading_path": [
+    "B0. ОБЩАЯ РЕГУЛЯТОРИКА ДЛЯ ОНЛАЙН-БИЗНЕСА (применяется к разделам 6–10)",
+    "B0.2. Маркировка интернет-рекламы: ст. 18.1 Закона о рекламе и ст. 14.3 КоАП"
+  ],
+  "chunk_type": "prose",
+  "scope": "global",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 2230,
+  "text": "## B0.2. Маркировка интернет-рекламы: ст. 18.1 Закона о рекламе и ст. 14.3 КоАП\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 2231,
+  "token_count": 53,
+  "content_hash": "392b190f025678590f00c70366f63bba48d92a4a592082c37a227e3439a740c9"
+}

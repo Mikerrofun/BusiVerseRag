@@ -1,0 +1,25 @@
+{
+  "chunk_id": "global-B0.3",
+  "business_type": "global",
+  "block": "global",
+  "section_code": "B0.3",
+  "section_title": "B0.3. Реестр владельцев страниц с большой аудиторией",
+  "block_title": null,
+  "heading_path": [
+    "B0. ОБЩАЯ РЕГУЛЯТОРИКА ДЛЯ ОНЛАЙН-БИЗНЕСА (применяется к разделам 6–10)",
+    "B0.3. Реестр владельцев страниц с большой аудиторией"
+  ],
+  "chunk_type": "prose",
+  "scope": "global",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 2240,
+  "text": "## B0.3. Реестр владельцев страниц с большой аудиторией\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 2241,
+  "token_count": 33,
+  "content_hash": "15ed453570cd9cf5a83e563f34f60ed02bf2a961413ce7e11bfbfb3b61346e32"
+}

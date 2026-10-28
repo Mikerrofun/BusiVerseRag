@@ -1,0 +1,25 @@
+{
+  "chunk_id": "pickup_point-2.6",
+  "business_type": "pickup_point",
+  "block": "offline",
+  "section_code": "2.6",
+  "section_title": "2.6. Рабочие регламенты (SOP)",
+  "block_title": null,
+  "heading_path": [
+    "2. ОФЛАЙН — ПУНКТ ВЫДАЧИ ЗАКАЗОВ (ПВЗ) МАРКЕТПЛЕЙСА",
+    "2.6. Рабочие регламенты (SOP)"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 813,
+  "text": "## 2.6. Рабочие регламенты (SOP)\n\n\n\nСодержит блоки:\n- SOP 1. Открытие смены и подготовка помещения\n- SOP 2. Приёмка отправлений\n- SOP 3. Размещение и хранение отправлений\n- SOP 4. Выдача заказа\n- SOP 5. Возвраты, отказы и повреждения\n- SOP 6. Штраф, спорная операция или пропажа отправления\n- Чек-лист сотрудника на смену/день\n- Матрица сбоев",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 814,
+  "token_count": 126,
+  "content_hash": "1d95256e7579bf0958c6f4dbe0c215c868a7ab29d0c0046f72bf20d669062a44"
+}

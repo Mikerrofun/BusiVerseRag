@@ -1,0 +1,25 @@
+{
+  "chunk_id": "mini_bakery-3.6",
+  "business_type": "mini_bakery",
+  "block": "offline",
+  "section_code": "3.6",
+  "section_title": "3.6. Рабочие регламенты (SOP)",
+  "block_title": null,
+  "heading_path": [
+    "3. ОФЛАЙН — МИНИ-ПЕКАРНЯ",
+    "3.6. Рабочие регламенты (SOP)"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 1279,
+  "text": "## 3.6. Рабочие регламенты (SOP)\n\n\n\nСодержит блоки:\n- SOP 1. Приёмка сырья\n- SOP 2. Производство и контроль качества\n- SOP 3. Списания, возвраты и остатки\n- SOP 4. Касса и закрытие смены\n- SOP 5. Санитарное состояние и хранение\n- SOP 6. Найм и ввод пекаря в работу\n- SOP 7. Действия при поломке оборудования или перебое электричества\n- Чек-лист сотрудника на смену/день\n- Матрица сбоев",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 1280,
+  "token_count": 142,
+  "content_hash": "a99832a0728c8d92b77f9b6666101e0c4cb9b027d2bbb0e77d4979658686b983"
+}

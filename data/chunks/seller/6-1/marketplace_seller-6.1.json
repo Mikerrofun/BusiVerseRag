@@ -1,0 +1,25 @@
+{
+  "chunk_id": "marketplace_seller-6.1",
+  "business_type": "marketplace_seller",
+  "block": "online",
+  "section_code": "6.1",
+  "section_title": "6.1. Паспорт формата",
+  "block_title": null,
+  "heading_path": [
+    "6. ОНЛАЙН — СЕЛЛЕР НА МАРКЕТПЛЕЙСЕ",
+    "6.1. Паспорт формата"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 2281,
+  "text": "## 6.1. Паспорт формата\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 2284,
+  "token_count": 27,
+  "content_hash": "385487d6c88b4b8a16657d8e45e8bb7f8ce622b4d946d69899488ea19d3a6111"
+}

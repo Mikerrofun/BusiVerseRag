@@ -1,0 +1,25 @@
+{
+  "chunk_id": "own_online_store-9.6",
+  "business_type": "own_online_store",
+  "block": "online",
+  "section_code": "9.6",
+  "section_title": "9.6. Рабочие регламенты (SOP)",
+  "block_title": null,
+  "heading_path": [
+    "9. ОНЛАЙН — ИНТЕРНЕТ-МАГАЗИН НА СОБСТВЕННОМ САЙТЕ",
+    "9.6. Рабочие регламенты (SOP)"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 3832,
+  "text": "## 9.6. Рабочие регламенты (SOP)\n\n\n\nСодержит блоки:\n- SOP-1. Приём и подтверждение заказа\n- SOP-2. Сборка, оплата и отгрузка\n- SOP-3. Возврат товара надлежащего качества\n- SOP-4. Закупка и контроль остатков\n- SOP-5. Контроль рекламы и ДРР\n- SOP-6. Платёжный календарь и кассовый разрыв\n- SOP-7. Сбой сайта, оплаты или утечка данных\n- Чек-лист сотрудника на смену/день\n- Матрица сбоев",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 3833,
+  "token_count": 146,
+  "content_hash": "181dcc45322c135a7bffe1d91fc477f3d6104035f28e6ad6c335136413a04f05"
+}

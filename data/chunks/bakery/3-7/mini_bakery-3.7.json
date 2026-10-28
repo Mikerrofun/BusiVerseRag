@@ -1,0 +1,25 @@
+{
+  "chunk_id": "mini_bakery-3.7",
+  "business_type": "mini_bakery",
+  "block": "offline",
+  "section_code": "3.7",
+  "section_title": "3.7. Реестр ловушек",
+  "block_title": null,
+  "heading_path": [
+    "3. ОФЛАЙН — МИНИ-ПЕКАРНЯ",
+    "3.7. Реестр ловушек"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 1365,
+  "text": "## 3.7. Реестр ловушек\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 1366,
+  "token_count": 28,
+  "content_hash": "18554bd61e352a02370a4a1a12dc335a285c2e1089affdd237d2b3a30b5e9438"
+}

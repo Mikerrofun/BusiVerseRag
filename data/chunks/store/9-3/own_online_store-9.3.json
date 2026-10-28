@@ -1,0 +1,25 @@
+{
+  "chunk_id": "own_online_store-9.3",
+  "business_type": "own_online_store",
+  "block": "online",
+  "section_code": "9.3",
+  "section_title": "9.3. Финансовая модель",
+  "block_title": null,
+  "heading_path": [
+    "9. ОНЛАЙН — ИНТЕРНЕТ-МАГАЗИН НА СОБСТВЕННОМ САЙТЕ",
+    "9.3. Финансовая модель"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 3652,
+  "text": "## 9.3. Финансовая модель\n\nВ офлайнмоделях учтены депозит по аренде, эквайринг, вывоз мусора и подписка на онлайн-кассу.\n\nСодержит блоки:\n- Лист «Интернет-магазин (свой сайт)»\n- Скрытые расходы\n- Отраслевые бенчмарки",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 3655,
+  "token_count": 80,
+  "content_hash": "c1ffd4270a510af1e958c342617f3fd22d5bf15dc3a4d46a0e1346fb4c1e3a3f"
+}

@@ -1,0 +1,25 @@
+{
+  "chunk_id": "manicure_studio-4.7",
+  "business_type": "manicure_studio",
+  "block": "offline",
+  "section_code": "4.7",
+  "section_title": "4.7. Реестр ловушек",
+  "block_title": null,
+  "heading_path": [
+    "4. ОФЛАЙН — МАНИКЮРНАЯ СТУДИЯ",
+    "4.7. Реестр ловушек"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 1795,
+  "text": "## 4.7. Реестр ловушек\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 1796,
+  "token_count": 28,
+  "content_hash": "638ff19c696215badec4887684359d3170f2309379f4422522a9249516a14c6e"
+}

@@ -1,0 +1,25 @@
+{
+  "chunk_id": "own_online_store-9.7",
+  "business_type": "own_online_store",
+  "block": "online",
+  "section_code": "9.7",
+  "section_title": "9.7. Реестр ловушек",
+  "block_title": null,
+  "heading_path": [
+    "9. ОНЛАЙН — ИНТЕРНЕТ-МАГАЗИН НА СОБСТВЕННОМ САЙТЕ",
+    "9.7. Реестр ловушек"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 3962,
+  "text": "## 9.7. Реестр ловушек\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 3963,
+  "token_count": 28,
+  "content_hash": "5fe1990b295c2f31b0078ae86d0e32b344ff325b12c1382001a2fe5613fa19b6"
+}

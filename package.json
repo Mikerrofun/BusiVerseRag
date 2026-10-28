@@ -12,7 +12,11 @@
     "db:migrate": "tsx scripts/database/migrate.ts",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "db:seed": "tsx scripts/database/insert-example.ts"
+    "db:seed": "tsx scripts/database/insert-example.ts",
+    "chunk": "tsx scripts/chunking/chunk.ts",
+    "chunk:validate": "tsx scripts/chunking/lib/validate.ts",
+    "chunk:load": "tsx scripts/chunking/load.ts",
+    "test:chunking": "tsx --test scripts/chunking/test/chunking.test.ts"
   },
   "repository": {
     "type": "git",
@@ -31,7 +35,8 @@
     "@neon/env": "^1.6.5",
     "@neondatabase/serverless": "^1.2.0",
     "dotenv": "^18.0.9",
-    "drizzle-orm": "^0.45.4"
+    "drizzle-orm": "^0.45.4",
+    "js-tiktoken": "^1.0.21"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

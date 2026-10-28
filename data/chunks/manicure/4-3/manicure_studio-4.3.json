@@ -1,0 +1,25 @@
+{
+  "chunk_id": "manicure_studio-4.3",
+  "business_type": "manicure_studio",
+  "block": "offline",
+  "section_code": "4.3",
+  "section_title": "4.3. Финансовая модель",
+  "block_title": null,
+  "heading_path": [
+    "4. ОФЛАЙН — МАНИКЮРНАЯ СТУДИЯ",
+    "4.3. Финансовая модель"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 1513,
+  "text": "## 4.3. Финансовая модель\n\nВ офлайнмоделях учтены депозит по аренде, эквайринг, вывоз мусора и подписка на онлайн-кассу.\n\nСодержит блоки:\n- Лист «Маникюр (Москва)»\n- Лист «Маникюр (регион)»\n- Скрытые расходы\n- Отраслевые бенчмарки",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 1516,
+  "token_count": 89,
+  "content_hash": "088415880120862043c9f1d8ca2dad31939f5d406005d507e2f49c2252ac0a3e"
+}

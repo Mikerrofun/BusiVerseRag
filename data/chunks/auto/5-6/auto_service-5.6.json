@@ -1,0 +1,25 @@
+{
+  "chunk_id": "auto_service-5.6",
+  "business_type": "auto_service",
+  "block": "offline",
+  "section_code": "5.6",
+  "section_title": "5.6. Рабочие регламенты (SOP)",
+  "block_title": null,
+  "heading_path": [
+    "5. ОФЛАЙН — АВТОСЕРВИС (2 поста)",
+    "5.6. Рабочие регламенты (SOP)"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 2096,
+  "text": "## 5.6. Рабочие регламенты (SOP)\n\n\n\nСодержит блоки:\n- SOP 1. Приём автомобиля\n- SOP 2. Диагностика и согласование сметы\n- SOP 3. Ремонт и техническое обслуживание\n- SOP 4. Заказ и приёмка запчастей\n- SOP 5. Контроль качества и выдача автомобиля\n- SOP 6. Претензия и повторное обращение\n- SOP 7. Открытие и закрытие смены\n- Чек-лист сотрудника на смену/день\n- Матрица сбоев",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 2097,
+  "token_count": 137,
+  "content_hash": "6194f9c370b5e984ed296de4a1248775c4a6711bf1ac829b462f1af973e849ff"
+}

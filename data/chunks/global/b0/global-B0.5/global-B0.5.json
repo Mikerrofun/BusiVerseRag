@@ -1,0 +1,25 @@
+{
+  "chunk_id": "global-B0.5",
+  "business_type": "global",
+  "block": "global",
+  "section_code": "B0.5",
+  "section_title": "B0.5. Налоговый режим НПД: ограничения для онлайн-бизнеса",
+  "block_title": null,
+  "heading_path": [
+    "B0. ОБЩАЯ РЕГУЛЯТОРИКА ДЛЯ ОНЛАЙН-БИЗНЕСА (применяется к разделам 6–10)",
+    "B0.5. Налоговый режим НПД: ограничения для онлайн-бизнеса"
+  ],
+  "chunk_type": "prose",
+  "scope": "global",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 2262,
+  "text": "## B0.5. Налоговый режим НПД: ограничения для онлайн-бизнеса\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 2263,
+  "token_count": 37,
+  "content_hash": "a75dd1a803acf9bb8fe27a4f88d8a73af27903a213f4c8f24cdcd57d410b27c0"
+}

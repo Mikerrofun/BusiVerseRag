@@ -1,0 +1,25 @@
+{
+  "chunk_id": "pickup_point-2.3",
+  "business_type": "pickup_point",
+  "block": "offline",
+  "section_code": "2.3",
+  "section_title": "2.3. Финансовая модель",
+  "block_title": null,
+  "heading_path": [
+    "2. ОФЛАЙН — ПУНКТ ВЫДАЧИ ЗАКАЗОВ (ПВЗ) МАРКЕТПЛЕЙСА",
+    "2.3. Финансовая модель"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 648,
+  "text": "## 2.3. Финансовая модель\n\nВ офлайнмоделях учтены депозит по аренде, эквайринг, вывоз мусора и подписка на онлайн-кассу.\n\nСодержит блоки:\n- Лист «ПВЗ Wildberries»\n- Скрытые расходы\n- Отраслевые бенчмарки",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 651,
+  "token_count": 76,
+  "content_hash": "11d8c5c942a86a9c446f6bff7469ae0ce029f98980687f88f1a2fadb509d0d9e"
+}

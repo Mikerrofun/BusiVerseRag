@@ -1,0 +1,25 @@
+{
+  "chunk_id": "online_school-7.4",
+  "business_type": "online_school",
+  "block": "online",
+  "section_code": "7.4",
+  "section_title": "7.4. Кадровая матрица",
+  "block_title": null,
+  "heading_path": [
+    "7. ОНЛАЙН — ОНЛАЙН-ШКОЛА (курсы)",
+    "7.4. Кадровая матрица"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 2892,
+  "text": "## 7.4. Кадровая матрица\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 2893,
+  "token_count": 30,
+  "content_hash": "7e1ee5e23cdbde0d4280c72eb71667c57d3bf1222d9dbbb461c52829dc202272"
+}

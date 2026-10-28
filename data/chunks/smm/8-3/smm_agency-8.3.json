@@ -1,0 +1,25 @@
+{
+  "chunk_id": "smm_agency-8.3",
+  "business_type": "smm_agency",
+  "block": "online",
+  "section_code": "8.3",
+  "section_title": "8.3. Финансовая модель",
+  "block_title": null,
+  "heading_path": [
+    "8. ОНЛАЙН — SMM / МАРКЕТИНГОВОЕ АГЕНТСТВО",
+    "8.3. Финансовая модель"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 3256,
+  "text": "## 8.3. Финансовая модель\n\nВ офлайнмоделях учтены депозит по аренде, эквайринг, вывоз мусора и подписка на онлайн-кассу.\n\nСодержит блоки:\n- Лист «SMM-агентство»\n- Скрытые расходы\n- Отраслевые бенчмарки",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 3259,
+  "token_count": 77,
+  "content_hash": "0366db444a060fe23d1111e84bc92b43b79f75d4111215f71da14b7e7466aa21"
+}

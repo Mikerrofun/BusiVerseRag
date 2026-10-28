@@ -1,0 +1,25 @@
+{
+  "chunk_id": "marketplace_seller-6.3",
+  "business_type": "marketplace_seller",
+  "block": "online",
+  "section_code": "6.3",
+  "section_title": "6.3. Финансовая модель",
+  "block_title": null,
+  "heading_path": [
+    "6. ОНЛАЙН — СЕЛЛЕР НА МАРКЕТПЛЕЙСЕ",
+    "6.3. Финансовая модель"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 2397,
+  "text": "## 6.3. Финансовая модель\n\nВ офлайнмоделях учтены депозит по аренде, эквайринг, вывоз мусора и подписка на онлайн-кассу.\n\nСодержит блоки:\n- Лист «Селлер маркетплейса»\n- Скрытые расходы\n- Отраслевые бенчмарки",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 2400,
+  "token_count": 78,
+  "content_hash": "b3674098bd7828bdd0a6eb16478e006d50c1b945e41fd8a48c6f5e386d21d38d"
+}

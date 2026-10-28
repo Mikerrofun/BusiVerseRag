@@ -1,0 +1,25 @@
+{
+  "chunk_id": "manicure_studio-4.1",
+  "business_type": "manicure_studio",
+  "block": "offline",
+  "section_code": "4.1",
+  "section_title": "4.1. Паспорт формата",
+  "block_title": null,
+  "heading_path": [
+    "4. ОФЛАЙН — МАНИКЮРНАЯ СТУДИЯ",
+    "4.1. Паспорт формата"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 1395,
+  "text": "## 4.1. Паспорт формата\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 1398,
+  "token_count": 27,
+  "content_hash": "f053e9f40ec21259e854b48b6ec1d20cfe21c62b6d4ff2eea045d99a7e256016"
+}

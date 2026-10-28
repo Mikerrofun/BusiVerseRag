@@ -1,0 +1,25 @@
+{
+  "chunk_id": "remote_accounting-10.5",
+  "business_type": "remote_accounting",
+  "block": "online",
+  "section_code": "10.5",
+  "section_title": "10.5. Цепочка поставок",
+  "block_title": null,
+  "heading_path": [
+    "10. ОНЛАЙН — УДАЛЁННАЯ БУХГАЛТЕРИЯ (бухгалтерский аутсорсинг для малого бизнеса)",
+    "10.5. Цепочка поставок"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 4226,
+  "text": "## 10.5. Цепочка поставок\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 4227,
+  "token_count": 28,
+  "content_hash": "c983724e00e297d522030f437ddd6f8e6b10839fc1ba389c6698a32ac0159acf"
+}

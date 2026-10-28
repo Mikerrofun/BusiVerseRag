@@ -1,0 +1,25 @@
+{
+  "chunk_id": "coffee_shop-1.6",
+  "business_type": "coffee_shop",
+  "block": "offline",
+  "section_code": "1.6",
+  "section_title": "1.6. Рабочие регламенты (SOP)",
+  "block_title": null,
+  "heading_path": [
+    "1. ОФЛАЙН — КОФЕЙНЯ (формат «кофе с собой»)",
+    "1.6. Рабочие регламенты (SOP)"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 374,
+  "text": "## 1.6. Рабочие регламенты (SOP)\n\n\n\nСодержит блоки:\n- SOP 1. Открытие смены\n- SOP 2. Приёмка сырья и товаров\n- SOP 3. Приготовление напитка и контроль качества\n- SOP 4. Учёт остатков и списаний\n- SOP 5. Расчёты и закрытие смены\n- SOP 6. Жалоба клиента\n- SOP 7. Остановка оборудования или сбой электроснабжения\n- Чек-лист сотрудника на смену/день\n- Матрица сбоев",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 375,
+  "token_count": 134,
+  "content_hash": "158e2f44ec023006ddb23c2aa9f6313a07294665694d52e7d33ab159d84d1982"
+}
