@@ -159,7 +159,11 @@ function checkTableHeaders(chunks: ChunkFile[], issues: ValidationIssue[]) {
       // шапка (строка '|' + разделитель) должна стоять непосредственно перед первой
       // строкой данных куска. Кусок без строк таблицы (текстовый хвост) шапки не требует
       const lines = part.text.split('\n');
-      const rowIdx = lines.findIndex((l) => l.startsWith('|') && !isSep(l));
+      // строка шапки опознаётся по разделителю следом за ней — иначе она сама
+      // подходит под шаблон «строки данных» и ломает поиск первой строки
+      const isDataRow = (idx: number) =>
+        lines[idx].startsWith('|') && !isSep(lines[idx]) && !(idx + 1 < lines.length && isSep(lines[idx + 1]));
+      const rowIdx = lines.findIndex((_, idx) => isDataRow(idx));
       if (rowIdx === -1) continue;
       const ok = rowIdx >= 2 && lines[rowIdx - 2].startsWith('|') && isSep(lines[rowIdx - 1]);
       if (!ok) {

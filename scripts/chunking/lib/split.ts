@@ -88,13 +88,15 @@ function splitTable(body: Trimmed, count: TokenCounter): SplitPart[] {
   let curTokens = 0;
   let curHeaders = new Set<NonNullable<Segment['header']>>();
   for (const seg of segments) {
-    const cost = segCost(seg, curHeaders);
-    if (cur.length > 0 && curTokens + cost > CONFIG.budgetMax) {
+    if (cur.length > 0 && curTokens + segCost(seg, curHeaders) > CONFIG.budgetMax) {
       groups.push(cur);
       cur = [];
       curTokens = 0;
       curHeaders = new Set();
     }
+    // стоимость считаем ПОСЛЕ возможного сброса: первая строка новой группы
+    // платит за шапку своей таблицы (иначе кусок вылезает за бюджет)
+    const cost = segCost(seg, curHeaders);
     cur.push(seg);
     curTokens += cost;
     if (seg.kind === 'row') curHeaders.add(seg.header!);
