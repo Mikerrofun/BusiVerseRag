@@ -1,0 +1,25 @@
+{
+  "chunk_id": "remote_accounting-10.1",
+  "business_type": "remote_accounting",
+  "block": "online",
+  "section_code": "10.1",
+  "section_title": "10.1. Паспорт формата",
+  "block_title": null,
+  "heading_path": [
+    "10. ОНЛАЙН — УДАЛЁННАЯ БУХГАЛТЕРИЯ (бухгалтерский аутсорсинг для малого бизнеса)",
+    "10.1. Паспорт формата"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 3990,
+  "text": "## 10.1. Паспорт формата\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 3993,
+  "token_count": 27,
+  "content_hash": "cd008b6ef1829f972c186a0278882e7a8575f66699e1646424c0278add3e7f6d"
+}

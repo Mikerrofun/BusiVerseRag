@@ -1,0 +1,102 @@
+[
+  {
+    "from_chunk_id": "marketplace_seller-6.1-b01",
+    "to_section": "B0",
+    "first_line": 2294
+  },
+  {
+    "from_chunk_id": "marketplace_seller-6.8-b01-p1",
+    "to_section": "B0",
+    "first_line": 2705
+  },
+  {
+    "from_chunk_id": "marketplace_seller-6.8-b01-p2",
+    "to_section": "B0",
+    "first_line": 2709
+  },
+  {
+    "from_chunk_id": "online_school-7.1-b01",
+    "to_section": "B0",
+    "first_line": 2724
+  },
+  {
+    "from_chunk_id": "online_school-7.6-b02",
+    "to_section": "B0",
+    "first_line": 3019
+  },
+  {
+    "from_chunk_id": "online_school-7.8-b01-p1",
+    "to_section": "B0",
+    "first_line": 3132
+  },
+  {
+    "from_chunk_id": "online_school-7.8-b01-p2",
+    "to_section": "B0",
+    "first_line": 3138
+  },
+  {
+    "from_chunk_id": "smm_agency-8.1-b01",
+    "to_section": "B0",
+    "first_line": 3154
+  },
+  {
+    "from_chunk_id": "smm_agency-8.5",
+    "to_section": "B0",
+    "first_line": 3363
+  },
+  {
+    "from_chunk_id": "smm_agency-8.6-b01",
+    "to_section": "B0",
+    "first_line": 3444
+  },
+  {
+    "from_chunk_id": "smm_agency-8.6-b05",
+    "to_section": "B0",
+    "first_line": 3494
+  },
+  {
+    "from_chunk_id": "smm_agency-8.7-b01-p2",
+    "to_section": "B0",
+    "first_line": 3550
+  },
+  {
+    "from_chunk_id": "smm_agency-8.8-b01-p1",
+    "to_section": "B0",
+    "first_line": 3556
+  },
+  {
+    "from_chunk_id": "own_online_store-9.1-b01",
+    "to_section": "B0",
+    "first_line": 3574
+  },
+  {
+    "from_chunk_id": "own_online_store-9.6-b05",
+    "to_section": "B0",
+    "first_line": 3887
+  },
+  {
+    "from_chunk_id": "own_online_store-9.6-b07",
+    "to_section": "B0",
+    "first_line": 3912
+  },
+  {
+    "from_chunk_id": "own_online_store-9.6-b09",
+    "to_section": "B0",
+    "first_line": 3960
+  },
+  {
+    "from_chunk_id": "own_online_store-9.8-b01-p1",
+    "to_section": "B0",
+    "first_line": 3980
+  },
+  {
+    "from_chunk_id": "own_online_store-9.8-b01-p2",
+    "to_section": "B0",
+    "first_line": 3982
+  },
+  {
+    "from_chunk_id": "remote_accounting-10.8-b01-p2",
+    "to_section": "B0",
+    "first_line": 4421
+  }
+]

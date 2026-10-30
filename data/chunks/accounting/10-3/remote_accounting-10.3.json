@@ -1,0 +1,25 @@
+{
+  "chunk_id": "remote_accounting-10.3",
+  "business_type": "remote_accounting",
+  "block": "online",
+  "section_code": "10.3",
+  "section_title": "10.3. Финансовая модель",
+  "block_title": null,
+  "heading_path": [
+    "10. ОНЛАЙН — УДАЛЁННАЯ БУХГАЛТЕРИЯ (бухгалтерский аутсорсинг для малого бизнеса)",
+    "10.3. Финансовая модель"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 4115,
+  "text": "## 10.3. Финансовая модель\n\nВ офлайнмоделях учтены депозит по аренде, эквайринг, вывоз мусора и подписка на онлайн-кассу.\n\nСодержит блоки:\n- Лист «Удалённая бухгалтерия»\n- Скрытые расходы\n- Отраслевые бенчмарки",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 4118,
+  "token_count": 76,
+  "content_hash": "7642e020fe7723206ebe22b62ae3816be6b65c4d6565aaa5e741841eda817051"
+}

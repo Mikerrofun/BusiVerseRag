@@ -1,0 +1,25 @@
+{
+  "chunk_id": "manicure_studio-4.2",
+  "business_type": "manicure_studio",
+  "block": "offline",
+  "section_code": "4.2",
+  "section_title": "4.2. Реальные кейсы (публикации за последние 12 месяцев)",
+  "block_title": null,
+  "heading_path": [
+    "4. ОФЛАЙН — МАНИКЮРНАЯ СТУДИЯ",
+    "4.2. Реальные кейсы (публикации за последние 12 месяцев)"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 1408,
+  "text": "## 4.2. Реальные кейсы (публикации за последние 12 месяцев)\n\n\n\nСодержит блоки:\n- Nail Sunny — Элеонора Мовсисян, Санкт-Петербург\n- Салоны «Расчеши» — Дарья Демченко, Санкт-Петербург\n- Milky — Анатолий Юдин, Москва\n- AVE beauty — Мири, Москва\n- Galka — Галина Полякова, Санкт-Петербург\n- Рыночный фон\n- Примеры смены стратегии (pivot)\n- Типовые сценарии закрытия в первые 6–12 месяцев",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 1409,
+  "token_count": 131,
+  "content_hash": "000aab6975942d90cb02164efcde0f3de84dcfe8c5abd32e32123a9db456714d"
+}

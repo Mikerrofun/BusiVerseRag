@@ -1,0 +1,25 @@
+{
+  "chunk_id": "online_school-7.1",
+  "business_type": "online_school",
+  "block": "online",
+  "section_code": "7.1",
+  "section_title": "7.1. Паспорт формата",
+  "block_title": null,
+  "heading_path": [
+    "7. ОНЛАЙН — ОНЛАЙН-ШКОЛА (курсы)",
+    "7.1. Паспорт формата"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 2711,
+  "text": "## 7.1. Паспорт формата\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 2714,
+  "token_count": 27,
+  "content_hash": "67262d8fc3fb953d270a067688333d2a0c739de979e1bbd3ae2748409c05e64c"
+}

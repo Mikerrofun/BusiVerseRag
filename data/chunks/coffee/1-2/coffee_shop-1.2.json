@@ -1,0 +1,25 @@
+{
+  "chunk_id": "coffee_shop-1.2",
+  "business_type": "coffee_shop",
+  "block": "offline",
+  "section_code": "1.2",
+  "section_title": "1.2. Реальные кейсы (публикации за последние 12 месяцев)",
+  "block_title": null,
+  "heading_path": [
+    "1. ОФЛАЙН — КОФЕЙНЯ (формат «кофе с собой»)",
+    "1.2. Реальные кейсы (публикации за последние 12 месяцев)"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 44,
+  "text": "## 1.2. Реальные кейсы (публикации за последние 12 месяцев)\n\n\n\nСодержит блоки:\n- Coffee Bull — Барнаул\n- Setterʼs — Ростов-на-Дону\n- Follow to feel — Люберцы и Котельники\n- «Ароматный дом» — Новосибирск\n- Семейные кофейни «Мами» — Пермь\n- Рыночный фон\n- Примеры смены стратегии (pivot)\n- Типовые сценарии закрытия в первые 6–12 месяцев",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 45,
+  "token_count": 119,
+  "content_hash": "b9765ddb2d5e996a64476cb0daac8fd54d0c3bab29dae795de6d5a5bf0e1d2bb"
+}

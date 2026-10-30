@@ -1,0 +1,25 @@
+{
+  "chunk_id": "global-B0.6",
+  "business_type": "global",
+  "block": "global",
+  "section_code": "B0.6",
+  "section_title": "B0.6. Прочие требования для онлайн-бизнеса",
+  "block_title": null,
+  "heading_path": [
+    "B0. ОБЩАЯ РЕГУЛЯТОРИКА ДЛЯ ОНЛАЙН-БИЗНЕСА (применяется к разделам 6–10)",
+    "B0.6. Прочие требования для онлайн-бизнеса"
+  ],
+  "chunk_type": "prose",
+  "scope": "global",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 2273,
+  "text": "## B0.6. Прочие требования для онлайн-бизнеса\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 2274,
+  "token_count": 32,
+  "content_hash": "c8fdbfcd417bd951231368753aaf7ec45648b4c78dd2e2cdfccc70fb628bb4fd"
+}

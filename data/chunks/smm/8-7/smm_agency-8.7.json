@@ -1,0 +1,25 @@
+{
+  "chunk_id": "smm_agency-8.7",
+  "business_type": "smm_agency",
+  "block": "online",
+  "section_code": "8.7",
+  "section_title": "8.7. Реестр ловушек",
+  "block_title": null,
+  "heading_path": [
+    "8. ОНЛАЙН — SMM / МАРКЕТИНГОВОЕ АГЕНТСТВО",
+    "8.7. Реестр ловушек"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 3539,
+  "text": "## 8.7. Реестр ловушек\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 3540,
+  "token_count": 28,
+  "content_hash": "bdc4381e31b3d55a3abfd394ebfb1d1df75671abbca821b75af5e576abb6831e"
+}

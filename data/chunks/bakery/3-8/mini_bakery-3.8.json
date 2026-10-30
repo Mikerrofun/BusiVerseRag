@@ -1,0 +1,25 @@
+{
+  "chunk_id": "mini_bakery-3.8",
+  "business_type": "mini_bakery",
+  "block": "offline",
+  "section_code": "3.8",
+  "section_title": "3.8. Проверки и штрафы",
+  "block_title": null,
+  "heading_path": [
+    "3. ОФЛАЙН — МИНИ-ПЕКАРНЯ",
+    "3.8. Проверки и штрафы"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 1381,
+  "text": "## 3.8. Проверки и штрафы\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 1382,
+  "token_count": 28,
+  "content_hash": "4d9b76502642cfb088a270126ce7a38132307ec3d48aaecd0f87027036c70b0a"
+}

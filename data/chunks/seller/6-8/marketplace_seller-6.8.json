@@ -1,0 +1,25 @@
+{
+  "chunk_id": "marketplace_seller-6.8",
+  "business_type": "marketplace_seller",
+  "block": "online",
+  "section_code": "6.8",
+  "section_title": "6.8. Проверки и штрафы",
+  "block_title": null,
+  "heading_path": [
+    "6. ОНЛАЙН — СЕЛЛЕР НА МАРКЕТПЛЕЙСЕ",
+    "6.8. Проверки и штрафы"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 2696,
+  "text": "## 6.8. Проверки и штрафы\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 2697,
+  "token_count": 28,
+  "content_hash": "2985845e6ac9f69b870fc1e463a4a67df4681a0209ab14297438bd630d887d99"
+}

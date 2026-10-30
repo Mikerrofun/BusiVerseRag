@@ -1,0 +1,25 @@
+{
+  "chunk_id": "pickup_point-2.1",
+  "business_type": "pickup_point",
+  "block": "offline",
+  "section_code": "2.1",
+  "section_title": "2.1. Паспорт формата",
+  "block_title": null,
+  "heading_path": [
+    "2. ОФЛАЙН — ПУНКТ ВЫДАЧИ ЗАКАЗОВ (ПВЗ) МАРКЕТПЛЕЙСА",
+    "2.1. Паспорт формата"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 532,
+  "text": "## 2.1. Паспорт формата\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 535,
+  "token_count": 27,
+  "content_hash": "fe1d905c2469a84128840198e2a04465e4222672fa2a24733a318362a6dbe1de"
+}

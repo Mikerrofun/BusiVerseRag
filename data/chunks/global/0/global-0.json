@@ -1,0 +1,24 @@
+{
+  "chunk_id": "global-0",
+  "business_type": "global",
+  "block": "global",
+  "section_code": "0",
+  "section_title": "0. ОБЩИЕ ПОЛОЖЕНИЯ: НАЛОГОВЫЕ ПАРАМЕТРЫ 2026 ГОДА",
+  "block_title": null,
+  "heading_path": [
+    "0. ОБЩИЕ ПОЛОЖЕНИЯ: НАЛОГОВЫЕ ПАРАМЕТРЫ 2026 ГОДА"
+  ],
+  "chunk_type": "prose",
+  "scope": "global",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 14,
+  "text": "## 0. ОБЩИЕ ПОЛОЖЕНИЯ: НАЛОГОВЫЕ ПАРАМЕТРЫ 2026 ГОДА\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 15,
+  "token_count": 50,
+  "content_hash": "5b527c0c3a2322d0372e47e37eb8a01fc7ed6b113a97b0405de8e422fe0acdc7"
+}

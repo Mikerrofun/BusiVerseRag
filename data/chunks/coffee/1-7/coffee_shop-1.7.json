@@ -1,0 +1,25 @@
+{
+  "chunk_id": "coffee_shop-1.7",
+  "business_type": "coffee_shop",
+  "block": "offline",
+  "section_code": "1.7",
+  "section_title": "1.7. Реестр ловушек",
+  "block_title": null,
+  "heading_path": [
+    "1. ОФЛАЙН — КОФЕЙНЯ (формат «кофе с собой»)",
+    "1.7. Реестр ловушек"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 506,
+  "text": "## 1.7. Реестр ловушек\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 507,
+  "token_count": 28,
+  "content_hash": "1fa032580f4efdd5140ce70e903a980a67dfd631183610b5bec74cbaf937ee33"
+}

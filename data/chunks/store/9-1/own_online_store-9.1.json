@@ -1,0 +1,25 @@
+{
+  "chunk_id": "own_online_store-9.1",
+  "business_type": "own_online_store",
+  "block": "online",
+  "section_code": "9.1",
+  "section_title": "9.1. Паспорт формата",
+  "block_title": null,
+  "heading_path": [
+    "9. ОНЛАЙН — ИНТЕРНЕТ-МАГАЗИН НА СОБСТВЕННОМ САЙТЕ",
+    "9.1. Паспорт формата"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 3561,
+  "text": "## 9.1. Паспорт формата\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 3564,
+  "token_count": 27,
+  "content_hash": "f8cefa99d9639141039c5e1a774f26ff79e39b80a6a9e52f39b2e053391928db"
+}

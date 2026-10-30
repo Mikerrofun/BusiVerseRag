@@ -1,0 +1,25 @@
+{
+  "chunk_id": "coffee_shop-1.8",
+  "business_type": "coffee_shop",
+  "block": "offline",
+  "section_code": "1.8",
+  "section_title": "1.8. Проверки и штрафы",
+  "block_title": null,
+  "heading_path": [
+    "1. ОФЛАЙН — КОФЕЙНЯ (формат «кофе с собой»)",
+    "1.8. Проверки и штрафы"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 519,
+  "text": "## 1.8. Проверки и штрафы\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 520,
+  "token_count": 28,
+  "content_hash": "390f87cb9e9408014ff2dde9fdf7e9739f700a37ebe5419353ac0a4e807ecdad"
+}

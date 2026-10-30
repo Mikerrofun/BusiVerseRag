@@ -1,0 +1,25 @@
+{
+  "chunk_id": "manicure_studio-4.6",
+  "business_type": "manicure_studio",
+  "block": "offline",
+  "section_code": "4.6",
+  "section_title": "4.6. Рабочие регламенты (SOP)",
+  "block_title": null,
+  "heading_path": [
+    "4. ОФЛАЙН — МАНИКЮРНАЯ СТУДИЯ",
+    "4.6. Рабочие регламенты (SOP)"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 1708,
+  "text": "## 4.6. Рабочие регламенты (SOP)\n\n\n\nСодержит блоки:\n- SOP 1. Открытие смены и готовность рабочих мест\n- SOP 2. Запись, подтверждение и напоминания\n- SOP 3. Консультация и выполнение услуги\n- SOP 4. Обработка инструментов и санитарный порядок\n- SOP 5. Расчёт, касса и закрытие оплаты\n- SOP 6. Управление расписанием, загрузкой и свободными окнами\n- SOP 7. Заказ и приёмка расходников\n- Чек-лист сотрудника на смену/день\n- Матрица сбоев",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 1709,
+  "token_count": 149,
+  "content_hash": "726f7a9fc40f29449bc2083731232550a2d0cdb2168840e829184126fde0e685"
+}

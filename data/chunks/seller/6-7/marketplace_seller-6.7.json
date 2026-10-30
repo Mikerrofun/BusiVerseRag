@@ -1,0 +1,25 @@
+{
+  "chunk_id": "marketplace_seller-6.7",
+  "business_type": "marketplace_seller",
+  "block": "online",
+  "section_code": "6.7",
+  "section_title": "6.7. Реестр ловушек",
+  "block_title": null,
+  "heading_path": [
+    "6. ОНЛАЙН — СЕЛЛЕР НА МАРКЕТПЛЕЙСЕ",
+    "6.7. Реестр ловушек"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 2683,
+  "text": "## 6.7. Реестр ловушек\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 2684,
+  "token_count": 28,
+  "content_hash": "d33c3f82812bf522a5c4ea6e062be505104f37d61f0f7afa0f629f4cdaa9dfe5"
+}

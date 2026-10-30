@@ -1,0 +1,25 @@
+{
+  "chunk_id": "mini_bakery-3.5",
+  "business_type": "mini_bakery",
+  "block": "offline",
+  "section_code": "3.5",
+  "section_title": "3.5. Цепочка поставок",
+  "block_title": null,
+  "heading_path": [
+    "3. ОФЛАЙН — МИНИ-ПЕКАРНЯ",
+    "3.5. Цепочка поставок"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 1220,
+  "text": "## 3.5. Цепочка поставок\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 1221,
+  "token_count": 28,
+  "content_hash": "59b17115f2ea280eef31ad9e8d42588d88192b86cf52a1889bcf5950777dbb26"
+}

@@ -1,0 +1,25 @@
+{
+  "chunk_id": "manicure_studio-4.4",
+  "business_type": "manicure_studio",
+  "block": "offline",
+  "section_code": "4.4",
+  "section_title": "4.4. Кадровая матрица",
+  "block_title": null,
+  "heading_path": [
+    "4. ОФЛАЙН — МАНИКЮРНАЯ СТУДИЯ",
+    "4.4. Кадровая матрица"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 1616,
+  "text": "## 4.4. Кадровая матрица\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 1617,
+  "token_count": 30,
+  "content_hash": "1aff48ddd8baba94d85160fecf88dff653c0f9d5b64cd7a778794d871b0ab331"
+}

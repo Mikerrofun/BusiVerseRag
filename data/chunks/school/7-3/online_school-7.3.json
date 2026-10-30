@@ -1,0 +1,25 @@
+{
+  "chunk_id": "online_school-7.3",
+  "business_type": "online_school",
+  "block": "online",
+  "section_code": "7.3",
+  "section_title": "7.3. Финансовая модель",
+  "block_title": null,
+  "heading_path": [
+    "7. ОНЛАЙН — ОНЛАЙН-ШКОЛА (курсы)",
+    "7.3. Финансовая модель"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 2831,
+  "text": "## 7.3. Финансовая модель\n\nВ офлайнмоделях учтены депозит по аренде, эквайринг, вывоз мусора и подписка на онлайн-кассу.\n\nСодержит блоки:\n- Лист «Онлайн-школа»\n- Скрытые расходы\n- Отраслевые бенчмарки",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 2834,
+  "token_count": 76,
+  "content_hash": "6731ff452bc571cfddc7049abaca5e64008f46fecfc7531ea9f0c127fa85ffb6"
+}

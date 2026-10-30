@@ -1,0 +1,25 @@
+{
+  "chunk_id": "remote_accounting-10.8",
+  "business_type": "remote_accounting",
+  "block": "online",
+  "section_code": "10.8",
+  "section_title": "10.8. Проверки и штрафы",
+  "block_title": null,
+  "heading_path": [
+    "10. ОНЛАЙН — УДАЛЁННАЯ БУХГАЛТЕРИЯ (бухгалтерский аутсорсинг для малого бизнеса)",
+    "10.8. Проверки и штрафы"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 4415,
+  "text": "## 10.8. Проверки и штрафы\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 4416,
+  "token_count": 28,
+  "content_hash": "f8f699b53f001edc5dd2ee2a952f05979b1781c4418274e24ed7dae4a436d22b"
+}

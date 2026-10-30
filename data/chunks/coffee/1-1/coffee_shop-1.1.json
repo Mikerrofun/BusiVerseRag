@@ -1,0 +1,25 @@
+{
+  "chunk_id": "coffee_shop-1.1",
+  "business_type": "coffee_shop",
+  "block": "offline",
+  "section_code": "1.1",
+  "section_title": "1.1. Паспорт формата",
+  "block_title": null,
+  "heading_path": [
+    "1. ОФЛАЙН — КОФЕЙНЯ (формат «кофе с собой»)",
+    "1.1. Паспорт формата"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 31,
+  "text": "## 1.1. Паспорт формата\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 34,
+  "token_count": 27,
+  "content_hash": "92d09568ec61def2925b0dac39e33abc9e580bfc54780411fe05fdd279afc8ab"
+}

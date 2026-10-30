@@ -1,0 +1,25 @@
+{
+  "chunk_id": "own_online_store-9.2",
+  "business_type": "own_online_store",
+  "block": "online",
+  "section_code": "9.2",
+  "section_title": "9.2. Реальные кейсы (публикации за последние 12 месяцев)",
+  "block_title": null,
+  "heading_path": [
+    "9. ОНЛАЙН — ИНТЕРНЕТ-МАГАЗИН НА СОБСТВЕННОМ САЙТЕ",
+    "9.2. Реальные кейсы (публикации за последние 12 месяцев)"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 3577,
+  "text": "## 9.2. Реальные кейсы (публикации за последние 12 месяцев)\n\n\n\nСодержит блоки:\n- Tray — Влад, Санкт-Петербург\n- IWANT / Iwant Concept Store — Яков Радченко, город не указан\n- «9:41 Store», точка на Псковской улице — Санкт-Петербург\n- Рыночный фон\n- Примеры смены стратегии (pivot)\n- Типовые сценарии закрытия в первые 6–12 месяцев",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 3578,
+  "token_count": 103,
+  "content_hash": "047685f4e3e55b52b5dfa9ebcfcc3181d9dd5227e784fbbe17b2d949ca624ede"
+}

@@ -1,0 +1,25 @@
+{
+  "chunk_id": "own_online_store-9.8",
+  "business_type": "own_online_store",
+  "block": "online",
+  "section_code": "9.8",
+  "section_title": "9.8. Проверки и штрафы",
+  "block_title": null,
+  "heading_path": [
+    "9. ОНЛАЙН — ИНТЕРНЕТ-МАГАЗИН НА СОБСТВЕННОМ САЙТЕ",
+    "9.8. Проверки и штрафы"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 3975,
+  "text": "## 9.8. Проверки и штрафы\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 3976,
+  "token_count": 28,
+  "content_hash": "becb7a64218453aa0aaea1c3b66eeec7f64bd68b545c88b08a2b9aa8c1e129be"
+}

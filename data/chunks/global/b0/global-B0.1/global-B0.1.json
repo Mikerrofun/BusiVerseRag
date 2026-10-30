@@ -1,0 +1,25 @@
+{
+  "chunk_id": "global-B0.1",
+  "business_type": "global",
+  "block": "global",
+  "section_code": "B0.1",
+  "section_title": "B0.1. Персональные данные: 152-ФЗ и ст. 13.11 КоАП",
+  "block_title": null,
+  "heading_path": [
+    "B0. ОБЩАЯ РЕГУЛЯТОРИКА ДЛЯ ОНЛАЙН-БИЗНЕСА (применяется к разделам 6–10)",
+    "B0.1. Персональные данные: 152-ФЗ и ст. 13.11 КоАП"
+  ],
+  "chunk_type": "prose",
+  "scope": "global",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 2217,
+  "text": "## B0.1. Персональные данные: 152-ФЗ и ст. 13.11 КоАП\n\n\n\nСодержит блоки:\n- (тело раздела — один блок)",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 2218,
+  "token_count": 41,
+  "content_hash": "7a6ed1611e9ec589abc36b7577a204defc0793d018979b5cec0a029dfffce591"
+}

@@ -1,0 +1,25 @@
+{
+  "chunk_id": "online_school-7.6",
+  "business_type": "online_school",
+  "block": "online",
+  "section_code": "7.6",
+  "section_title": "7.6. Рабочие регламенты (SOP)",
+  "block_title": null,
+  "heading_path": [
+    "7. ОНЛАЙН — ОНЛАЙН-ШКОЛА (курсы)",
+    "7.6. Рабочие регламенты (SOP)"
+  ],
+  "chunk_type": "prose",
+  "scope": "business",
+  "parent_id": null,
+  "chunk_index": 0,
+  "part_index": 1,
+  "part_total": 1,
+  "line_start": 3000,
+  "text": "## 7.6. Рабочие регламенты (SOP)\n\n\n\nСодержит блоки:\n- SOP 1. Проверка спроса и запуск пилота\n- SOP 2. Ведение воронки продаж\n- SOP 3. Поддержка учеников и проверка заданий\n- SOP 4. Контроль оплат, чеков и возвратов\n- SOP 5. Реакция на падение продаж\n- SOP 6. Управление каналами привлечения и резервом\n- Чек-лист сотрудника на смену/день\n- Матрица сбоев",
+  "source_id": "busiverse-2026-10-13",
+  "topics": [],
+  "line_end": 3001,
+  "token_count": 129,
+  "content_hash": "b49a880ca100488a739af29c1e27aa4ba9e53ddbcf2f30642a029f553530b23c"
+}
