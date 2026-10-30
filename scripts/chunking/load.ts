@@ -34,6 +34,22 @@ function collectJsonFiles(dir: string): string[] {
   return out.sort();
 }
 
+// повтор попытки при сбое запроса: 3 попытки с нарастающей паузой.
+// Апсёрты идемпотентны, поэтому повтор безопасен даже после частичной записи
+async function withRetry<T>(label: string, fn: () => Promise<T>): Promise<T> {
+  const delays = [1000, 2000, 4000];
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await fn();
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      if (attempt >= 3) throw new Error(`${label}: не удалось после 3 попыток — ${msg}`);
+      console.error(`[v0] ${label}: попытка ${attempt} упала (${msg}), повтор через ${delays[attempt - 1]} мс`);
+      await new Promise((r) => setTimeout(r, delays[attempt - 1]));
+    }
+  }
+}
+
 async function main() {
   const apply = process.argv.includes('--apply');
   const files = collectJsonFiles(CONFIG.outputDir);
@@ -75,18 +91,21 @@ async function main() {
     // строка источника нужна для FK chunks.source_id → sources.source_id
     const raw = fs.readFileSync(CONFIG.inputPath, 'utf-8');
     const docTitle = (raw.split('\n').find((l) => l.startsWith('# ')) ?? 'BusiVerse').replace(/^#+\s*/, '').trim();
-    await pool.query(
-      `insert into sources (source_id, title, doc_version, valid_from, content_hash)
-       values ($1, $2, $3, $4, $5)
-       on conflict (source_id) do update set title = excluded.title, doc_version = excluded.doc_version,
-         valid_from = excluded.valid_from, content_hash = excluded.content_hash`,
-      [CONFIG.sourceId, docTitle, CONFIG.sourceId.replace('busiverse-', ''), '2026-10-13', crypto.createHash('sha256').update(raw).digest('hex')],
+    await withRetry('sources', () =>
+      pool.query(
+        `insert into sources (source_id, title, doc_version, valid_from, content_hash)
+         values ($1, $2, $3, $4, $5)
+         on conflict (source_id) do update set title = excluded.title, doc_version = excluded.doc_version,
+           valid_from = excluded.valid_from, content_hash = excluded.content_hash`,
+        [CONFIG.sourceId, docTitle, CONFIG.sourceId.replace('busiverse-', ''), '2026-10-13', crypto.createHash('sha256').update(raw).digest('hex')],
+      ),
     );
 
     // повторный запуск безопасен: конфликт по chunk_id — обновление, а не дубликат.
     // При изменении текста (content_hash) старый эмбеддинг сбрасывается — он устарел
     for (const c of chunks) {
-      await pool.query(
+      await withRetry(`chunk ${c.chunk_id}`, () =>
+        pool.query(
         `insert into chunks (chunk_id, source_id, business_type, block, section_code, section_title, block_title,
            heading_path, chunk_type, topics, scope, parent_id, chunk_index, line_start, line_end, token_count,
            text, content_hash, embedding)
@@ -104,15 +123,18 @@ async function main() {
           c.chunk_id, c.source_id, c.business_type, c.block, c.section_code, c.section_title, c.block_title,
           c.heading_path, c.chunk_type, c.topics, c.scope, c.parent_id, c.chunk_index,
           c.line_start, c.line_end, c.token_count, c.text, c.content_hash,
-        ],
+          ],
+        ),
       );
     }
 
     for (const l of links) {
-      await pool.query(
-        `insert into chunk_links (from_chunk_id, to_section) values ($1, $2)
-         on conflict (from_chunk_id, to_section) do nothing`,
-        [l.from_chunk_id, l.to_section],
+      await withRetry(`link ${l.from_chunk_id} → ${l.to_section}`, () =>
+        pool.query(
+          `insert into chunk_links (from_chunk_id, to_section) values ($1, $2)
+           on conflict (from_chunk_id, to_section) do nothing`,
+          [l.from_chunk_id, l.to_section],
+        ),
       );
     }
 
