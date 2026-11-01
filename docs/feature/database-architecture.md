@@ -209,11 +209,11 @@ CREATE INDEX chunks_embedding_idx
 ON chunks USING hnsw (embedding vector_cosine_ops);
 ```
 
-**Назначение:** Approximate Nearest Neighbor search по косинусному расстоянию.
+**Назначение:** Approximate Nearest Neighbor search по similarity.
 
 **Параметры:**
-- Алгоритм: HNSW (Hierarchical Navigable Small World)
-- Метрика: cosine distance
+- ��лгоритм: HNSW (Hierarchical Navigable Small World)
+- Метрика: similarity = 1 − (embedding <=> query)
 - На 600 чанках: мгновенный поиск
 
 **Запрос:**
@@ -530,7 +530,7 @@ LIMIT 50;
 
 **Параметры:**
 - `$1` — эмбеддинг запроса (vector(1024))
-- `<=>` — оператор cosine distance
+- `<=>` — оператор расстояния; similarity = 1 − `<=>`
 - Index: `chunks_embedding_idx` (HNSW)
 
 **Что ловит:**
@@ -643,7 +643,7 @@ LIMIT 20;
 - ✅ Не надо подбирать коэффициенты α и β
 - ✅ Работает out-of-the-box
 - ✅ Стандарт с 2009 года (Cormack, Clarke, Buettcher)
-- ✅ Устойчив к разным шкалам (cosine 0..1 vs ts_rank произвольное)
+- ✅ Устойчив к разным шкалам (similarity 0..1 vs ts_rank произвольное)
 
 **Результат:** top-20 чанков
 
@@ -732,7 +732,7 @@ WHERE chunk_id IN (
 - Родитель даёт контекст: что это за таблица, откуда данные
 - Модель видит полную картину
 
-**Результат:** top-5..8 + их родители (если есть)
+**Результат:** top-5..8 + их родители (��сли есть)
 
 ---
 

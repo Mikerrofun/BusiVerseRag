@@ -22,7 +22,7 @@ async function fetchEmbeddings(inputs: string[], apiKey: string): Promise<number
       model: EMBED_CONFIG.model,
       task: 'retrieval.passage', // для поискового запроса на этапе поиска будет retrieval.query
       dimensions: EMBED_CONFIG.dimensions,
-      normalized: true, // нормировка → косинусная близость через скалярное произведение
+      normalized: true, // нормировка → similarity через скалярное произведение
       input: inputs,
     }),
   });

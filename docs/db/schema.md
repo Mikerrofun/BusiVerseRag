@@ -47,7 +47,7 @@
 
 | Индекс | Тип | Описание |
 |--------|-----|----------|
-| `chunks_embedding_idx` | HNSW | Векторный поиск с косинусным расстоянием |
+| `chunks_embedding_idx` | HNSW | Векторный поиск по similarity |
 | `chunks_tsv_idx` | GIN | Полнотекстовый поиск по русскому языку |
 | `chunks_filter_idx` | B-tree | Фильтрация по `business_type` и `section_code` |
 | `chunks_scope_idx` | B-tree | Фильтрация по `scope` (global/business) |
@@ -88,7 +88,7 @@ PK: `(from_chunk_id, to_section)`
   ├─ 2. Фильтр: WHERE business_type = $1 OR scope = 'global'
   │
   ├─ 3. Параллельные поиски:
-  │     - Vector: top-50 по cosine distance
+  │     - Vector: top-50 по similarity
   │     - Fulltext: top-50 по to_tsquery('russian', ...)
   │
   ├─ 4. RRF (Reciprocal Rank Fusion) → top-20
