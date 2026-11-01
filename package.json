@@ -16,6 +16,7 @@
     "chunk": "tsx scripts/chunking/chunk.ts",
     "chunk:validate": "tsx scripts/chunking/lib/validate.ts",
     "chunk:load": "tsx scripts/chunking/load.ts",
+    "embed": "tsx scripts/embeddings/embed.ts",
     "test:chunking": "tsx --test scripts/chunking/test/chunking.test.ts"
   },
   "repository": {
