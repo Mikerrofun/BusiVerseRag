@@ -79,7 +79,7 @@ neon status           # Статус проекта
 
 ### Индексы
 
-- **HNSW** для векторного поиска (cosine distance)
+ - **HNSW** для векторного поиска (similarity)
 - **GIN** для полнотекстового поиска (russian)
 - **B-tree** для фильтрации по `business_type`, `scope`, `section_code`
 

@@ -9,6 +9,7 @@ import * as crypto from 'crypto';
 import * as dotenv from 'dotenv';
 import { CONFIG } from './config/chunking.config';
 import { ChunkFile } from './types/chunking.types';
+import { withRetry } from '../lib/retry';
 
 // подключение — по образцу scripts/database/migrate.ts
 for (const name of ['.env.local', '.env']) {
@@ -32,22 +33,6 @@ function collectJsonFiles(dir: string): string[] {
   walk(dir);
   // сортировка путей даёт порядок и соседство чанков (план 3, раздел 11.2)
   return out.sort();
-}
-
-// повтор попытки при сбое запроса: 3 попытки с нарастающей паузой.
-// Апсёрты идемпотентны, поэтому повтор безопасен даже после частичной записи
-async function withRetry<T>(label: string, fn: () => Promise<T>): Promise<T> {
-  const delays = [1000, 2000, 4000];
-  for (let attempt = 1; ; attempt++) {
-    try {
-      return await fn();
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : String(err);
-      if (attempt >= 3) throw new Error(`${label}: не удалось после 3 попыток — ${msg}`);
-      console.error(`[v0] ${label}: попытка ${attempt} упала (${msg}), повтор через ${delays[attempt - 1]} мс`);
-      await new Promise((r) => setTimeout(r, delays[attempt - 1]));
-    }
-  }
 }
 
 async function main() {
