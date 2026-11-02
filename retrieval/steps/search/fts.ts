@@ -1,18 +1,18 @@
-import { RETRIEVAL_CONFIG } from '../config/retrieval.config';
-import { ChunkRow, ScoredChunk } from '../types/retrieval.types';
-import { CHUNK_COLUMNS, getPool, nicheFilter } from './db';
-import { withRetry } from '../../scripts/lib/retry';
+import { ChunkRow, ScoredChunk } from '../../types/retrieval.types';
+import { CHUNK_COLUMNS, getPool, nicheFilter } from '../../lib/db';
+import { withRetry } from '../../lib/retry';
+import { SEARCH_CONFIG } from './search.config';
 
-// Полнотекстовый поиск (план 06, шаг 4): to_tsquery('russian', ...) с
-// префикс-матчингом окончаний. websearch_to_tsquery префиксы не поддерживает,
-// поэтому запрос разбирается на термины на стороне приложения.
+// Полнотекстовый поиск: to_tsquery('russian', ...) с префикс-матчингом
+// окончаний. websearch_to_tsquery префиксы не поддерживает, поэтому запрос
+// разбирается на термины на стороне приложения.
 
 // Префиксуются кириллические термины («кофейн*» найдёт «кофейни», «кофейням»).
 // Числа и латиница-артикулы («152-ФЗ», «SOP-1») не префиксуются — точные термины.
 function buildTsQuery(query: string): string | null {
   const terms = query.toLowerCase().match(/[a-zа-яё0-9]+/g) ?? [];
   const parts = terms.map((t) =>
-    /^[а-яё]+$/.test(t) && t.length >= RETRIEVAL_CONFIG.ftsPrefixMinLength ? `${t}:*` : t,
+    /^[а-яё]+$/.test(t) && t.length >= SEARCH_CONFIG.ftsPrefixMinLength ? `${t}:*` : t,
   );
   return parts.length > 0 ? parts.join(' & ') : null;
 }

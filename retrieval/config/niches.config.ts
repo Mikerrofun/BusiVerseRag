@@ -2,7 +2,7 @@ import { NicheCode } from '../types/retrieval.types';
 
 export interface NicheDef {
   title: string;
-  /** Ключевые слова для fulltext-пробы: подстроки, сверьаются с запросом в нижнем регистре */
+  /** Ключевые слова fulltext-пробы: подстроки, сверяются с запросом в нижнем регистре */
   keywords: string[];
 }
 
@@ -25,14 +25,3 @@ export const NICHE_CODES = Object.keys(NICHES) as NicheCode[];
 export function isNicheCode(value: string): value is NicheCode {
   return Object.prototype.hasOwnProperty.call(NICHES, value);
 }
-
-// Системный промпт классификатора — настройка, не логика (план 06, задача 4).
-// На выходе требуется строго JSON без пояснений.
-export const CLASSIFIER_SYSTEM_PROMPT = `Ты определяешь нишу бизнеса по запросу пользователя. Выбери ровно одну нишу из списка:
-
-${(Object.keys(NICHES) as NicheCode[]).map((code) => `- ${code} — ${NICHES[code].title}`).join('\n')}
-
-Если запрос не относится ни к одной нише или ты не уверена — верни нишу, которая кажется наиболее вероятной, и низкую confidence.
-
-Ответ — строго JSON без пояснений, в формате:
-{"niche": "<код из списка>", "confidence": <число от 0 до 1>}`;

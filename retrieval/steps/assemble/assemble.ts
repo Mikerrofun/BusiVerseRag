@@ -1,15 +1,8 @@
 import { encodingForModel } from 'js-tiktoken';
-import { RETRIEVAL_CONFIG } from '../config/retrieval.config';
-import { ChunkRole, ContextChunk, ExpandedGroup } from '../types/retrieval.types';
-
-// Сборка финального контекста (план 06, шаг 9).
-
-export interface AssembledContext {
-  context: string;
-  chunks: ContextChunk[];
-  truncated: boolean;
-  usedCount: number;
-}
+import { ChunkRole, ContextChunk } from '../../types/retrieval.types';
+import { ExpandedGroup } from '../expand/expand.types';
+import { ASSEMBLE_CONFIG } from './assemble.config';
+import { AssembledContext } from './assemble.types';
 
 const MARKERS: Record<'block' | 'parent' | 'link', string> = {
   block: 'Источник',
@@ -21,11 +14,8 @@ function renderUnit(unitKind: 'block' | 'parent' | 'link', heading: string, text
   return `## ${MARKERS[unitKind]}: ${heading}\n\n${text}`;
 }
 
-export function assembleContext(
-  groups: ExpandedGroup[],
-  budget: number = RETRIEVAL_CONFIG.tokenBudget,
-): AssembledContext {
-  const encoder = encodingForModel(RETRIEVAL_CONFIG.tokenEncoderModel);
+export function assembleContext(groups: ExpandedGroup[]): AssembledContext {
+  const encoder = encodingForModel(ASSEMBLE_CONFIG.encoderModel);
   const countTokens = (text: string): number => encoder.encode(text).length;
 
   // Порядок блоков — по убыванию rerank-скора лучшего хита блока
@@ -67,8 +57,8 @@ export function assembleContext(
     const blockTokens = countTokens(blockText);
 
     // Хиты одного блока не разрезаются посреди: блок целиком не влезает —
-    // группа пропускается, бюджет важнее точного попадания не ценой атомарности
-    if (used + blockTokens > budget) {
+    // группа пропускается, атомарность блока важнее точного попадания в бюджет
+    if (used + blockTokens > ASSEMBLE_CONFIG.tokenBudget) {
       truncated = true;
       continue;
     }
@@ -89,7 +79,7 @@ export function assembleContext(
     for (const { kind, unit } of extras) {
       const text = renderUnit(kind, unit.heading, unit.text);
       const tokens = countTokens(text);
-      if (used + tokens > budget) {
+      if (used + tokens > ASSEMBLE_CONFIG.tokenBudget) {
         truncated = true;
         continue;
       }

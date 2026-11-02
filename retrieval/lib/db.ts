@@ -31,7 +31,7 @@ export async function closePool(): Promise<void> {
   }
 }
 
-/** Общая выборка полей чанка для всех SQL-запросов конвейера (контракт раздела 4) */
+/** Общая выборка полей чанка для всех SQL-запросов конвейера */
 export const CHUNK_COLUMNS = `chunk_id, business_type, block, section_code, section_title, block_title,
   heading_path, chunk_type, scope, parent_id, chunk_index, line_start, token_count, text`;
 

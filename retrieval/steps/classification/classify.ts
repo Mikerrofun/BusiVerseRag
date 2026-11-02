@@ -1,27 +1,23 @@
-import { CLASSIFIER_SYSTEM_PROMPT, NICHE_CODES, NICHES, isNicheCode } from '../config/niches.config';
-import { RETRIEVAL_CONFIG } from '../config/retrieval.config';
-import { ClassifierAnswer, NicheCode, NicheDecision } from '../types/retrieval.types';
-import { chatCompletion } from './llm-client';
+import { NICHE_CODES, NICHES, isNicheCode } from '../../config/niches.config';
+import { NicheCode } from '../../types/retrieval.types';
+import { chatCompletion } from '../../lib/llm-client';
+import { CLASSIFICATION_CONFIG } from './classification.config';
+import { ClassifierAnswer, NicheDecision } from './classification.types';
 
-// Определение ниши (план 06, шаг 2). Три уровня по возрастанию стоимости:
-// переданная ниша → fulltext-проба → LLM-классификатор.
-
-// Уровень 2: запрос сверяется со словарём ключевых слов. Ровно одна ниша
-// совпала → используем её, LLM не вызывается.
+// Ровно одно совпадение со словарём ключевых слов — LLM не вызывается
 function fulltextProbe(query: string): NicheCode[] {
   const q = query.toLowerCase();
   return NICHE_CODES.filter((code) => NICHES[code].keywords.some((kw) => q.includes(kw)));
 }
 
 // Мусорный/непарсящийся ответ трактуется как «не определено»
-function parseClassifierAnswer(text: string): ClassifierAnswer | null {
+function parseAnswer(text: string): ClassifierAnswer | null {
   const jsonMatch = text.match(/\{[\s\S]*\}/);
   if (!jsonMatch) return null;
   try {
     const raw = JSON.parse(jsonMatch[0]) as { niche?: unknown; confidence?: unknown };
     if (typeof raw.niche !== 'string' || typeof raw.confidence !== 'number') return null;
-    const confidence = Math.min(1, Math.max(0, raw.confidence));
-    return { niche: raw.niche, confidence };
+    return { niche: raw.niche, confidence: Math.min(1, Math.max(0, raw.confidence)) };
   } catch {
     return null;
   }
@@ -36,18 +32,17 @@ export async function detectNiche(query: string, uiNiche?: NicheCode): Promise<N
     return { niche: matched[0], source: 'fulltext-probe', confidence: null };
   }
 
-  // Уровень 3: LLM-классификатор
   let parsed: ClassifierAnswer | null = null;
   try {
     const answer = await chatCompletion([
-      { role: 'system', content: CLASSIFIER_SYSTEM_PROMPT },
+      { role: 'system', content: CLASSIFICATION_CONFIG.systemPrompt },
       { role: 'user', content: query },
     ]);
-    parsed = parseClassifierAnswer(answer);
+    parsed = parseAnswer(answer);
     if (
       parsed &&
       isNicheCode(parsed.niche) &&
-      parsed.confidence >= RETRIEVAL_CONFIG.classifierThreshold
+      parsed.confidence >= CLASSIFICATION_CONFIG.threshold
     ) {
       return { niche: parsed.niche, source: 'llm', confidence: parsed.confidence };
     }
@@ -56,7 +51,7 @@ export async function detectNiche(query: string, uiNiche?: NicheCode): Promise<N
     console.error(`[v0] классификатор недоступен: ${msg}`);
   }
 
-  // Ниже порога / мусорный ответ / ошибка API — поиск без фильтра по всему
-  // корпусу: лучше чанки из нескольких ниш, чем отфильтрованная правильная
+  // Ниже порога / мусорный ответ / ошибка API — поиск без фильтра:
+  // лучше чанки из нескольких ниш, чем отфильтрованная правильная
   return { niche: null, source: 'none', confidence: parsed?.confidence ?? null };
 }

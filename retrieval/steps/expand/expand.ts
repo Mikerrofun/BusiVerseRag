@@ -1,6 +1,7 @@
-import { ChunkRow, ExpandedGroup, ScoredChunk } from '../types/retrieval.types';
-import { CHUNK_COLUMNS, getPool } from './db';
-import { withRetry } from '../../scripts/lib/retry';
+import { ChunkRow, ScoredChunk } from '../../types/retrieval.types';
+import { CHUNK_COLUMNS, getPool } from '../../lib/db';
+import { withRetry } from '../../lib/retry';
+import { ExpandedGroup } from './expand.types';
 
 // Small-to-big и ссылки (план 06, шаги 7–8).
 
@@ -11,10 +12,9 @@ async function fetchBlocksOfSections(parentIds: string[]): Promise<ChunkRow[]> {
   if (parentIds.length === 0) return [];
   const pool = getPool();
   const { rows } = await withRetry('fetch blocks of sections', () =>
-    pool.query<ChunkRow>(
-      `select ${CHUNK_COLUMNS} from chunks where parent_id = any($1::text[])`,
-      [parentIds],
-    ),
+    pool.query<ChunkRow>(`select ${CHUNK_COLUMNS} from chunks where parent_id = any($1::text[])`, [
+      parentIds,
+    ]),
   );
   return rows;
 }
@@ -47,7 +47,6 @@ async function fetchLinks(chunkIds: string[]): Promise<LinkRow[]> {
   return rows;
 }
 
-// Чанки-секции для кодов: все кандидаты, выбор приоритета — на стороне вызова
 async function fetchSectionChunks(codes: string[]): Promise<ChunkRow[]> {
   if (codes.length === 0) return [];
   const pool = getPool();

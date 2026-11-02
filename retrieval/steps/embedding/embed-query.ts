@@ -1,15 +1,14 @@
-import { MODELS_CONFIG } from '../config/models.config';
-import { JinaEmbeddingResponse } from '../types/retrieval.types';
-import { withRetry } from '../../scripts/lib/retry';
+import { MODELS_CONFIG } from '../../config/models.config';
+import { withRetry } from '../../lib/retry';
+import { EMBEDDING_CONFIG } from './embedding.config';
+import { JinaEmbeddingResponse } from './embedding.types';
 
-// Эмбеддинг запроса через Jina (план 06, шаг 3). Тот же вызов, что в
-// scripts/embeddings/embed.ts, но task: retrieval.query и один вход, не батч.
+// Эмбеддинг запроса через Jina. Тот же вызов, что в scripts/embeddings,
+// но task: retrieval.query и один вход, не батч.
 export async function embedQuery(query: string): Promise<number[]> {
   const apiKey = process.env[MODELS_CONFIG.env.jinaEmbedKey];
   if (!apiKey) {
-    throw new Error(
-      `${MODELS_CONFIG.env.jinaEmbedKey} is not set (.env.local) — нужен для эмбеддинга запроса`,
-    );
+    throw new Error(`${MODELS_CONFIG.env.jinaEmbedKey} is not set (.env.local)`);
   }
 
   return withRetry('jina embed query', async () => {
@@ -17,9 +16,9 @@ export async function embedQuery(query: string): Promise<number[]> {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: MODELS_CONFIG.embedModel,
-        task: MODELS_CONFIG.embedTask,
-        dimensions: MODELS_CONFIG.embedDimensions,
+        model: EMBEDDING_CONFIG.model,
+        task: EMBEDDING_CONFIG.task,
+        dimensions: EMBEDDING_CONFIG.dimensions,
         normalized: true,
         input: [query],
       }),

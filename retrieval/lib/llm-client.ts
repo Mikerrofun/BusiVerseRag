@@ -1,14 +1,17 @@
 import { MODELS_CONFIG } from '../config/models.config';
-import { ZaiChatResponse } from '../types/retrieval.types';
-import { withRetry } from '../../scripts/lib/retry';
+import { withRetry } from './retry';
 
 export interface ChatMessage {
   role: 'system' | 'user' | 'assistant';
   content: string;
 }
 
-// Универсальный коннектор к chat-completions z.ai (план 06, задача 2).
-// Позже переиспользуется ассистентом для основной модели.
+interface ZaiChatResponse {
+  choices?: { message?: { content?: string | null } }[];
+}
+
+// Коннектор к chat-completions z.ai. Позже переиспользуется ассистентом
+// для основной модели.
 export async function chatCompletion(messages: ChatMessage[]): Promise<string> {
   const apiKey = process.env[MODELS_CONFIG.env.zaiKey];
   if (!apiKey) {

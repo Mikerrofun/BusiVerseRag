@@ -28,7 +28,7 @@ async function main() {
     process.exit(1);
   }
 
-  // Понятные ошибки env-переменных: какая переменная и зачем (по паттерну embed.ts)
+  // Понятные ошибки env-переменных: какая переменная и зачем
   const envChecks: Array<[string, string]> = [
     [MODELS_CONFIG.env.databaseUrl, 'подключение к Neon'],
     [MODELS_CONFIG.env.jinaEmbedKey, 'эмбеддинг запроса и rerank (ключ один)'],
