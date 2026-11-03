@@ -9,7 +9,6 @@ import { vectorSearch } from './steps/search/vector-search';
 import { ftsSearch } from './steps/search/fts';
 import { fuseRrf } from './steps/fusion/rrf';
 import { rerank } from './steps/rerank/rerank';
-import { RERANK_CONFIG } from './steps/rerank/rerank.config';
 import { expandHits } from './steps/expand/expand';
 import { assembleContext } from './steps/assemble/assemble';
 
@@ -37,7 +36,7 @@ export async function retrieve(input: RetrieveInput): Promise<RetrievalResult> {
   const fused = fuseRrf([vectorHits, ftsHits]);
 
   // Шаг 6. Rerank → топ-8. Ошибка API роняет retrieval целиком
-  const top = (await rerank(query, fused)).slice(0, RERANK_CONFIG.topK);
+  const top = await rerank(query, fused);
 
   // Шаги 7–8. Small-to-big + ссылки
   const groups = await expandHits(top);

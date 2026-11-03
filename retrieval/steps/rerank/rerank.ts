@@ -39,6 +39,7 @@ export async function rerank(query: string, items: ScoredChunk[]): Promise<Score
     return json.results
       .map((r) => ({ chunk: items[r.index]?.chunk, score: r.relevance_score }))
       .filter((r): r is ScoredChunk => !!r.chunk)
-      .sort((a, b) => b.score - a.score);
+      .sort((a, b) => b.score - a.score)
+      .slice(0, RERANK_CONFIG.topK);
   });
 }
