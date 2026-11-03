@@ -4,7 +4,7 @@ import { withRetry } from '../../lib/retry';
 import { RERANK_CONFIG } from './rerank.config';
 import { JinaRerankResponse } from './rerank.types';
 
-// Ключ: RERANKER_API_JINA (override) или общий EMBEDING_API_JINA
+
 function apiKey(): string {
   const override = process.env[MODELS_CONFIG.env.jinaRerankKey];
   if (override) return override;
@@ -16,9 +16,6 @@ function apiKey(): string {
   }
   return shared;
 }
-
-// Ошибка API роняет весь retrieval: rerank и эмбеддинг — один провайдер,
-// если недоступен один, нет смысла отдавать неотранжированный контекст.
 export async function rerank(query: string, items: ScoredChunk[]): Promise<ScoredChunk[]> {
   if (items.length === 0) return [];
   const key = apiKey();

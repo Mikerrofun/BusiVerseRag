@@ -1,9 +1,6 @@
 import { ScoredChunk } from '../../types/retrieval.types';
 import { FUSION_CONFIG } from './fusion.config';
 
-// RRF работает только с позициями: сырые скоры vector и FTS несравнимы.
-// Дубль из обоих списков остаётся один раз с суммой вкладов — совпадение
-// в двух независимых поисках бустится наверх. score = Σ 1/(k + rank).
 export function fuseRrf(lists: ScoredChunk[][]): ScoredChunk[] {
   const fused = new Map<string, ScoredChunk>();
 

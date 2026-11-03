@@ -3,8 +3,7 @@ import { withRetry } from '../../lib/retry';
 import { EMBEDDING_CONFIG } from './embedding.config';
 import { JinaEmbeddingResponse } from './embedding.types';
 
-// Эмбеддинг запроса через Jina. Тот же вызов, что в scripts/embeddings,
-// но task: retrieval.query и один вход, не батч.
+
 export async function embedQuery(query: string): Promise<number[]> {
   const apiKey = process.env[MODELS_CONFIG.env.jinaEmbedKey];
   if (!apiKey) {

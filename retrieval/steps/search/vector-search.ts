@@ -2,8 +2,7 @@ import { ChunkRow, ScoredChunk } from '../../types/retrieval.types';
 import { CHUNK_COLUMNS, getPool, nicheFilter } from '../../lib/db';
 import { withRetry } from '../../lib/retry';
 
-// Векторный поиск: косинусное расстояние по HNSW-индексу.
-// Вектор запроса нормализован, сходство = 1 - расстояние.
+
 export async function vectorSearch(
   vector: number[],
   niche: string | null,

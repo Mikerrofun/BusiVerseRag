@@ -14,7 +14,7 @@ import { expandHits } from './steps/expand/expand';
 import { assembleContext } from './steps/assemble/assemble';
 
 export async function retrieve(input: RetrieveInput): Promise<RetrievalResult> {
-  // Шаг 1. Валидация входа: понятная ошибка, не падение
+  // Шаг 1. Валидация входа
   const query = typeof input.query === 'string' ? input.query.trim() : '';
   if (!query) throw new Error('query: обязательна непустая строка');
   if (input.niche !== undefined && !isNicheCode(input.niche)) {
@@ -33,7 +33,7 @@ export async function retrieve(input: RetrieveInput): Promise<RetrievalResult> {
     ftsSearch(query, decision.niche, SEARCH_CONFIG.topK),
   ]);
 
-  // Шаг 5. RRF → отрезка до 20 (окончательная: rerank видит только эти 20)
+  // Шаг 5. RRF → отрезка до 20 
   const fused = fuseRrf([vectorHits, ftsHits]);
 
   // Шаг 6. Rerank → топ-8. Ошибка API роняет retrieval целиком

@@ -3,11 +3,7 @@ import { CHUNK_COLUMNS, getPool } from '../../lib/db';
 import { withRetry } from '../../lib/retry';
 import { ExpandedGroup } from './expand.types';
 
-// Small-to-big и ссылки (план 06, шаги 7–8).
 
-// Куски одного блока в БД делят parent_id (чанк-секция) и chunk_index
-// (номер блока в секции) — колонки part_index в DDL нет. Один запрос по
-// parent_id достаёт все блоки секции, группировка по chunk_index — в JS.
 async function fetchBlocksOfSections(parentIds: string[]): Promise<ChunkRow[]> {
   if (parentIds.length === 0) return [];
   const pool = getPool();
@@ -67,7 +63,6 @@ function headingOf(chunk: ChunkRow): string {
 export async function expandHits(hits: ScoredChunk[]): Promise<ExpandedGroup[]> {
   if (hits.length === 0) return [];
 
-  // Дедуп хитов по chunk_id (rerank дубликатов не отдаёт, но защита дешёвая)
   const uniqueHits: ScoredChunk[] = [];
   const seen = new Set<string>();
   for (const hit of hits) {
@@ -77,7 +72,6 @@ export async function expandHits(hits: ScoredChunk[]): Promise<ExpandedGroup[]> 
     }
   }
 
-  // Блоки и родители всех хитов — по два запроса на всё множество
   const parentIds = Array.from(
     new Set(uniqueHits.map((h) => h.chunk.parent_id).filter((id): id is string => id !== null)),
   );
@@ -94,7 +88,6 @@ export async function expandHits(hits: ScoredChunk[]): Promise<ExpandedGroup[]> 
     blocksByParent.set(row.parent_id ?? '', list);
   }
 
-  // Ссылки всех хитов, затем чанки секций-целей
   const links = await fetchLinks(uniqueHits.map((h) => h.chunk.chunk_id));
   const sectionRows = await fetchSectionChunks(Array.from(new Set(links.map((l) => l.to_section))));
   const sectionsByCode = new Map<string, ChunkRow[]>();
@@ -104,7 +97,6 @@ export async function expandHits(hits: ScoredChunk[]): Promise<ExpandedGroup[]> 
     sectionsByCode.set(row.section_code ?? '', list);
   }
 
-  // Приоритет цели ссылки: та же ниша, что у хита; сквозная — global; иначе первая
   const resolveSection = (code: string, hitType: string): ChunkRow | null => {
     const candidates = sectionsByCode.get(code) ?? [];
     return (
@@ -115,7 +107,6 @@ export async function expandHits(hits: ScoredChunk[]): Promise<ExpandedGroup[]> 
     );
   };
 
-  // Группы: хиты одного блока → одна группа, блок и родитель включаются один раз
   const groups = new Map<string, ExpandedGroup>();
   for (const hit of uniqueHits) {
     const chunk = hit.chunk;
@@ -156,7 +147,6 @@ export async function expandHits(hits: ScoredChunk[]): Promise<ExpandedGroup[]> 
     }
     group.hits.push(hit);
 
-    // Ссылки собираются с каждого хита группы, дедуп по chunk_id секции
     for (const link of links.filter((l) => l.from_chunk_id === chunk.chunk_id)) {
       const section = resolveSection(link.to_section, chunk.business_type);
       if (!section) continue;

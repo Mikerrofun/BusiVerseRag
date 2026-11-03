@@ -4,13 +4,11 @@ import { chatCompletion } from '../../lib/llm-client';
 import { CLASSIFICATION_CONFIG } from './classification.config';
 import { ClassifierAnswer, NicheDecision } from './classification.types';
 
-// Ровно одно совпадение со словарём ключевых слов — LLM не вызывается
 function fulltextProbe(query: string): NicheCode[] {
   const q = query.toLowerCase();
   return NICHE_CODES.filter((code) => NICHES[code].keywords.some((kw) => q.includes(kw)));
 }
 
-// Мусорный/непарсящийся ответ трактуется как «не определено»
 function parseAnswer(text: string): ClassifierAnswer | null {
   const jsonMatch = text.match(/\{[\s\S]*\}/);
   if (!jsonMatch) return null;
@@ -24,7 +22,7 @@ function parseAnswer(text: string): ClassifierAnswer | null {
 }
 
 export async function detectNiche(query: string, uiNiche?: NicheCode): Promise<NicheDecision> {
-  // Уровень 1: ниша передана на входе — классификатор не вызывается вообще
+  //Ниша передана — классификатор не вызывается вообще
   if (uiNiche) return { niche: uiNiche, source: 'ui', confidence: null };
 
   const matched = fulltextProbe(query);

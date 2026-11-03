@@ -18,14 +18,11 @@ export function assembleContext(groups: ExpandedGroup[]): AssembledContext {
   const encoder = encodingForModel(ASSEMBLE_CONFIG.encoderModel);
   const countTokens = (text: string): number => encoder.encode(text).length;
 
-  // Порядок блоков — по убыванию rerank-скора лучшего хита блока
   const ordered = [...groups].sort((a, b) => b.score - a.score);
 
   const sections: string[] = [];
   const chunks: ContextChunk[] = [];
-  const usedIds = new Set<string>();
 
-  // Роль приоритетнее, если чанк входит контекстом несколькими путями
   const rolePriority: Record<ChunkRole, number> = { hit: 0, part: 1, parent: 2, link: 3 };
   const pushChunk = (
     chunkId: string,
