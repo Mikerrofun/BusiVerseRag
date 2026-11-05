@@ -92,7 +92,7 @@ npm run retrieve -- "как открыть кофейню" --json              #
 - Запрос передаётся позиционным аргументом после `--` (несколько слов склеиваются в одну строку).
 - Флаги: `--niche <код>` — пропустить классификатор и искать в заданной нише; `--json` — вывести весь `RetrievalResult` (context + chunks + meta) машинно-читаемо.
 - Коды ниш: `coffee_shop`, `pickup_point`, `mini_bakery`, `manicure_studio`, `auto_service`, `marketplace_seller`, `online_school`, `smm_agency`, `own_online_store`, `remote_accounting`.
-- Что делает (план 6): определяет нишу (переданная → fulltext-проба по словарю → LLM `glm-5.3-flash`), эмбеддит запрос (Jina, `retrieval.query`), параллельно гонит vector-поиск и FTS (по 40 кандидатов), сливает через RRF (топ-20), переранживает (`jina-reranker-v3.5`, топ-8), достаёт блоки целиком + родительские секции + связанные разделы, собирает контекст в бюджет 12 000 токенов.
+- Что делает (план 6): определяет нишу (переданная → fulltext-проба по словарю → LLM `glm-5.3-flash`), эмбеддит запрос (Jina, `retrieval.query`), параллельно гонит vector-поиск и FTS (по 40 кандидатов), сливает через RRF (топ-20), переранживает (`jina-reranker-v3.5`, топ-5), достаёт блоки целиком + родительские секции + связанные разделы, собирает контекст в бюджет 12 000 токенов.
 - Вывод без `--json`: блок `meta` (ниша и способ её определения, счётчики vector/fts/rrf/rerank/context, флаг обрезки по бюджету) и собранный контекст с заголовками-источниками.
 - БД **только читает** — чанки, эмбеддинги и ссылки должны быть загружены заранее (`chunk:load --apply`, `embed --apply`).
 - Отказоустойчивость: все сетевые вызовы и SQL обёрнуты в retry (3 попытки, 1с → 2с → 4с). Падение rerank, эмбеддинга или БД роняет команду с ошибкой; падение классификатора — нет (поиск продолжается без фильтра ниши).
@@ -116,3 +116,64 @@ npm run retrieve -- "запрос"   # 7. ручная проверка поис
 Сделано: очистка текста (план 2), нарезка + дерево папок + родители/ссылки (план 3), валидатор, загрузчик в БД с retry, эмбеддинги через Jina, retrieval-конвейер с CLI-проверкой (план 6, папка `retrieval/`).
 
 Дальше (по `01-rag-plan.md`): заполнение `topics` (частотные термины + LLM-нормализация), поиск (tsv + pgvector) и API.
+
+
+## 🧪 Eval (Тестирование качества retrieval)
+
+### CLI запуск
+
+```bash
+# Запустить eval для всех вопросов
+npm run eval
+
+# Ограничить количество вопросов
+npm run eval:limit 10
+
+# Сохранить результаты в JSON
+npm run eval:json
+
+# Комбинация
+tsx retrieval/eval/runner/runner.ts --limit 5 --json
+```
+
+### Программный запуск
+
+```typescript
+import { runEval } from './retrieval/eval';
+
+// Запуск с опциями
+await runEval({
+  questionsPath: './custom-questions.jsonl',
+  limit: 10,
+  outputJson: true
+});
+
+// Только eval функция
+import { evalRetrieve } from './retrieval/eval/evalFunction';
+
+const result = await evalRetrieve({
+  query: 'Как настроить бухгалтерский учет?',
+  niche: 'accounting',
+  expected_chunk_ids: ['accounting-1-2-b01']
+});
+
+// Вычисление метрик
+import { calculateMetrics } from './retrieval/eval/runner/metrics';
+
+const metrics = calculateMetrics(
+  'q001',
+  'Test question',
+  'easy',
+  ['chunk1', 'chunk2'],
+  ['chunk1', 'chunk3']
+);
+```
+
+### Метрики
+
+- **Precision** = TP / (TP + FP) — доля правильных среди найденных
+- **Recall** = TP / (TP + FN) — доля найденных среди правильных  
+- **F1** = 2 × (Precision × Recall) / (Precision + Recall)
+- **Perfect Match** — все expected найдены, лишних нет
+
+Агрегация по сложности (easy, medium, hard) и типу (niche, global, hard)

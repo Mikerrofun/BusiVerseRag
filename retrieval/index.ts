@@ -35,7 +35,7 @@ export async function retrieve(input: RetrieveInput): Promise<RetrievalResult> {
   // Шаг 5. RRF → отрезка до 20 
   const fused = fuseRrf([vectorHits, ftsHits]);
 
-  // Шаг 6. Rerank → топ-8. Ошибка API роняет retrieval целиком
+  // Шаг 6. Rerank → топ-5. Ошибка API роняет retrieval целиком
   const top = await rerank(query, fused);
 
   // Шаги 7–8. Small-to-big + ссылки
