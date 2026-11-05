@@ -116,3 +116,64 @@ npm run retrieve -- "запрос"   # 7. ручная проверка поис
 Сделано: очистка текста (план 2), нарезка + дерево папок + родители/ссылки (план 3), валидатор, загрузчик в БД с retry, эмбеддинги через Jina, retrieval-конвейер с CLI-проверкой (план 6, папка `retrieval/`).
 
 Дальше (по `01-rag-plan.md`): заполнение `topics` (частотные термины + LLM-нормализация), поиск (tsv + pgvector) и API.
+
+
+## 🧪 Eval (Тестирование качества retrieval)
+
+### CLI запуск
+
+```bash
+# Запустить eval для всех вопросов
+npm run eval
+
+# Ограничить количество вопросов
+npm run eval:limit 10
+
+# Сохранить результаты в JSON
+npm run eval:json
+
+# Комбинация
+tsx retrieval/eval/runner/runner.ts --limit 5 --json
+```
+
+### Программный запуск
+
+```typescript
+import { runEval } from './retrieval/eval';
+
+// Запуск с опциями
+await runEval({
+  questionsPath: './custom-questions.jsonl',
+  limit: 10,
+  outputJson: true
+});
+
+// Только eval функция
+import { evalRetrieve } from './retrieval/eval/evalFunction';
+
+const result = await evalRetrieve({
+  query: 'Как настроить бухгалтерский учет?',
+  niche: 'accounting',
+  expected_chunk_ids: ['accounting-1-2-b01']
+});
+
+// Вычисление метрик
+import { calculateMetrics } from './retrieval/eval/runner/metrics';
+
+const metrics = calculateMetrics(
+  'q001',
+  'Test question',
+  'easy',
+  ['chunk1', 'chunk2'],
+  ['chunk1', 'chunk3']
+);
+```
+
+### Метрики
+
+- **Precision** = TP / (TP + FP) — доля правильных среди найденных
+- **Recall** = TP / (TP + FN) — доля найденных среди правильных  
+- **F1** = 2 × (Precision × Recall) / (Precision + Recall)
+- **Perfect Match** — все expected найдены, лишних нет
+
+Агрегация по сложности (easy, medium, hard) и типу (niche, global, hard)
