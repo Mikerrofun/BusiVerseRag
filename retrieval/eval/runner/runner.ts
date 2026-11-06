@@ -11,12 +11,17 @@ import { RunEvalOptions, QuestionResult } from './runner.types';
 
 export async function runEval(options: RunEvalOptions): Promise<void> {
   const questionsPath = options.questionsPath ?? path.join(__dirname, '..', 'questions.jsonl');
-  const { limit, outputJson = false } = options;
+  const { limit, outputJson = false, skip = 0 } = options;
   
   console.log('🚀 Starting eval runner...');
   console.log(`📁 Loading questions from: ${questionsPath}\n`);
   
   let questions = loadQuestions(questionsPath);
+  
+  if (skip > 0) {
+    console.log(`⏭️  Skipping first ${skip} questions\n`);
+    questions = questions.slice(skip);
+  }
   
   if (limit) {
     console.log(`⚠️  Limiting to first ${limit} questions\n`);
@@ -54,6 +59,11 @@ export async function runEval(options: RunEvalOptions): Promise<void> {
         `   ✓ P=${pct(metrics.precision)} R=${pct(metrics.recall)} F1=${pct(metrics.f1)} ` +
         `${metrics.perfect_match ? '🎯' : ''}`
       );
+      
+
+      if (i < questions.length - 1) {
+        await new Promise(resolve => setTimeout(resolve, 3000));
+      }
       
     } catch (error) {
       console.error(`   ✗ Error: ${error instanceof Error ? error.message : String(error)}`);
@@ -94,9 +104,13 @@ if (require.main === module) {
     ? parseInt(process.argv[process.argv.indexOf('--limit') + 1], 10)
     : undefined;
   
+  const skip = process.argv.includes('--skip')
+    ? parseInt(process.argv[process.argv.indexOf('--skip') + 1], 10)
+    : undefined;
+  
   const outputJson = process.argv.includes('--json');
   
-  runEval({ limit, outputJson }).catch(error => {
+  runEval({ limit, skip, outputJson }).catch(error => {
     console.error('❌ Fatal error:', error);
     process.exit(1);
   });

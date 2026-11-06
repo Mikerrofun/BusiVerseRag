@@ -2,6 +2,7 @@ import { ChunkRow, ScoredChunk } from '../../types/retrieval.types';
 import { CHUNK_COLUMNS, getPool } from '../../lib/db';
 import { withRetry } from '../../lib/retry';
 import { ExpandedGroup } from './expand.types';
+import { EXPAND_CONFIG } from './expand.config';
 
 
 async function fetchBlocksOfSections(parentIds: string[]): Promise<ChunkRow[]> {
@@ -72,6 +73,19 @@ export async function expandHits(hits: ScoredChunk[]): Promise<ExpandedGroup[]> 
     }
   }
 
+  // Определяем какие хиты получат links: топ-N или высокий score
+  const hitsEligibleForLinks = uniqueHits.filter((hit, index) => {
+    // Топ-N всегда получают links
+    if (index < EXPAND_CONFIG.linksTopN) return true;
+    // Остальные — только если score выше порога
+    return hit.score >= EXPAND_CONFIG.linksScoreThreshold;
+  });
+
+  console.log(
+    `[expand] Links будут загружены для ${hitsEligibleForLinks.length}/${uniqueHits.length} хитов ` +
+    `(топ-${EXPAND_CONFIG.linksTopN} + score≥${EXPAND_CONFIG.linksScoreThreshold})`
+  );
+
   const parentIds = Array.from(
     new Set(uniqueHits.map((h) => h.chunk.parent_id).filter((id): id is string => id !== null)),
   );
@@ -88,7 +102,8 @@ export async function expandHits(hits: ScoredChunk[]): Promise<ExpandedGroup[]> 
     blocksByParent.set(row.parent_id ?? '', list);
   }
 
-  const links = await fetchLinks(uniqueHits.map((h) => h.chunk.chunk_id));
+  // Fetch links только для qualified хитов
+  const links = await fetchLinks(hitsEligibleForLinks.map((h) => h.chunk.chunk_id));
   const sectionRows = await fetchSectionChunks(Array.from(new Set(links.map((l) => l.to_section))));
   const sectionsByCode = new Map<string, ChunkRow[]>();
   for (const row of sectionRows) {
@@ -96,6 +111,9 @@ export async function expandHits(hits: ScoredChunk[]): Promise<ExpandedGroup[]> 
     list.push(row);
     sectionsByCode.set(row.section_code ?? '', list);
   }
+
+  // Set для быстрой проверки eligibility
+  const eligibleChunkIds = new Set(hitsEligibleForLinks.map(h => h.chunk.chunk_id));
 
   const resolveSection = (code: string, hitType: string): ChunkRow | null => {
     const candidates = sectionsByCode.get(code) ?? [];
@@ -147,18 +165,22 @@ export async function expandHits(hits: ScoredChunk[]): Promise<ExpandedGroup[]> 
     }
     group.hits.push(hit);
 
-    for (const link of links.filter((l) => l.from_chunk_id === chunk.chunk_id)) {
-      const section = resolveSection(link.to_section, chunk.business_type);
-      if (!section) continue;
-      if (group.links.some((u) => u.parts[0]?.chunk_id === section.chunk_id)) continue;
-      if (group.parent && section.chunk_id === group.parent.parts[0]?.chunk_id) continue;
-      group.links.push({
-        kind: 'link',
-        text: section.text,
-        heading: headingOf(section),
-        score: hit.score,
-        parts: [section],
-      });
+    // Links добавляем только для eligible хитов (топ-N или высокий score)
+    const hitEligibleForLinks = eligibleChunkIds.has(chunk.chunk_id);
+    if (hitEligibleForLinks) {
+      for (const link of links.filter((l) => l.from_chunk_id === chunk.chunk_id)) {
+        const section = resolveSection(link.to_section, chunk.business_type);
+        if (!section) continue;
+        if (group.links.some((u) => u.parts[0]?.chunk_id === section.chunk_id)) continue;
+        if (group.parent && section.chunk_id === group.parent.parts[0]?.chunk_id) continue;
+        group.links.push({
+          kind: 'link',
+          text: section.text,
+          heading: headingOf(section),
+          score: hit.score,
+          parts: [section],
+        });
+      }
     }
   }
 

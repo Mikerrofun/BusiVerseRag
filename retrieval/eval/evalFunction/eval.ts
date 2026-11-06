@@ -29,13 +29,10 @@ function extractChunkIds(groups: Awaited<ReturnType<typeof expandHits>>): string
   const ids = new Set<string>();
   
   for (const group of groups) {
-    // Собираем chunk_id ТОЛЬКО из основного блока
     for (const part of group.block.parts) {
       ids.add(part.chunk_id);
     }
     
-    // НЕ добавляем parent.parts — это контекст для LLM, не часть eval golden standard
-    // НЕ добавляем links.parts — это cross-references, которых нет в expected
   }
   
   return Array.from(ids);

@@ -66,6 +66,7 @@ export interface GroupStats {
 export interface RunEvalOptions {
   questionsPath?: string;
   limit?: number;
+  skip?: number;
   outputJson?: boolean;
 }
 
