@@ -6,7 +6,7 @@ export type {
   EvalQuestion,
   EvalMetrics,
   AggregatedMetrics,
-  DifficultyStats,
+  UnanswerableStats,
   GroupStats,
   RunEvalOptions,
   QuestionResult,

@@ -2,7 +2,6 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { evalRetrieve } from '../evalFunction/eval';
 import { EvalRetrievalResult } from '../evalFunction/eval.types';
-import { NicheCode } from '../../types/retrieval.types';
 import { calculateMetrics } from './metrics';
 import { aggregateMetrics } from './aggregation';
 import { loadQuestions } from './loaders';
@@ -39,25 +38,27 @@ export async function runEval(options: RunEvalOptions): Promise<void> {
     try {
       const result = await evalRetrieve({
         query: q.question,
-        niche: q.business_type as NicheCode | undefined,
+        niche: q.business_type,
         expected_chunk_ids: q.expected_chunk_ids,
         expected_section: q.expected_section,
         expected_sections: q.expected_sections,
       });
-      
+
       const metrics = calculateMetrics(
         q.qid,
         q.question,
         q.difficulty,
+        q.unanswerable,
         q.expected_chunk_ids,
-        result.retrieved_chunk_ids
+        result.retrieved_chunk_ids,
+        result.retrieved_chunk_ids_ordered
       );
-      
+
       results.push({ question: q, result, metrics });
-      
+
       console.log(
-        `   ✓ P=${pct(metrics.precision)} R=${pct(metrics.recall)} F1=${pct(metrics.f1)} ` +
-        `${metrics.perfect_match ? '🎯' : ''}`
+        `   ✓ R=${pct(metrics.recall)} P=${pct(metrics.precision)} ` +
+        `MRR=${metrics.mrr.toFixed(2)} ${metrics.perfect_match ? '🎯' : ''}`
       );
       
 
@@ -86,6 +87,8 @@ export async function runEval(options: RunEvalOptions): Promise<void> {
             question: r.question.question,
             metrics: r.metrics,
             retrieved_chunk_ids: r.result.retrieved_chunk_ids,
+            retrieved_chunk_ids_ordered: r.result.retrieved_chunk_ids_ordered,
+            top_rerank_score: r.result.top_rerank_score,
             expected_chunk_ids: r.question.expected_chunk_ids,
           })),
         },

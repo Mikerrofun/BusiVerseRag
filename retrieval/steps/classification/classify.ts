@@ -21,7 +21,7 @@ function parseAnswer(text: string): ClassifierAnswer | null {
   }
 }
 
-export async function detectNiche(query: string, uiNiche?: NicheCode): Promise<NicheDecision> {
+export async function detectNiche(query: string, uiNiche?: NicheCode | null): Promise<NicheDecision> {
   //Ниша передана — классификатор не вызывается вообще
   if (uiNiche) return { niche: uiNiche, source: 'ui', confidence: null };
 
