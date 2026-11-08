@@ -39,7 +39,7 @@ export async function runEval(options: RunEvalOptions): Promise<void> {
     try {
       const result = await evalRetrieve({
         query: q.question,
-        niche: q.business_type as NicheCode | undefined,
+        niche: (q.business_type ?? undefined) as NicheCode | undefined,
         expected_chunk_ids: q.expected_chunk_ids,
         expected_section: q.expected_section,
         expected_sections: q.expected_sections,
