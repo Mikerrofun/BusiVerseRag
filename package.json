@@ -19,6 +19,7 @@
     "embed": "tsx scripts/embeddings/embed.ts",
     "retrieve": "tsx retrieval/run.ts",
     "test:chunking": "tsx --test scripts/chunking/test/chunking.test.ts",
+    "test:eval": "tsx --test retrieval/eval/runner/test/metrics.test.ts",
     "eval": "tsx retrieval/eval/runner/runner.ts",
     "eval:limit": "tsx retrieval/eval/runner/runner.ts --limit",
     "eval:json": "tsx retrieval/eval/runner/runner.ts --json"

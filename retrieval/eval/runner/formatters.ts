@@ -24,7 +24,9 @@ export function printAggregatedMetrics(agg: AggregatedMetrics): void {
     `(исключены из средних)`
   );
   console.log(`Hit rate: ${pct(agg.hit_rate)}`);
-  console.log(`Perfect matches: ${agg.perfect_matches} (${pct(agg.perfect_matches / agg.evaluated_questions)})`);
+  const perfectShare =
+    agg.evaluated_questions > 0 ? pct(agg.perfect_matches / agg.evaluated_questions) : 'n/a';
+  console.log(`Perfect matches: ${agg.perfect_matches} (${perfectShare})`);
   console.log(`\nAverage Recall:    ${pct(agg.avg_recall)}`);
   console.log(`Average Precision: ${pct(agg.avg_precision)}`);
   console.log(`Average MRR:       ${agg.avg_mrr.toFixed(3)}`);
