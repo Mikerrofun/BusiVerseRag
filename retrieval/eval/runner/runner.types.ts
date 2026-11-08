@@ -12,7 +12,6 @@ export interface EvalQuestion {
   expected_section: string | null;
   expected_sections: string[];
   difficulty: string;
-  unanswerable: boolean;
   notes: string;
 }
 
@@ -21,7 +20,6 @@ export interface EvalMetrics {
   qid: string;
   question: string;
   difficulty: string;
-  unanswerable: boolean;
   /** |expected ∩ retrieved| / |expected| — доля expected-частей, которые нашлись */
   recall: number;
   /** Найдена хотя бы одна expected-часть (recall > 0) */
@@ -38,14 +36,6 @@ export interface EvalMetrics {
   perfect_match: boolean;
 }
 
-/** Статистика unanswerable-вопросов в агрегированном отчёте */
-export interface UnanswerableStats {
-  /** Сколько unanswerable-вопросов было в прогоне */
-  total: number;
-  /** Сколько из них обработано (исключено из всех средних) */
-  processed: number;
-}
-
 /** Статистика по группе (difficulty или group) */
 export interface GroupStats {
   count: number;
@@ -56,13 +46,10 @@ export interface GroupStats {
   perfect_matches: number;
 }
 
-/** Агрегированные метрики по всем вопросам (unanswerable исключены из средних) */
+/** Агрегированные метрики по всем вопросам */
 export interface AggregatedMetrics {
   total_questions: number;
-  /** Вопросы, вошедшие в средние (не unanswerable) */
-  evaluated_questions: number;
-  unanswerable: UnanswerableStats;
-  /** Доля не-unanswerable вопросов с hit (recall > 0) */
+  /** Доля вопросов с hit (recall > 0) */
   hit_rate: number;
   perfect_matches: number;
   avg_recall: number;

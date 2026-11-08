@@ -18,14 +18,10 @@ export function printAggregatedMetrics(agg: AggregatedMetrics): void {
   console.log('📈 AGGREGATED METRICS');
   console.log('='.repeat(80));
 
-  console.log(`\nTotal questions: ${agg.total_questions} (evaluated: ${agg.evaluated_questions})`);
-  console.log(
-    `Unanswerable: ${agg.unanswerable.total} было, ${agg.unanswerable.processed} обработано ` +
-    `(исключены из средних)`
-  );
+  console.log(`\nTotal questions: ${agg.total_questions}`);
   console.log(`Hit rate: ${pct(agg.hit_rate)}`);
   const perfectShare =
-    agg.evaluated_questions > 0 ? pct(agg.perfect_matches / agg.evaluated_questions) : 'n/a';
+    agg.total_questions > 0 ? pct(agg.perfect_matches / agg.total_questions) : 'n/a';
   console.log(`Perfect matches: ${agg.perfect_matches} (${perfectShare})`);
   console.log(`\nAverage Recall:    ${pct(agg.avg_recall)}`);
   console.log(`Average Precision: ${pct(agg.avg_precision)}`);

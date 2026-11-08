@@ -21,14 +21,10 @@ function calculateGroupStats(metrics: EvalMetrics[]): GroupStats {
 }
 
 export function aggregateMetrics(results: QuestionResult[]): AggregatedMetrics {
-  // Unanswerable-вопросы считаются per-question, но исключаются из всех агрегатов
-  const answerable = results.filter((r) => !r.question.unanswerable);
-  const unanswerable = results.filter((r) => r.question.unanswerable);
-
   const byDifficulty: Record<string, EvalMetrics[]> = {};
   const byGroup: Record<string, EvalMetrics[]> = {};
 
-  for (const { question, metrics } of results.filter((r) => !r.question.unanswerable)) {
+  for (const { question, metrics } of results) {
     if (!byDifficulty[question.difficulty]) {
       byDifficulty[question.difficulty] = [];
     }
@@ -40,15 +36,10 @@ export function aggregateMetrics(results: QuestionResult[]): AggregatedMetrics {
     byGroup[question.group].push(metrics);
   }
 
-  const allMetrics = answerable.map((r) => r.metrics);
+  const allMetrics = results.map((r) => r.metrics);
 
   return {
     total_questions: results.length,
-    evaluated_questions: answerable.length,
-    unanswerable: {
-      total: results.length - answerable.length,
-      processed: unanswerable.length,
-    },
     hit_rate: allMetrics.length > 0 ? allMetrics.filter((m) => m.hit).length / allMetrics.length : 0,
     perfect_matches: allMetrics.filter((m) => m.perfect_match).length,
     avg_recall: avg(allMetrics.map((m) => m.recall)),

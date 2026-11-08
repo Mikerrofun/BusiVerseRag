@@ -13,7 +13,7 @@ function metrics(
   retrieved: string[],
   retrievedOrdered: string[] = retrieved,
 ) {
-  return calculateMetrics('q-test', 'Тестовый вопрос', 'easy', false, expected, retrieved, retrievedOrdered);
+  return calculateMetrics('q-test', 'Тестовый вопрос', 'easy', expected, retrieved, retrievedOrdered);
 }
 
 test('полное попадание: recall=1, perfect_match, mrr=1', () => {
@@ -60,7 +60,7 @@ test('дубликаты в retrieved не завышают precision (срав�
   assert.equal(m.precision, 1 / 2);
 });
 
-test('пустой expected (unanswerable): все метрики нулевые, не perfect', () => {
+test('пустой expected: все метрики нулевые, не perfect', () => {
   const m = metrics([], ['x', 'y']);
   assert.equal(m.recall, 0);
   assert.equal(m.precision, 0);
@@ -88,7 +88,7 @@ test('порядок retrievedOrdered не совпадает с retrieved — m
 
 // --- aggregateMetrics ---
 
-function fakeResult(qid: string, group: string, difficulty: string, unanswerable: boolean, recall: number): QuestionResult {
+function fakeResult(qid: string, group: string, difficulty: string, recall: number): QuestionResult {
   return {
     question: {
       qid,
@@ -101,7 +101,6 @@ function fakeResult(qid: string, group: string, difficulty: string, unanswerable
       expected_section: null,
       expected_sections: [],
       difficulty,
-      unanswerable,
       notes: '',
     },
     result: {},
@@ -109,7 +108,6 @@ function fakeResult(qid: string, group: string, difficulty: string, unanswerable
       qid,
       question: qid,
       difficulty,
-      unanswerable,
       recall,
       hit: recall > 0,
       precision: recall,
@@ -122,17 +120,14 @@ function fakeResult(qid: string, group: string, difficulty: string, unanswerable
   };
 }
 
-test('агрегация: unanswerable исключены из средних, но учтены в счётчиках', () => {
+test('агрегация: средние по всем вопросам и разрезы by_difficulty / by_group', () => {
   const results: QuestionResult[] = [
-    fakeResult('q1', 'niche', 'easy', false, 1),
-    fakeResult('q2', 'niche', 'easy', false, 0),
-    fakeResult('q3', 'hard', 'hard', false, 0.5),
-    fakeResult('q4', 'hard', 'hard', true, 0),
+    fakeResult('q1', 'niche', 'easy', 1),
+    fakeResult('q2', 'niche', 'easy', 0),
+    fakeResult('q3', 'hard', 'hard', 0.5),
   ];
   const agg = aggregateMetrics(results);
-  assert.equal(agg.total_questions, 4);
-  assert.equal(agg.evaluated_questions, 3);
-  assert.deepEqual(agg.unanswerable, { total: 1, processed: 1 });
+  assert.equal(agg.total_questions, 3);
   assert.equal(agg.avg_recall, (1 + 0 + 0.5) / 3);
   assert.equal(agg.hit_rate, 2 / 3);
   assert.equal(agg.perfect_matches, 1);
@@ -147,7 +142,6 @@ test('агрегация: unanswerable исключены из средних, �
 test('агрегация на пустом списке не падает и даёт нули', () => {
   const agg = aggregateMetrics([]);
   assert.equal(agg.total_questions, 0);
-  assert.equal(agg.evaluated_questions, 0);
   assert.equal(agg.avg_recall, 0);
   assert.equal(agg.hit_rate, 0);
   assert.deepEqual(agg.by_difficulty, {});

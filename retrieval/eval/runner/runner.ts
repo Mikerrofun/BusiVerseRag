@@ -48,7 +48,6 @@ export async function runEval(options: RunEvalOptions): Promise<void> {
         q.qid,
         q.question,
         q.difficulty,
-        q.unanswerable,
         q.expected_chunk_ids,
         result.retrieved_chunk_ids,
         result.retrieved_chunk_ids_ordered
