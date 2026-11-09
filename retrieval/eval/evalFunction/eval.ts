@@ -38,10 +38,35 @@ function extractChunkIds(groups: Awaited<ReturnType<typeof expandHits>>): string
   return Array.from(ids);
 }
 
+/**
+ * Собирает retrieved-части в порядке rerank: от лучшего хита к худшему.
+ *
+ * expandHits возвращает группы в порядке первых вхождений хитов после rerank
+ * (Map сохраняет порядок вставки — группа создаётся при первом хите блока),
+ * поэтому итерация по группам сверху вниз и есть порядок rerank.
+ * Часть может появиться в нескольких группах — берём первое вхождение.
+ */
+function extractOrderedChunkIds(groups: Awaited<ReturnType<typeof expandHits>>): string[] {
+  const ordered: string[] = [];
+  const seen = new Set<string>();
+
+  for (const group of groups) {
+    for (const part of group.block.parts) {
+      if (!seen.has(part.chunk_id)) {
+        seen.add(part.chunk_id);
+        ordered.push(part.chunk_id);
+      }
+    }
+  }
+
+  return ordered;
+}
+
 export async function evalRetrieve(input: EvalRetrieveInput): Promise<EvalRetrievalResult> {
   const query = typeof input.query === 'string' ? input.query.trim() : '';
   if (!query) throw new Error('query: обязательна непустая строка');
-  if (input.niche !== undefined && !isNicheCode(input.niche)) {
+  // null — легитимное значение («ниша неизвестна»), классификатор определит её сам
+  if (input.niche !== null && !isNicheCode(input.niche)) {
     throw new Error(`niche: неизвестный код «${String(input.niche)}»`);
   }
 
@@ -58,6 +83,8 @@ export async function evalRetrieve(input: EvalRetrieveInput): Promise<EvalRetrie
   const groups = await expandHits(top);
 
   const retrievedChunkIds = extractChunkIds(groups);
+  const retrievedChunkIdsOrdered = extractOrderedChunkIds(groups);
+  const topRerankScore = groups.length > 0 ? groups[0].score : null;
   const expectedChunkIds = input.expected_chunk_ids ?? [];
   const expectedSection = input.expected_section ?? null;
   const expectedSections = input.expected_sections ?? [];
@@ -65,6 +92,8 @@ export async function evalRetrieve(input: EvalRetrieveInput): Promise<EvalRetrie
   const result: EvalRetrievalResult = {
     query,
     retrieved_chunk_ids: retrievedChunkIds,
+    retrieved_chunk_ids_ordered: retrievedChunkIdsOrdered,
+    top_rerank_score: topRerankScore,
     expected_chunk_ids: expectedChunkIds,
     expected_section: expectedSection,
     expected_sections: expectedSections,
