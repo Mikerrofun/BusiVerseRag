@@ -17,6 +17,7 @@ export interface EvalCounters {
   fts: number;
   rrf: number;
   rerank: number;
+  filtered: number; // Результатов после filter-rerank
   expanded_groups: number;
   total_chunks: number;
 }
@@ -28,7 +29,7 @@ export interface EvalRetrievalResult {
   retrieved_chunk_ids: string[];
   /** Те же chunk_id в порядке rerank: от лучшего хита к худшему, без дубликатов */
   retrieved_chunk_ids_ordered: string[];
-  /** Rerank-скор первой группы (лучший хит прогонa); null, если ничего не найдено */
+  /** Score лучшего rerank-результата до фильтрации; null, если результатов нет */
   top_rerank_score: number | null;
   expected_chunk_ids: string[];
   expected_section: string | null;

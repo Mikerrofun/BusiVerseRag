@@ -8,7 +8,8 @@ import { SEARCH_CONFIG } from './steps/search/search.config';
 import { vectorSearch } from './steps/search/vector-search';
 import { ftsSearch } from './steps/search/fts';
 import { fuseRrf } from './steps/fusion/rrf';
-import { rerank } from './steps/rerank/rerank';
+import { rerank } from './steps/rerank/rerank-system/rerank';
+import { filterRerank } from './steps/rerank/filter-rerank/filter-rerank';
 import { expandHits } from './steps/expand/expand';
 import { assembleContext } from './steps/assemble/assemble';
 
@@ -35,11 +36,12 @@ export async function retrieve(input: RetrieveInput): Promise<RetrievalResult> {
   // Шаг 5. RRF → отрезка до 20 
   const fused = fuseRrf([vectorHits, ftsHits]);
 
-  // Шаг 6. Rerank → топ-5. Ошибка API роняет retrieval целиком
+  // Шаг 6. Rerank → фильтрация по релевантности → топ-N
   const top = await rerank(query, fused);
+  const filtered = filterRerank(top);
 
   // Шаги 7–8. Small-to-big + ссылки
-  const groups = await expandHits(top);
+  const groups = await expandHits(filtered);
 
   // Шаг 9. Сборка контекста
   const assembled = assembleContext(groups);

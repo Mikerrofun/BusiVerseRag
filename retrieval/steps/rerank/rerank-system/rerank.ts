@@ -1,6 +1,6 @@
-import { MODELS_CONFIG } from '../../config/models.config';
-import { ScoredChunk } from '../../types/retrieval.types';
-import { withRetry } from '../../lib/retry';
+import { MODELS_CONFIG } from '../../../config/models.config';
+import { ScoredChunk } from '../../../types/retrieval.types';
+import { withRetry } from '../../../lib/retry';
 import { RERANK_CONFIG } from './rerank.config';
 import { JinaRerankResponse } from './rerank.types';
 

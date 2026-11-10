@@ -1,54 +1,54 @@
 {
-  "timestamp": "2026-11-10T21:48:24.731Z",
+  "timestamp": "2026-11-10T22:45:58.117Z",
   "aggregated": {
-    "total_questions": 30,
-    "hit_rate": 0.9666666666666667,
-    "perfect_matches": 25,
-    "avg_recall": 0.8833333333333332,
-    "avg_precision": 0.2126719576719577,
-    "avg_mrr": 0.7697619047619048,
+    "total_questions": 29,
+    "hit_rate": 0.7931034482758621,
+    "perfect_matches": 17,
+    "avg_recall": 0.6620689655172414,
+    "avg_precision": 0.6149425287356323,
+    "avg_mrr": 0.7327586206896551,
     "by_difficulty": {
       "medium": {
         "count": 10,
-        "avg_recall": 0.8666666666666666,
-        "avg_precision": 0.2704761904761904,
-        "avg_mrr": 0.8699999999999999,
-        "hit_rate": 1,
-        "perfect_matches": 8
+        "avg_recall": 0.72,
+        "avg_precision": 0.6583333333333333,
+        "avg_mrr": 0.85,
+        "hit_rate": 0.9,
+        "perfect_matches": 6
       },
       "easy": {
         "count": 15,
-        "avg_recall": 1,
-        "avg_precision": 0.14835978835978833,
-        "avg_mrr": 0.8595238095238095,
-        "hit_rate": 1,
-        "perfect_matches": 15
+        "avg_recall": 0.7777777777777778,
+        "avg_precision": 0.6833333333333333,
+        "avg_mrr": 0.7833333333333333,
+        "hit_rate": 0.8666666666666667,
+        "perfect_matches": 11
       },
       "hard": {
-        "count": 5,
-        "avg_recall": 0.5666666666666667,
-        "avg_precision": 0.29,
-        "avg_mrr": 0.3,
-        "hit_rate": 0.8,
-        "perfect_matches": 2
+        "count": 4,
+        "avg_recall": 0.08333333333333333,
+        "avg_precision": 0.25,
+        "avg_mrr": 0.25,
+        "hit_rate": 0.25,
+        "perfect_matches": 0
       }
     },
     "by_group": {
       "niche": {
         "count": 25,
-        "avg_recall": 0.9466666666666665,
-        "avg_precision": 0.19720634920634925,
-        "avg_mrr": 0.8637142857142857,
-        "hit_rate": 1,
-        "perfect_matches": 23
+        "avg_recall": 0.7546666666666667,
+        "avg_precision": 0.6733333333333335,
+        "avg_mrr": 0.81,
+        "hit_rate": 0.88,
+        "perfect_matches": 17
       },
       "hard": {
-        "count": 5,
-        "avg_recall": 0.5666666666666667,
-        "avg_precision": 0.29,
-        "avg_mrr": 0.3,
-        "hit_rate": 0.8,
-        "perfect_matches": 2
+        "count": 4,
+        "avg_recall": 0.08333333333333333,
+        "avg_precision": 0.25,
+        "avg_mrr": 0.25,
+        "hit_rate": 0.25,
+        "perfect_matches": 0
       }
     }
   },
@@ -62,10 +62,10 @@
         "difficulty": "medium",
         "recall": 1,
         "hit": true,
-        "precision": 0.2,
+        "precision": 0.25,
         "mrr": 1,
         "expected_count": 1,
-        "retrieved_count": 5,
+        "retrieved_count": 4,
         "matched_count": 1,
         "perfect_match": true
       },
@@ -73,15 +73,13 @@
         "coffee_shop-1.2-b01",
         "coffee_shop-1.2",
         "coffee_shop-1.2-b07-p1",
-        "coffee_shop-1.2-b07-p2",
-        "coffee_shop-1.2-b06"
+        "coffee_shop-1.2-b07-p2"
       ],
       "retrieved_chunk_ids_ordered": [
         "coffee_shop-1.2-b01",
         "coffee_shop-1.2",
         "coffee_shop-1.2-b07-p1",
-        "coffee_shop-1.2-b07-p2",
-        "coffee_shop-1.2-b06"
+        "coffee_shop-1.2-b07-p2"
       ],
       "top_rerank_score": 0.57125751,
       "expected_chunk_ids": [
@@ -95,38 +93,30 @@
         "qid": "q-niche-04",
         "question": "Сколько стоит открыть ПВЗ Wildberries и когда он выходит в плюс?",
         "difficulty": "medium",
-        "recall": 0.3333333333333333,
+        "recall": 0.2,
         "hit": true,
-        "precision": 0.14285714285714285,
+        "precision": 0.5,
         "mrr": 0.5,
-        "expected_count": 3,
-        "retrieved_count": 7,
+        "expected_count": 5,
+        "retrieved_count": 2,
         "matched_count": 1,
         "perfect_match": false
       },
       "retrieved_chunk_ids": [
         "pickup_point-2.2-b04",
-        "pickup_point-2.3-b01",
-        "pickup_point-2.2-b05",
-        "pickup_point-2.2-b07-p1",
-        "pickup_point-2.2-b07-p2",
-        "global-11-b01-p1",
-        "global-11-b01-p2"
+        "pickup_point-2.3-b01"
       ],
       "retrieved_chunk_ids_ordered": [
         "pickup_point-2.2-b04",
-        "pickup_point-2.3-b01",
-        "pickup_point-2.2-b05",
-        "pickup_point-2.2-b07-p1",
-        "pickup_point-2.2-b07-p2",
-        "global-11-b01-p1",
-        "global-11-b01-p2"
+        "pickup_point-2.3-b01"
       ],
       "top_rerank_score": 0.44160522,
       "expected_chunk_ids": [
         "pickup_point-2.3-b01",
         "pickup_point-2.3-b03-p1",
-        "pickup_point-2.3-b03-p2"
+        "pickup_point-2.3-b03-p2",
+        "global-11-b01-p1",
+        "global-11-b01-p2"
       ]
     },
     {
@@ -136,32 +126,24 @@
         "qid": "q-niche-05",
         "question": "Как устроены совмещённые ПВЗ Wildberries и Ozon — что рассказывают владельцы?",
         "difficulty": "medium",
-        "recall": 1,
+        "recall": 0.5,
         "hit": true,
-        "precision": 0.2857142857142857,
+        "precision": 0.3333333333333333,
         "mrr": 1,
         "expected_count": 2,
-        "retrieved_count": 7,
-        "matched_count": 2,
-        "perfect_match": true
+        "retrieved_count": 3,
+        "matched_count": 1,
+        "perfect_match": false
       },
       "retrieved_chunk_ids": [
         "pickup_point-2.2-b02",
         "pickup_point-2.2-b06-p1",
-        "pickup_point-2.2-b06-p2",
-        "pickup_point-2.2-b03",
-        "pickup_point-2.2",
-        "pickup_point-2.2-b07-p1",
-        "pickup_point-2.2-b07-p2"
+        "pickup_point-2.2-b06-p2"
       ],
       "retrieved_chunk_ids_ordered": [
         "pickup_point-2.2-b02",
         "pickup_point-2.2-b06-p1",
-        "pickup_point-2.2-b06-p2",
-        "pickup_point-2.2-b03",
-        "pickup_point-2.2",
-        "pickup_point-2.2-b07-p1",
-        "pickup_point-2.2-b07-p2"
+        "pickup_point-2.2-b06-p2"
       ],
       "top_rerank_score": 0.46685183,
       "expected_chunk_ids": [
@@ -176,35 +158,17 @@
         "qid": "q-niche-06",
         "question": "Что делать оператору ПВЗ, если посылка пропала или клиент открыл спор?",
         "difficulty": "easy",
-        "recall": 1,
-        "hit": true,
-        "precision": 0.125,
-        "mrr": 1,
+        "recall": 0,
+        "hit": false,
+        "precision": 0,
+        "mrr": 0,
         "expected_count": 1,
-        "retrieved_count": 8,
-        "matched_count": 1,
-        "perfect_match": true
+        "retrieved_count": 0,
+        "matched_count": 0,
+        "perfect_match": false
       },
-      "retrieved_chunk_ids": [
-        "pickup_point-2.6-b06",
-        "pickup_point-2.6-b04",
-        "pickup_point-2.6-b08",
-        "pickup_point-2.5-b01-p1",
-        "pickup_point-2.5-b01-p2",
-        "pickup_point-2.5-b01-p3",
-        "pickup_point-2.5-b01-p4",
-        "pickup_point-2.6-b01"
-      ],
-      "retrieved_chunk_ids_ordered": [
-        "pickup_point-2.6-b06",
-        "pickup_point-2.6-b04",
-        "pickup_point-2.6-b08",
-        "pickup_point-2.5-b01-p1",
-        "pickup_point-2.5-b01-p2",
-        "pickup_point-2.5-b01-p3",
-        "pickup_point-2.5-b01-p4",
-        "pickup_point-2.6-b01"
-      ],
+      "retrieved_chunk_ids": [],
+      "retrieved_chunk_ids_ordered": [],
       "top_rerank_score": 0.28393852,
       "expected_chunk_ids": [
         "pickup_point-2.6-b06"
@@ -217,28 +181,26 @@
         "qid": "q-niche-07",
         "question": "Чем отличается финмодель мини-пекарни в Москве от финмодели в регионе?",
         "difficulty": "medium",
-        "recall": 0.3333333333333333,
-        "hit": true,
-        "precision": 0.2,
-        "mrr": 0.2,
+        "recall": 0,
+        "hit": false,
+        "precision": 0,
+        "mrr": 0,
         "expected_count": 3,
-        "retrieved_count": 5,
-        "matched_count": 1,
+        "retrieved_count": 4,
+        "matched_count": 0,
         "perfect_match": false
       },
       "retrieved_chunk_ids": [
         "mini_bakery-3.1-b01",
         "mini_bakery-3.3",
         "mini_bakery-3.3-b04-p1",
-        "mini_bakery-3.3-b04-p2",
-        "mini_bakery-3.3-b02"
+        "mini_bakery-3.3-b04-p2"
       ],
       "retrieved_chunk_ids_ordered": [
         "mini_bakery-3.1-b01",
         "mini_bakery-3.3",
         "mini_bakery-3.3-b04-p1",
-        "mini_bakery-3.3-b04-p2",
-        "mini_bakery-3.3-b02"
+        "mini_bakery-3.3-b04-p2"
       ],
       "top_rerank_score": 0.33294467,
       "expected_chunk_ids": [
@@ -256,30 +218,18 @@
         "difficulty": "easy",
         "recall": 1,
         "hit": true,
-        "precision": 0.14285714285714285,
+        "precision": 1,
         "mrr": 1,
         "expected_count": 1,
-        "retrieved_count": 7,
+        "retrieved_count": 1,
         "matched_count": 1,
         "perfect_match": true
       },
       "retrieved_chunk_ids": [
-        "mini_bakery-3.2-b01",
-        "mini_bakery-3.2-b07-p1",
-        "mini_bakery-3.2-b07-p2",
-        "mini_bakery-3.2",
-        "mini_bakery-3.7-b01-p1",
-        "mini_bakery-3.7-b01-p2",
-        "mini_bakery-3.3-b03"
+        "mini_bakery-3.2-b01"
       ],
       "retrieved_chunk_ids_ordered": [
-        "mini_bakery-3.2-b01",
-        "mini_bakery-3.2-b07-p1",
-        "mini_bakery-3.2-b07-p2",
-        "mini_bakery-3.2",
-        "mini_bakery-3.7-b01-p1",
-        "mini_bakery-3.7-b01-p2",
-        "mini_bakery-3.3-b03"
+        "mini_bakery-3.2-b01"
       ],
       "top_rerank_score": 0.50675094,
       "expected_chunk_ids": [
@@ -295,26 +245,20 @@
         "difficulty": "medium",
         "recall": 1,
         "hit": true,
-        "precision": 0.4,
+        "precision": 1,
         "mrr": 1,
         "expected_count": 2,
-        "retrieved_count": 5,
+        "retrieved_count": 2,
         "matched_count": 2,
         "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "mini_bakery-3.7-b01-p1",
-        "mini_bakery-3.7-b01-p2",
-        "mini_bakery-3.6-b09",
-        "mini_bakery-3.3-b03",
-        "mini_bakery-3.1-b01"
+        "mini_bakery-3.7-b01-p2"
       ],
       "retrieved_chunk_ids_ordered": [
         "mini_bakery-3.7-b01-p1",
-        "mini_bakery-3.7-b01-p2",
-        "mini_bakery-3.6-b09",
-        "mini_bakery-3.3-b03",
-        "mini_bakery-3.1-b01"
+        "mini_bakery-3.7-b01-p2"
       ],
       "top_rerank_score": 0.37280032,
       "expected_chunk_ids": [
@@ -329,36 +273,30 @@
         "qid": "q-niche-10",
         "question": "Сколько нужно вложить в студию маникюра в регионе и какая там прибыль?",
         "difficulty": "easy",
-        "recall": 1,
+        "recall": 0.3333333333333333,
         "hit": true,
-        "precision": 0.14285714285714285,
+        "precision": 0.3333333333333333,
         "mrr": 1,
-        "expected_count": 1,
-        "retrieved_count": 7,
+        "expected_count": 3,
+        "retrieved_count": 3,
         "matched_count": 1,
-        "perfect_match": true
+        "perfect_match": false
       },
       "retrieved_chunk_ids": [
         "manicure_studio-4.3-b02",
         "manicure_studio-4.3-b04-p1",
-        "manicure_studio-4.3-b04-p2",
-        "manicure_studio-4.1-b01",
-        "global-11-b01-p1",
-        "global-11-b01-p2",
-        "manicure_studio-4.3-b01"
+        "manicure_studio-4.3-b04-p2"
       ],
       "retrieved_chunk_ids_ordered": [
         "manicure_studio-4.3-b02",
         "manicure_studio-4.3-b04-p1",
-        "manicure_studio-4.3-b04-p2",
-        "manicure_studio-4.1-b01",
-        "global-11-b01-p1",
-        "global-11-b01-p2",
-        "manicure_studio-4.3-b01"
+        "manicure_studio-4.3-b04-p2"
       ],
       "top_rerank_score": 0.42339661,
       "expected_chunk_ids": [
-        "manicure_studio-4.3-b02"
+        "manicure_studio-4.3-b02",
+        "global-11-b01-p1",
+        "global-11-b01-p2"
       ]
     },
     {
@@ -370,28 +308,18 @@
         "difficulty": "easy",
         "recall": 1,
         "hit": true,
-        "precision": 0.16666666666666666,
+        "precision": 1,
         "mrr": 1,
         "expected_count": 1,
-        "retrieved_count": 6,
+        "retrieved_count": 1,
         "matched_count": 1,
         "perfect_match": true
       },
       "retrieved_chunk_ids": [
-        "manicure_studio-4.2-b03",
-        "manicure_studio-4.2-b08-p1",
-        "manicure_studio-4.2-b08-p2",
-        "manicure_studio-4.2",
-        "manicure_studio-4.2-b07-p1",
-        "manicure_studio-4.2-b07-p2"
+        "manicure_studio-4.2-b03"
       ],
       "retrieved_chunk_ids_ordered": [
-        "manicure_studio-4.2-b03",
-        "manicure_studio-4.2-b08-p1",
-        "manicure_studio-4.2-b08-p2",
-        "manicure_studio-4.2",
-        "manicure_studio-4.2-b07-p1",
-        "manicure_studio-4.2-b07-p2"
+        "manicure_studio-4.2-b03"
       ],
       "top_rerank_score": 0.37388276,
       "expected_chunk_ids": [
@@ -407,32 +335,18 @@
         "difficulty": "easy",
         "recall": 1,
         "hit": true,
-        "precision": 0.125,
+        "precision": 1,
         "mrr": 1,
         "expected_count": 1,
-        "retrieved_count": 8,
+        "retrieved_count": 1,
         "matched_count": 1,
         "perfect_match": true
       },
       "retrieved_chunk_ids": [
-        "auto_service-5.3-b03",
-        "auto_service-5.2-b05-p1",
-        "auto_service-5.2-b05-p2",
-        "auto_service-5.3-b01-p1",
-        "auto_service-5.3-b01-p2",
-        "auto_service-5.1-b01",
-        "auto_service-5.7-b01-p1",
-        "auto_service-5.7-b01-p2"
+        "auto_service-5.3-b03"
       ],
       "retrieved_chunk_ids_ordered": [
-        "auto_service-5.3-b03",
-        "auto_service-5.2-b05-p1",
-        "auto_service-5.2-b05-p2",
-        "auto_service-5.3-b01-p1",
-        "auto_service-5.3-b01-p2",
-        "auto_service-5.1-b01",
-        "auto_service-5.7-b01-p1",
-        "auto_service-5.7-b01-p2"
+        "auto_service-5.3-b03"
       ],
       "top_rerank_score": 0.39742581,
       "expected_chunk_ids": [
@@ -448,32 +362,18 @@
         "difficulty": "easy",
         "recall": 1,
         "hit": true,
-        "precision": 0.125,
+        "precision": 1,
         "mrr": 1,
         "expected_count": 1,
-        "retrieved_count": 8,
+        "retrieved_count": 1,
         "matched_count": 1,
         "perfect_match": true
       },
       "retrieved_chunk_ids": [
-        "auto_service-5.2-b01",
-        "auto_service-5.2-b05-p1",
-        "auto_service-5.2-b05-p2",
-        "auto_service-5.2",
-        "auto_service-5.7-b01-p1",
-        "auto_service-5.7-b01-p2",
-        "auto_service-5.3-b01-p1",
-        "auto_service-5.3-b01-p2"
+        "auto_service-5.2-b01"
       ],
       "retrieved_chunk_ids_ordered": [
-        "auto_service-5.2-b01",
-        "auto_service-5.2-b05-p1",
-        "auto_service-5.2-b05-p2",
-        "auto_service-5.2",
-        "auto_service-5.7-b01-p1",
-        "auto_service-5.7-b01-p2",
-        "auto_service-5.3-b01-p1",
-        "auto_service-5.3-b01-p2"
+        "auto_service-5.2-b01"
       ],
       "top_rerank_score": 0.48383336,
       "expected_chunk_ids": [
@@ -489,26 +389,22 @@
         "difficulty": "easy",
         "recall": 1,
         "hit": true,
-        "precision": 0.2,
+        "precision": 0.3333333333333333,
         "mrr": 0.5,
         "expected_count": 1,
-        "retrieved_count": 5,
+        "retrieved_count": 3,
         "matched_count": 1,
         "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "marketplace_seller-6.3-b01",
         "marketplace_seller-6.3-b02",
-        "marketplace_seller-6.3",
-        "marketplace_seller-6.2-b05",
-        "marketplace_seller-6.7-b01"
+        "marketplace_seller-6.3"
       ],
       "retrieved_chunk_ids_ordered": [
         "marketplace_seller-6.3-b01",
         "marketplace_seller-6.3-b02",
-        "marketplace_seller-6.3",
-        "marketplace_seller-6.2-b05",
-        "marketplace_seller-6.7-b01"
+        "marketplace_seller-6.3"
       ],
       "top_rerank_score": 0.39264279,
       "expected_chunk_ids": [
@@ -524,28 +420,20 @@
         "difficulty": "medium",
         "recall": 1,
         "hit": true,
-        "precision": 0.3333333333333333,
+        "precision": 1,
         "mrr": 1,
         "expected_count": 2,
-        "retrieved_count": 6,
+        "retrieved_count": 2,
         "matched_count": 2,
         "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "marketplace_seller-6.2-b02",
-        "marketplace_seller-6.2-b06",
-        "marketplace_seller-6.2-b07-p1",
-        "marketplace_seller-6.2-b07-p2",
-        "marketplace_seller-6.2",
-        "marketplace_seller-6.7-b01"
+        "marketplace_seller-6.2-b06"
       ],
       "retrieved_chunk_ids_ordered": [
         "marketplace_seller-6.2-b02",
-        "marketplace_seller-6.2-b06",
-        "marketplace_seller-6.2-b07-p1",
-        "marketplace_seller-6.2-b07-p2",
-        "marketplace_seller-6.2",
-        "marketplace_seller-6.7-b01"
+        "marketplace_seller-6.2-b06"
       ],
       "top_rerank_score": 0.61477961,
       "expected_chunk_ids": [
@@ -562,10 +450,10 @@
         "difficulty": "medium",
         "recall": 1,
         "hit": true,
-        "precision": 0.3333333333333333,
+        "precision": 0.5,
         "mrr": 1,
         "expected_count": 2,
-        "retrieved_count": 6,
+        "retrieved_count": 4,
         "matched_count": 2,
         "perfect_match": true
       },
@@ -573,17 +461,13 @@
         "marketplace_seller-6.2-b07-p1",
         "marketplace_seller-6.2-b07-p2",
         "marketplace_seller-6.2-b08-p1",
-        "marketplace_seller-6.2-b08-p2",
-        "marketplace_seller-6.2-b05",
-        "marketplace_seller-6.3-b01"
+        "marketplace_seller-6.2-b08-p2"
       ],
       "retrieved_chunk_ids_ordered": [
         "marketplace_seller-6.2-b07-p1",
         "marketplace_seller-6.2-b07-p2",
         "marketplace_seller-6.2-b08-p1",
-        "marketplace_seller-6.2-b08-p2",
-        "marketplace_seller-6.2-b05",
-        "marketplace_seller-6.3-b01"
+        "marketplace_seller-6.2-b08-p2"
       ],
       "top_rerank_score": 0.6781402,
       "expected_chunk_ids": [
@@ -598,38 +482,26 @@
         "qid": "q-niche-19",
         "question": "Сколько стоит запустить онлайн-школу и какая прибыль в базовом сценарии?",
         "difficulty": "easy",
-        "recall": 1,
+        "recall": 0.3333333333333333,
         "hit": true,
-        "precision": 0.125,
+        "precision": 1,
         "mrr": 1,
-        "expected_count": 1,
-        "retrieved_count": 8,
+        "expected_count": 3,
+        "retrieved_count": 1,
         "matched_count": 1,
-        "perfect_match": true
+        "perfect_match": false
       },
       "retrieved_chunk_ids": [
-        "online_school-7.3-b01",
-        "online_school-7.3-b03-p1",
-        "online_school-7.3-b03-p2",
-        "global-11-b01-p1",
-        "global-11-b01-p2",
-        "online_school-7.2-b04-p1",
-        "online_school-7.2-b04-p2",
-        "online_school-7.2-b04-p3"
+        "online_school-7.3-b01"
       ],
       "retrieved_chunk_ids_ordered": [
-        "online_school-7.3-b01",
-        "online_school-7.3-b03-p1",
-        "online_school-7.3-b03-p2",
-        "global-11-b01-p1",
-        "global-11-b01-p2",
-        "online_school-7.2-b04-p1",
-        "online_school-7.2-b04-p2",
-        "online_school-7.2-b04-p3"
+        "online_school-7.3-b01"
       ],
       "top_rerank_score": 0.50357221,
       "expected_chunk_ids": [
-        "online_school-7.3-b01"
+        "online_school-7.3-b01",
+        "global-11-b01-p1",
+        "global-11-b01-p2"
       ]
     },
     {
@@ -641,34 +513,18 @@
         "difficulty": "easy",
         "recall": 1,
         "hit": true,
-        "precision": 0.1111111111111111,
+        "precision": 1,
         "mrr": 1,
         "expected_count": 1,
-        "retrieved_count": 9,
+        "retrieved_count": 1,
         "matched_count": 1,
         "perfect_match": true
       },
       "retrieved_chunk_ids": [
-        "online_school-7.2-b01",
-        "online_school-7.2-b03-p1",
-        "online_school-7.2-b03-p2",
-        "online_school-7.2",
-        "online_school-7.7-b01-p1",
-        "online_school-7.7-b01-p2",
-        "online_school-7.2-b04-p1",
-        "online_school-7.2-b04-p2",
-        "online_school-7.2-b04-p3"
+        "online_school-7.2-b01"
       ],
       "retrieved_chunk_ids_ordered": [
-        "online_school-7.2-b01",
-        "online_school-7.2-b03-p1",
-        "online_school-7.2-b03-p2",
-        "online_school-7.2",
-        "online_school-7.7-b01-p1",
-        "online_school-7.7-b01-p2",
-        "online_school-7.2-b04-p1",
-        "online_school-7.2-b04-p2",
-        "online_school-7.2-b04-p3"
+        "online_school-7.2-b01"
       ],
       "top_rerank_score": 0.57128365,
       "expected_chunk_ids": [
@@ -682,32 +538,24 @@
         "qid": "q-niche-21",
         "question": "Что делать, если продажи онлайн-школы упали?",
         "difficulty": "easy",
-        "recall": 1,
-        "hit": true,
-        "precision": 0.14285714285714285,
-        "mrr": 0.14285714285714285,
+        "recall": 0,
+        "hit": false,
+        "precision": 0,
+        "mrr": 0,
         "expected_count": 1,
-        "retrieved_count": 7,
-        "matched_count": 1,
-        "perfect_match": true
+        "retrieved_count": 3,
+        "matched_count": 0,
+        "perfect_match": false
       },
       "retrieved_chunk_ids": [
         "online_school-7.2-b03-p1",
         "online_school-7.2-b03-p2",
-        "online_school-7.2",
-        "online_school-7.2-b04-p1",
-        "online_school-7.2-b04-p2",
-        "online_school-7.2-b04-p3",
-        "online_school-7.6-b05"
+        "online_school-7.2"
       ],
       "retrieved_chunk_ids_ordered": [
         "online_school-7.2-b03-p1",
         "online_school-7.2-b03-p2",
-        "online_school-7.2",
-        "online_school-7.2-b04-p1",
-        "online_school-7.2-b04-p2",
-        "online_school-7.2-b04-p3",
-        "online_school-7.6-b05"
+        "online_school-7.2"
       ],
       "top_rerank_score": 0.41443457,
       "expected_chunk_ids": [
@@ -723,28 +571,18 @@
         "difficulty": "easy",
         "recall": 1,
         "hit": true,
-        "precision": 0.16666666666666666,
+        "precision": 1,
         "mrr": 1,
         "expected_count": 1,
-        "retrieved_count": 6,
+        "retrieved_count": 1,
         "matched_count": 1,
         "perfect_match": true
       },
       "retrieved_chunk_ids": [
-        "smm_agency-8.3-b01",
-        "smm_agency-8.2-b08",
-        "smm_agency-8.3-b02",
-        "smm_agency-8.1-b01",
-        "smm_agency-8.3-b03-p1",
-        "smm_agency-8.3-b03-p2"
+        "smm_agency-8.3-b01"
       ],
       "retrieved_chunk_ids_ordered": [
-        "smm_agency-8.3-b01",
-        "smm_agency-8.2-b08",
-        "smm_agency-8.3-b02",
-        "smm_agency-8.1-b01",
-        "smm_agency-8.3-b03-p1",
-        "smm_agency-8.3-b03-p2"
+        "smm_agency-8.3-b01"
       ],
       "top_rerank_score": 0.59439533,
       "expected_chunk_ids": [
@@ -760,30 +598,22 @@
         "difficulty": "easy",
         "recall": 1,
         "hit": true,
-        "precision": 0.14285714285714285,
+        "precision": 0.3333333333333333,
         "mrr": 1,
         "expected_count": 1,
-        "retrieved_count": 7,
+        "retrieved_count": 3,
         "matched_count": 1,
         "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "smm_agency-8.2-b01",
         "smm_agency-8.2-b07-p1",
-        "smm_agency-8.2-b07-p2",
-        "smm_agency-8.7-b01-p1",
-        "smm_agency-8.7-b01-p2",
-        "smm_agency-8.2",
-        "smm_agency-8.3-b01"
+        "smm_agency-8.2-b07-p2"
       ],
       "retrieved_chunk_ids_ordered": [
         "smm_agency-8.2-b01",
         "smm_agency-8.2-b07-p1",
-        "smm_agency-8.2-b07-p2",
-        "smm_agency-8.7-b01-p1",
-        "smm_agency-8.7-b01-p2",
-        "smm_agency-8.2",
-        "smm_agency-8.3-b01"
+        "smm_agency-8.2-b07-p2"
       ],
       "top_rerank_score": 0.39558776,
       "expected_chunk_ids": [
@@ -797,34 +627,25 @@
         "qid": "q-niche-24",
         "question": "Как передавать сведения о рекламе в ОРД по ежемесячному отчёту?",
         "difficulty": "medium",
-        "recall": 1,
+        "recall": 0.5,
         "hit": true,
-        "precision": 0.16666666666666666,
+        "precision": 1,
         "mrr": 1,
-        "expected_count": 1,
-        "retrieved_count": 6,
+        "expected_count": 2,
+        "retrieved_count": 1,
         "matched_count": 1,
-        "perfect_match": true
+        "perfect_match": false
       },
       "retrieved_chunk_ids": [
-        "smm_agency-8.6-b03",
-        "global-B0.2-b01",
-        "global-B0.2",
-        "smm_agency-8.5-b01-p1",
-        "smm_agency-8.5-b01-p2",
-        "smm_agency-8.5-b01-p3"
+        "smm_agency-8.6-b03"
       ],
       "retrieved_chunk_ids_ordered": [
-        "smm_agency-8.6-b03",
-        "global-B0.2-b01",
-        "global-B0.2",
-        "smm_agency-8.5-b01-p1",
-        "smm_agency-8.5-b01-p2",
-        "smm_agency-8.5-b01-p3"
+        "smm_agency-8.6-b03"
       ],
       "top_rerank_score": 0.65518492,
       "expected_chunk_ids": [
-        "smm_agency-8.6-b03"
+        "smm_agency-8.6-b03",
+        "global-B0.2-b01"
       ]
     },
     {
@@ -836,10 +657,10 @@
         "difficulty": "easy",
         "recall": 1,
         "hit": true,
-        "precision": 0.14285714285714285,
+        "precision": 0.25,
         "mrr": 0.25,
         "expected_count": 1,
-        "retrieved_count": 7,
+        "retrieved_count": 4,
         "matched_count": 1,
         "perfect_match": true
       },
@@ -847,19 +668,13 @@
         "own_online_store-9.3",
         "own_online_store-9.3-b01-p1",
         "own_online_store-9.3-b01-p2",
-        "own_online_store-9.3-b02",
-        "own_online_store-9.3-b03-p1",
-        "own_online_store-9.3-b03-p2",
-        "own_online_store-9.2-b02"
+        "own_online_store-9.3-b02"
       ],
       "retrieved_chunk_ids_ordered": [
         "own_online_store-9.3",
         "own_online_store-9.3-b01-p1",
         "own_online_store-9.3-b01-p2",
-        "own_online_store-9.3-b02",
-        "own_online_store-9.3-b03-p1",
-        "own_online_store-9.3-b03-p2",
-        "own_online_store-9.2-b02"
+        "own_online_store-9.3-b02"
       ],
       "top_rerank_score": 0.38366493,
       "expected_chunk_ids": [
@@ -875,26 +690,18 @@
         "difficulty": "easy",
         "recall": 1,
         "hit": true,
-        "precision": 0.2,
+        "precision": 1,
         "mrr": 1,
         "expected_count": 1,
-        "retrieved_count": 5,
+        "retrieved_count": 1,
         "matched_count": 1,
         "perfect_match": true
       },
       "retrieved_chunk_ids": [
-        "own_online_store-9.2-b01",
-        "own_online_store-9.2-b05",
-        "own_online_store-9.2",
-        "own_online_store-9.7-b01-p1",
-        "own_online_store-9.7-b01-p2"
+        "own_online_store-9.2-b01"
       ],
       "retrieved_chunk_ids_ordered": [
-        "own_online_store-9.2-b01",
-        "own_online_store-9.2-b05",
-        "own_online_store-9.2",
-        "own_online_store-9.7-b01-p1",
-        "own_online_store-9.7-b01-p2"
+        "own_online_store-9.2-b01"
       ],
       "top_rerank_score": 0.58707582,
       "expected_chunk_ids": [
@@ -910,24 +717,20 @@
         "difficulty": "medium",
         "recall": 1,
         "hit": true,
-        "precision": 0.5,
+        "precision": 1,
         "mrr": 1,
         "expected_count": 2,
-        "retrieved_count": 4,
+        "retrieved_count": 2,
         "matched_count": 2,
         "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "remote_accounting-10.3-b03-p1",
-        "remote_accounting-10.3-b03-p2",
-        "remote_accounting-10.3",
-        "remote_accounting-10.3-b01"
+        "remote_accounting-10.3-b03-p2"
       ],
       "retrieved_chunk_ids_ordered": [
         "remote_accounting-10.3-b03-p1",
-        "remote_accounting-10.3-b03-p2",
-        "remote_accounting-10.3",
-        "remote_accounting-10.3-b01"
+        "remote_accounting-10.3-b03-p2"
       ],
       "top_rerank_score": 0.35412784,
       "expected_chunk_ids": [
@@ -944,28 +747,18 @@
         "difficulty": "easy",
         "recall": 1,
         "hit": true,
-        "precision": 0.16666666666666666,
+        "precision": 1,
         "mrr": 1,
         "expected_count": 1,
-        "retrieved_count": 6,
+        "retrieved_count": 1,
         "matched_count": 1,
         "perfect_match": true
       },
       "retrieved_chunk_ids": [
-        "remote_accounting-10.2-b01",
-        "remote_accounting-10.2-b06",
-        "remote_accounting-10.4",
-        "remote_accounting-10.1-b01",
-        "remote_accounting-10.3-b03-p1",
-        "remote_accounting-10.3-b03-p2"
+        "remote_accounting-10.2-b01"
       ],
       "retrieved_chunk_ids_ordered": [
-        "remote_accounting-10.2-b01",
-        "remote_accounting-10.2-b06",
-        "remote_accounting-10.4",
-        "remote_accounting-10.1-b01",
-        "remote_accounting-10.3-b03-p1",
-        "remote_accounting-10.3-b03-p2"
+        "remote_accounting-10.2-b01"
       ],
       "top_rerank_score": 0.48009802,
       "expected_chunk_ids": [
@@ -981,30 +774,18 @@
         "difficulty": "medium",
         "recall": 1,
         "hit": true,
-        "precision": 0.14285714285714285,
+        "precision": 1,
         "mrr": 1,
         "expected_count": 1,
-        "retrieved_count": 7,
+        "retrieved_count": 1,
         "matched_count": 1,
         "perfect_match": true
       },
       "retrieved_chunk_ids": [
-        "remote_accounting-10.6-b05",
-        "remote_accounting-10.6-b01",
-        "remote_accounting-10.4-b01-p1",
-        "remote_accounting-10.4-b01-p2",
-        "remote_accounting-10.4-b01-p3",
-        "remote_accounting-10.6",
-        "remote_accounting-10.6-b07"
+        "remote_accounting-10.6-b05"
       ],
       "retrieved_chunk_ids_ordered": [
-        "remote_accounting-10.6-b05",
-        "remote_accounting-10.6-b01",
-        "remote_accounting-10.4-b01-p1",
-        "remote_accounting-10.4-b01-p2",
-        "remote_accounting-10.4-b01-p3",
-        "remote_accounting-10.6",
-        "remote_accounting-10.6-b07"
+        "remote_accounting-10.6-b05"
       ],
       "top_rerank_score": 0.51138417,
       "expected_chunk_ids": [
@@ -1018,31 +799,26 @@
         "qid": "q-hard-01",
         "question": "Какой штраф по ст. 14.5 КоАП за расчёт без применения онлайн-кассы?",
         "difficulty": "hard",
-        "recall": 1,
+        "recall": 0.3333333333333333,
         "hit": true,
-        "precision": 0.5,
-        "mrr": 0.5,
-        "expected_count": 2,
-        "retrieved_count": 4,
-        "matched_count": 2,
-        "perfect_match": true
+        "precision": 1,
+        "mrr": 1,
+        "expected_count": 3,
+        "retrieved_count": 1,
+        "matched_count": 1,
+        "perfect_match": false
       },
       "retrieved_chunk_ids": [
-        "global-B0.6-b01",
-        "coffee_shop-1.8-b01-p1",
-        "coffee_shop-1.8-b01-p2",
-        "coffee_shop-1.8"
+        "global-B0.6-b01"
       ],
       "retrieved_chunk_ids_ordered": [
-        "global-B0.6-b01",
-        "coffee_shop-1.8-b01-p1",
-        "coffee_shop-1.8-b01-p2",
-        "coffee_shop-1.8"
+        "global-B0.6-b01"
       ],
       "top_rerank_score": 0.33891359,
       "expected_chunk_ids": [
         "coffee_shop-1.8-b01-p1",
-        "coffee_shop-1.8-b01-p2"
+        "coffee_shop-1.8-b01-p2",
+        "global-B0.6-b01"
       ]
     },
     {
@@ -1052,28 +828,20 @@
         "qid": "q-hard-02",
         "question": "Что делает бариста при открытии смены по регламенту и какие KPI у бариста в кадровой матрице?",
         "difficulty": "hard",
-        "recall": 0.3333333333333333,
-        "hit": true,
-        "precision": 0.2,
-        "mrr": 0.5,
+        "recall": 0,
+        "hit": false,
+        "precision": 0,
+        "mrr": 0,
         "expected_count": 3,
-        "retrieved_count": 5,
-        "matched_count": 1,
+        "retrieved_count": 1,
+        "matched_count": 0,
         "perfect_match": false
       },
       "retrieved_chunk_ids": [
-        "coffee_shop-1.4",
-        "coffee_shop-1.6-b01",
-        "coffee_shop-1.6-b08",
-        "coffee_shop-1.6-b09",
-        "coffee_shop-1.6-b05"
+        "coffee_shop-1.4"
       ],
       "retrieved_chunk_ids_ordered": [
-        "coffee_shop-1.4",
-        "coffee_shop-1.6-b01",
-        "coffee_shop-1.6-b08",
-        "coffee_shop-1.6-b09",
-        "coffee_shop-1.6-b05"
+        "coffee_shop-1.4"
       ],
       "top_rerank_score": 0.59995729,
       "expected_chunk_ids": [
@@ -1094,84 +862,16 @@
         "precision": 0,
         "mrr": 0,
         "expected_count": 2,
-        "retrieved_count": 11,
+        "retrieved_count": 0,
         "matched_count": 0,
         "perfect_match": false
       },
-      "retrieved_chunk_ids": [
-        "own_online_store-9.3-b01-p1",
-        "own_online_store-9.3-b01-p2",
-        "pickup_point-2.3-b03-p1",
-        "pickup_point-2.3-b03-p2",
-        "marketplace_seller-6.3-b03-p1",
-        "marketplace_seller-6.3-b03-p2",
-        "remote_accounting-10.3-b03-p1",
-        "remote_accounting-10.3-b03-p2",
-        "coffee_shop-1.3-b01-p1",
-        "coffee_shop-1.3-b01-p2",
-        "coffee_shop-1.3-moscow"
-      ],
-      "retrieved_chunk_ids_ordered": [
-        "own_online_store-9.3-b01-p1",
-        "own_online_store-9.3-b01-p2",
-        "pickup_point-2.3-b03-p1",
-        "pickup_point-2.3-b03-p2",
-        "marketplace_seller-6.3-b03-p1",
-        "marketplace_seller-6.3-b03-p2",
-        "remote_accounting-10.3-b03-p1",
-        "remote_accounting-10.3-b03-p2",
-        "coffee_shop-1.3-b01-p1",
-        "coffee_shop-1.3-b01-p2",
-        "coffee_shop-1.3-moscow"
-      ],
+      "retrieved_chunk_ids": [],
+      "retrieved_chunk_ids_ordered": [],
       "top_rerank_score": 0.16055392,
       "expected_chunk_ids": [
         "global-11-b01-p1",
         "global-11-b01-p2"
-      ]
-    },
-    {
-      "qid": "q-hard-04",
-      "question": "Чем отличается прибыль кофейни в Москве от кофейни в регионе?",
-      "metrics": {
-        "qid": "q-hard-04",
-        "question": "Чем отличается прибыль кофейни в Москве от кофейни в регионе?",
-        "difficulty": "hard",
-        "recall": 0.5,
-        "hit": true,
-        "precision": 0.25,
-        "mrr": 0.25,
-        "expected_count": 4,
-        "retrieved_count": 8,
-        "matched_count": 2,
-        "perfect_match": false
-      },
-      "retrieved_chunk_ids": [
-        "coffee_shop-1.1-b01",
-        "coffee_shop-1.3-b04-p1",
-        "coffee_shop-1.3-b04-p2",
-        "coffee_shop-1.3-b01-p1",
-        "coffee_shop-1.3-b01-p2",
-        "coffee_shop-1.3-moscow",
-        "global-11-b01-p1",
-        "global-11-b01-p2"
-      ],
-      "retrieved_chunk_ids_ordered": [
-        "coffee_shop-1.1-b01",
-        "coffee_shop-1.3-b04-p1",
-        "coffee_shop-1.3-b04-p2",
-        "coffee_shop-1.3-b01-p1",
-        "coffee_shop-1.3-b01-p2",
-        "coffee_shop-1.3-moscow",
-        "global-11-b01-p1",
-        "global-11-b01-p2"
-      ],
-      "top_rerank_score": 0.38385733,
-      "expected_chunk_ids": [
-        "coffee_shop-1.3-b01-p1",
-        "coffee_shop-1.3-b01-p2",
-        "coffee_shop-1.3-b02-p1",
-        "coffee_shop-1.3-b02-p2"
       ]
     },
     {
@@ -1181,31 +881,17 @@
         "qid": "q-hard-06",
         "question": "Где кофейня чаще всего ошибается с деньгами и как не попасть на штрафы от проверяющих?",
         "difficulty": "hard",
-        "recall": 1,
-        "hit": true,
-        "precision": 0.5,
-        "mrr": 0.25,
+        "recall": 0,
+        "hit": false,
+        "precision": 0,
+        "mrr": 0,
         "expected_count": 3,
-        "retrieved_count": 6,
-        "matched_count": 3,
-        "perfect_match": true
+        "retrieved_count": 0,
+        "matched_count": 0,
+        "perfect_match": false
       },
-      "retrieved_chunk_ids": [
-        "coffee_shop-1.2",
-        "coffee_shop-1.2-b07-p1",
-        "coffee_shop-1.2-b07-p2",
-        "coffee_shop-1.7-b01",
-        "coffee_shop-1.8-b01-p1",
-        "coffee_shop-1.8-b01-p2"
-      ],
-      "retrieved_chunk_ids_ordered": [
-        "coffee_shop-1.2",
-        "coffee_shop-1.2-b07-p1",
-        "coffee_shop-1.2-b07-p2",
-        "coffee_shop-1.7-b01",
-        "coffee_shop-1.8-b01-p1",
-        "coffee_shop-1.8-b01-p2"
-      ],
+      "retrieved_chunk_ids": [],
+      "retrieved_chunk_ids_ordered": [],
       "top_rerank_score": 0.20017323,
       "expected_chunk_ids": [
         "coffee_shop-1.7-b01",
