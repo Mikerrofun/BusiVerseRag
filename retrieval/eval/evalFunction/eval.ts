@@ -11,6 +11,7 @@ import { vectorSearch } from '../../steps/search/vector-search';
 import { ftsSearch } from '../../steps/search/fts';
 import { fuseRrf } from '../../steps/fusion/rrf';
 import { rerank } from '../../steps/rerank/rerank';
+import { filterRerank } from '../../steps/rerank/filter-rerank';
 import { expandHits } from '../../steps/expand/expand';
 import { EvalRetrieveInput, EvalRetrievalResult } from './eval.types';
 
@@ -80,11 +81,12 @@ export async function evalRetrieve(input: EvalRetrieveInput): Promise<EvalRetrie
 
   const fused = fuseRrf([vectorHits, ftsHits]);
   const top = await rerank(query, fused);
-  const groups = await expandHits(top);
+  const filtered = filterRerank(top);
+  const groups = await expandHits(filtered);
 
   const retrievedChunkIds = extractChunkIds(groups);
   const retrievedChunkIdsOrdered = extractOrderedChunkIds(groups);
-  const topRerankScore = groups.length > 0 ? groups[0].score : null;
+  const topRerankScore = top.length > 0 ? top[0].score : null;
   const expectedChunkIds = input.expected_chunk_ids ?? [];
   const expectedSection = input.expected_section ?? null;
   const expectedSections = input.expected_sections ?? [];
@@ -105,6 +107,7 @@ export async function evalRetrieve(input: EvalRetrieveInput): Promise<EvalRetrie
       fts: ftsHits.length,
       rrf: fused.length,
       rerank: top.length,
+      filtered: filtered.length,
       expanded_groups: groups.length,
       total_chunks: retrievedChunkIds.length,
     },
@@ -122,7 +125,7 @@ export async function evalRetrieve(input: EvalRetrieveInput): Promise<EvalRetrie
   console.log(retrievedChunkIds.length > 0 ? retrievedChunkIds.join(', ') : '  (none)');
   console.log('-'.repeat(80));
   console.log(`Expected sections: ${expectedSections.join(', ') || '(none)'}`);
-  console.log(`Counters: vector=${vectorHits.length}, fts=${ftsHits.length}, rrf=${fused.length}, rerank=${top.length}, groups=${groups.length}`);
+  console.log(`Counters: vector=${vectorHits.length}, fts=${ftsHits.length}, rrf=${fused.length}, rerank=${top.length}, filtered=${filtered.length}, groups=${groups.length}`);
   console.log('='.repeat(80) + '\n');
 
   return result;
