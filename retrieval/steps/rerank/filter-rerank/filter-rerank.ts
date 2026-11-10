@@ -6,11 +6,12 @@ export function filterRerank(items: FilterRerankInput): FilterRerankOutput {
 
   const maxScore = Math.max(...items.map((item) => item.score));
   if (maxScore < FILTER_RERANK_CONFIG.maxThreshold) {
-    // Лучший результат слабый — весь топ нерелевантен.
+    // золотой случай если max не прошел 
+    // значит все остальное ниже - выкидываем
     return [];
   }
 
-  // Max прошёл, но чистим слабые из хвоста.
+  //чистим хвост
   return items.filter((item) => item.score >= FILTER_RERANK_CONFIG.individualThreshold);
 }
 

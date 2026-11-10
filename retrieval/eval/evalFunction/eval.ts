@@ -10,8 +10,8 @@ import { SEARCH_CONFIG } from '../../steps/search/search.config';
 import { vectorSearch } from '../../steps/search/vector-search';
 import { ftsSearch } from '../../steps/search/fts';
 import { fuseRrf } from '../../steps/fusion/rrf';
-import { rerank } from '../../steps/rerank/rerank';
-import { filterRerank } from '../../steps/rerank/filter-rerank';
+import { rerank } from '../../steps/rerank/rerank-system/rerank';
+import { filterRerank } from '../../steps/rerank/filter-rerank/filter-rerank';
 import { expandHits } from '../../steps/expand/expand';
 import { EvalRetrieveInput, EvalRetrievalResult } from './eval.types';
 
