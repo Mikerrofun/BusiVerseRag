@@ -1,86 +1,58 @@
 {
-  "timestamp": "2026-11-06T16:17:32.007Z",
+  "timestamp": "2026-11-10T21:48:24.731Z",
   "aggregated": {
-    "total_questions": 34,
-    "perfect_matches": 0,
-    "avg_precision": 0.178092903828198,
-    "avg_recall": 0.9117647058823529,
-    "avg_f1": 0.29253034547152196,
+    "total_questions": 30,
+    "hit_rate": 0.9666666666666667,
+    "perfect_matches": 25,
+    "avg_recall": 0.8833333333333332,
+    "avg_precision": 0.2126719576719577,
+    "avg_mrr": 0.7697619047619048,
     "by_difficulty": {
-      "easy": {
-        "count": 21,
-        "avg_precision": 0.1588057445200302,
-        "avg_recall": 0.9761904761904762,
-        "avg_f1": 0.2716175359032502,
-        "perfect_matches": 0
-      },
       "medium": {
-        "count": 9,
-        "avg_precision": 0.23835978835978835,
-        "avg_recall": 0.9444444444444444,
-        "avg_f1": 0.3729276895943563,
-        "perfect_matches": 0
+        "count": 10,
+        "avg_recall": 0.8666666666666666,
+        "avg_precision": 0.2704761904761904,
+        "avg_mrr": 0.8699999999999999,
+        "hit_rate": 1,
+        "perfect_matches": 8
+      },
+      "easy": {
+        "count": 15,
+        "avg_recall": 1,
+        "avg_precision": 0.14835978835978833,
+        "avg_mrr": 0.8595238095238095,
+        "hit_rate": 1,
+        "perfect_matches": 15
       },
       "hard": {
-        "count": 4,
-        "avg_precision": 0.14375,
-        "avg_recall": 0.5,
-        "avg_f1": 0.22142857142857142,
-        "perfect_matches": 0
+        "count": 5,
+        "avg_recall": 0.5666666666666667,
+        "avg_precision": 0.29,
+        "avg_mrr": 0.3,
+        "hit_rate": 0.8,
+        "perfect_matches": 2
       }
     },
     "by_group": {
       "niche": {
-        "count": 30,
-        "avg_precision": 0.18267195767195774,
-        "avg_recall": 0.9666666666666667,
-        "avg_f1": 0.302010582010582,
-        "perfect_matches": 0
+        "count": 25,
+        "avg_recall": 0.9466666666666665,
+        "avg_precision": 0.19720634920634925,
+        "avg_mrr": 0.8637142857142857,
+        "hit_rate": 1,
+        "perfect_matches": 23
       },
       "hard": {
-        "count": 4,
-        "avg_precision": 0.14375,
-        "avg_recall": 0.5,
-        "avg_f1": 0.22142857142857142,
-        "perfect_matches": 0
+        "count": 5,
+        "avg_recall": 0.5666666666666667,
+        "avg_precision": 0.29,
+        "avg_mrr": 0.3,
+        "hit_rate": 0.8,
+        "perfect_matches": 2
       }
     }
   },
   "results": [
-    {
-      "qid": "q-niche-01",
-      "question": "Сколько денег нужно на старт кофейни навынос в Москве и сколько она приносит в базовом сценарии?",
-      "metrics": {
-        "qid": "q-niche-01",
-        "question": "Сколько денег нужно на старт кофейни навынос в Москве и сколько она приносит в базовом сценарии?",
-        "difficulty": "easy",
-        "precision": 0.2,
-        "recall": 1,
-        "f1": 0.33333333333333337,
-        "true_positives": 2,
-        "false_positives": 8,
-        "false_negatives": 0,
-        "expected_count": 2,
-        "retrieved_count": 10,
-        "perfect_match": false
-      },
-      "retrieved_chunk_ids": [
-        "coffee_shop-1.3-b01-p1",
-        "coffee_shop-1.3-b01-p2",
-        "coffee_shop-1.3-moscow",
-        "coffee_shop-1.1-b01",
-        "coffee_shop-1.3-b04-p1",
-        "coffee_shop-1.3-b04-p2",
-        "coffee_shop-1.3-b02-p1",
-        "coffee_shop-1.3-b02-p2",
-        "global-11-b01-p1",
-        "global-11-b01-p2"
-      ],
-      "expected_chunk_ids": [
-        "coffee_shop-1.3-b01-p1",
-        "coffee_shop-1.3-b01-p2"
-      ]
-    },
     {
       "qid": "q-niche-02",
       "question": "Как развивалась кофейня Coffee Bull в Барнауле и какие выводы из её кейса?",
@@ -88,15 +60,14 @@
         "qid": "q-niche-02",
         "question": "Как развивалась кофейня Coffee Bull в Барнауле и какие выводы из её кейса?",
         "difficulty": "medium",
-        "precision": 0.2,
         "recall": 1,
-        "f1": 0.33333333333333337,
-        "true_positives": 1,
-        "false_positives": 4,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.2,
+        "mrr": 1,
         "expected_count": 1,
         "retrieved_count": 5,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "coffee_shop-1.2-b01",
@@ -105,36 +76,16 @@
         "coffee_shop-1.2-b07-p2",
         "coffee_shop-1.2-b06"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "coffee_shop-1.2-b01",
+        "coffee_shop-1.2",
+        "coffee_shop-1.2-b07-p1",
+        "coffee_shop-1.2-b07-p2",
+        "coffee_shop-1.2-b06"
+      ],
+      "top_rerank_score": 0.57125751,
       "expected_chunk_ids": [
         "coffee_shop-1.2-b01"
-      ]
-    },
-    {
-      "qid": "q-niche-03",
-      "question": "Что должен проверить бариста по чек-листу перед открытием смены?",
-      "metrics": {
-        "qid": "q-niche-03",
-        "question": "Что должен проверить бариста по чек-листу перед открытием смены?",
-        "difficulty": "easy",
-        "precision": 0.2,
-        "recall": 1,
-        "f1": 0.33333333333333337,
-        "true_positives": 1,
-        "false_positives": 4,
-        "false_negatives": 0,
-        "expected_count": 1,
-        "retrieved_count": 5,
-        "perfect_match": false
-      },
-      "retrieved_chunk_ids": [
-        "coffee_shop-1.6-b08",
-        "coffee_shop-1.6-b01",
-        "coffee_shop-1.6-b09",
-        "coffee_shop-1.6-b04",
-        "coffee_shop-1.6-b05"
-      ],
-      "expected_chunk_ids": [
-        "coffee_shop-1.6-b08"
       ]
     },
     {
@@ -143,15 +94,14 @@
       "metrics": {
         "qid": "q-niche-04",
         "question": "Сколько стоит открыть ПВЗ Wildberries и когда он выходит в плюс?",
-        "difficulty": "easy",
+        "difficulty": "medium",
+        "recall": 0.3333333333333333,
+        "hit": true,
         "precision": 0.14285714285714285,
-        "recall": 0.5,
-        "f1": 0.22222222222222224,
-        "true_positives": 1,
-        "false_positives": 6,
-        "false_negatives": 1,
-        "expected_count": 2,
+        "mrr": 0.5,
+        "expected_count": 3,
         "retrieved_count": 7,
+        "matched_count": 1,
         "perfect_match": false
       },
       "retrieved_chunk_ids": [
@@ -163,8 +113,19 @@
         "global-11-b01-p1",
         "global-11-b01-p2"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "pickup_point-2.2-b04",
+        "pickup_point-2.3-b01",
+        "pickup_point-2.2-b05",
+        "pickup_point-2.2-b07-p1",
+        "pickup_point-2.2-b07-p2",
+        "global-11-b01-p1",
+        "global-11-b01-p2"
+      ],
+      "top_rerank_score": 0.44160522,
       "expected_chunk_ids": [
         "pickup_point-2.3-b01",
+        "pickup_point-2.3-b03-p1",
         "pickup_point-2.3-b03-p2"
       ]
     },
@@ -175,15 +136,14 @@
         "qid": "q-niche-05",
         "question": "Как устроены совмещённые ПВЗ Wildberries и Ozon — что рассказывают владельцы?",
         "difficulty": "medium",
-        "precision": 0.2857142857142857,
         "recall": 1,
-        "f1": 0.4444444444444445,
-        "true_positives": 2,
-        "false_positives": 5,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.2857142857142857,
+        "mrr": 1,
         "expected_count": 2,
         "retrieved_count": 7,
-        "perfect_match": false
+        "matched_count": 2,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "pickup_point-2.2-b02",
@@ -194,6 +154,16 @@
         "pickup_point-2.2-b07-p1",
         "pickup_point-2.2-b07-p2"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "pickup_point-2.2-b02",
+        "pickup_point-2.2-b06-p1",
+        "pickup_point-2.2-b06-p2",
+        "pickup_point-2.2-b03",
+        "pickup_point-2.2",
+        "pickup_point-2.2-b07-p1",
+        "pickup_point-2.2-b07-p2"
+      ],
+      "top_rerank_score": 0.46685183,
       "expected_chunk_ids": [
         "pickup_point-2.2-b02",
         "pickup_point-2.2-b03"
@@ -206,15 +176,14 @@
         "qid": "q-niche-06",
         "question": "Что делать оператору ПВЗ, если посылка пропала или клиент открыл спор?",
         "difficulty": "easy",
-        "precision": 0.125,
         "recall": 1,
-        "f1": 0.2222222222222222,
-        "true_positives": 1,
-        "false_positives": 7,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.125,
+        "mrr": 1,
         "expected_count": 1,
         "retrieved_count": 8,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "pickup_point-2.6-b06",
@@ -226,6 +195,17 @@
         "pickup_point-2.5-b01-p4",
         "pickup_point-2.6-b01"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "pickup_point-2.6-b06",
+        "pickup_point-2.6-b04",
+        "pickup_point-2.6-b08",
+        "pickup_point-2.5-b01-p1",
+        "pickup_point-2.5-b01-p2",
+        "pickup_point-2.5-b01-p3",
+        "pickup_point-2.5-b01-p4",
+        "pickup_point-2.6-b01"
+      ],
+      "top_rerank_score": 0.28393852,
       "expected_chunk_ids": [
         "pickup_point-2.6-b06"
       ]
@@ -237,14 +217,13 @@
         "qid": "q-niche-07",
         "question": "Чем отличается финмодель мини-пекарни в Москве от финмодели в регионе?",
         "difficulty": "medium",
+        "recall": 0.3333333333333333,
+        "hit": true,
         "precision": 0.2,
-        "recall": 0.5,
-        "f1": 0.28571428571428575,
-        "true_positives": 1,
-        "false_positives": 4,
-        "false_negatives": 1,
-        "expected_count": 2,
+        "mrr": 0.2,
+        "expected_count": 3,
         "retrieved_count": 5,
+        "matched_count": 1,
         "perfect_match": false
       },
       "retrieved_chunk_ids": [
@@ -254,8 +233,17 @@
         "mini_bakery-3.3-b04-p2",
         "mini_bakery-3.3-b02"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "mini_bakery-3.1-b01",
+        "mini_bakery-3.3",
+        "mini_bakery-3.3-b04-p1",
+        "mini_bakery-3.3-b04-p2",
+        "mini_bakery-3.3-b02"
+      ],
+      "top_rerank_score": 0.33294467,
       "expected_chunk_ids": [
         "mini_bakery-3.3-b01-p1",
+        "mini_bakery-3.3-b01-p2",
         "mini_bakery-3.3-b02"
       ]
     },
@@ -266,15 +254,14 @@
         "qid": "q-niche-08",
         "question": "Как пекарня «Машенька» в Люберцах начинала и что из её опыта следует?",
         "difficulty": "easy",
-        "precision": 0.14285714285714285,
         "recall": 1,
-        "f1": 0.25,
-        "true_positives": 1,
-        "false_positives": 6,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.14285714285714285,
+        "mrr": 1,
         "expected_count": 1,
         "retrieved_count": 7,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "mini_bakery-3.2-b01",
@@ -285,6 +272,16 @@
         "mini_bakery-3.7-b01-p2",
         "mini_bakery-3.3-b03"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "mini_bakery-3.2-b01",
+        "mini_bakery-3.2-b07-p1",
+        "mini_bakery-3.2-b07-p2",
+        "mini_bakery-3.2",
+        "mini_bakery-3.7-b01-p1",
+        "mini_bakery-3.7-b01-p2",
+        "mini_bakery-3.3-b03"
+      ],
+      "top_rerank_score": 0.50675094,
       "expected_chunk_ids": [
         "mini_bakery-3.2-b01"
       ]
@@ -296,15 +293,14 @@
         "qid": "q-niche-09",
         "question": "Какие ловушки чаще всего губят мини-пекарни и как их избежать?",
         "difficulty": "medium",
-        "precision": 0.4,
         "recall": 1,
-        "f1": 0.5714285714285715,
-        "true_positives": 2,
-        "false_positives": 3,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.4,
+        "mrr": 1,
         "expected_count": 2,
         "retrieved_count": 5,
-        "perfect_match": false
+        "matched_count": 2,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "mini_bakery-3.7-b01-p1",
@@ -313,6 +309,14 @@
         "mini_bakery-3.3-b03",
         "mini_bakery-3.1-b01"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "mini_bakery-3.7-b01-p1",
+        "mini_bakery-3.7-b01-p2",
+        "mini_bakery-3.6-b09",
+        "mini_bakery-3.3-b03",
+        "mini_bakery-3.1-b01"
+      ],
+      "top_rerank_score": 0.37280032,
       "expected_chunk_ids": [
         "mini_bakery-3.7-b01-p1",
         "mini_bakery-3.7-b01-p2"
@@ -325,15 +329,14 @@
         "qid": "q-niche-10",
         "question": "Сколько нужно вложить в студию маникюра в регионе и какая там прибыль?",
         "difficulty": "easy",
-        "precision": 0.14285714285714285,
         "recall": 1,
-        "f1": 0.25,
-        "true_positives": 1,
-        "false_positives": 6,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.14285714285714285,
+        "mrr": 1,
         "expected_count": 1,
         "retrieved_count": 7,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "manicure_studio-4.3-b02",
@@ -344,6 +347,16 @@
         "global-11-b01-p2",
         "manicure_studio-4.3-b01"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "manicure_studio-4.3-b02",
+        "manicure_studio-4.3-b04-p1",
+        "manicure_studio-4.3-b04-p2",
+        "manicure_studio-4.1-b01",
+        "global-11-b01-p1",
+        "global-11-b01-p2",
+        "manicure_studio-4.3-b01"
+      ],
+      "top_rerank_score": 0.42339661,
       "expected_chunk_ids": [
         "manicure_studio-4.3-b02"
       ]
@@ -355,15 +368,14 @@
         "qid": "q-niche-11",
         "question": "Как развивалась студия Milky Анатолия Юдина в Москве?",
         "difficulty": "easy",
-        "precision": 0.16666666666666666,
         "recall": 1,
-        "f1": 0.2857142857142857,
-        "true_positives": 1,
-        "false_positives": 5,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.16666666666666666,
+        "mrr": 1,
         "expected_count": 1,
         "retrieved_count": 6,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "manicure_studio-4.2-b03",
@@ -373,37 +385,17 @@
         "manicure_studio-4.2-b07-p1",
         "manicure_studio-4.2-b07-p2"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "manicure_studio-4.2-b03",
+        "manicure_studio-4.2-b08-p1",
+        "manicure_studio-4.2-b08-p2",
+        "manicure_studio-4.2",
+        "manicure_studio-4.2-b07-p1",
+        "manicure_studio-4.2-b07-p2"
+      ],
+      "top_rerank_score": 0.37388276,
       "expected_chunk_ids": [
         "manicure_studio-4.2-b03"
-      ]
-    },
-    {
-      "qid": "q-niche-12",
-      "question": "Как по регламенту обрабатывать инструменты в маникюрной студии?",
-      "metrics": {
-        "qid": "q-niche-12",
-        "question": "Как по регламенту обрабатывать инструменты в маникюрной студии?",
-        "difficulty": "easy",
-        "precision": 0.16666666666666666,
-        "recall": 1,
-        "f1": 0.2857142857142857,
-        "true_positives": 1,
-        "false_positives": 5,
-        "false_negatives": 0,
-        "expected_count": 1,
-        "retrieved_count": 6,
-        "perfect_match": false
-      },
-      "retrieved_chunk_ids": [
-        "manicure_studio-4.6-b04",
-        "manicure_studio-4.6",
-        "manicure_studio-4.6-b08",
-        "manicure_studio-4.8-b01-p1",
-        "manicure_studio-4.8-b01-p2",
-        "manicure_studio-4.8-b01-p3"
-      ],
-      "expected_chunk_ids": [
-        "manicure_studio-4.6-b04"
       ]
     },
     {
@@ -413,15 +405,14 @@
         "qid": "q-niche-13",
         "question": "Какая наценка на запчасти считается нормальной для автосервиса?",
         "difficulty": "easy",
-        "precision": 0.125,
         "recall": 1,
-        "f1": 0.2222222222222222,
-        "true_positives": 1,
-        "false_positives": 7,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.125,
+        "mrr": 1,
         "expected_count": 1,
         "retrieved_count": 8,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "auto_service-5.3-b03",
@@ -433,6 +424,17 @@
         "auto_service-5.7-b01-p1",
         "auto_service-5.7-b01-p2"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "auto_service-5.3-b03",
+        "auto_service-5.2-b05-p1",
+        "auto_service-5.2-b05-p2",
+        "auto_service-5.3-b01-p1",
+        "auto_service-5.3-b01-p2",
+        "auto_service-5.1-b01",
+        "auto_service-5.7-b01-p1",
+        "auto_service-5.7-b01-p2"
+      ],
+      "top_rerank_score": 0.39742581,
       "expected_chunk_ids": [
         "auto_service-5.3-b03"
       ]
@@ -444,15 +446,14 @@
         "qid": "q-niche-14",
         "question": "Как автосервис «ЛП-сервис» Анастасии Жук из Красноярска строил бизнес?",
         "difficulty": "easy",
-        "precision": 0.125,
         "recall": 1,
-        "f1": 0.2222222222222222,
-        "true_positives": 1,
-        "false_positives": 7,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.125,
+        "mrr": 1,
         "expected_count": 1,
         "retrieved_count": 8,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "auto_service-5.2-b01",
@@ -464,36 +465,19 @@
         "auto_service-5.3-b01-p1",
         "auto_service-5.3-b01-p2"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "auto_service-5.2-b01",
+        "auto_service-5.2-b05-p1",
+        "auto_service-5.2-b05-p2",
+        "auto_service-5.2",
+        "auto_service-5.7-b01-p1",
+        "auto_service-5.7-b01-p2",
+        "auto_service-5.3-b01-p1",
+        "auto_service-5.3-b01-p2"
+      ],
+      "top_rerank_score": 0.48383336,
       "expected_chunk_ids": [
         "auto_service-5.2-b01"
-      ]
-    },
-    {
-      "qid": "q-niche-15",
-      "question": "Что делать, если клиент вернулся с претензией к ремонту?",
-      "metrics": {
-        "qid": "q-niche-15",
-        "question": "Что делать, если клиент вернулся с претензией к ремонту?",
-        "difficulty": "easy",
-        "precision": 0.2,
-        "recall": 1,
-        "f1": 0.33333333333333337,
-        "true_positives": 1,
-        "false_positives": 4,
-        "false_negatives": 0,
-        "expected_count": 1,
-        "retrieved_count": 5,
-        "perfect_match": false
-      },
-      "retrieved_chunk_ids": [
-        "auto_service-5.6-b06",
-        "auto_service-5.6-b09",
-        "auto_service-5.6-b03",
-        "auto_service-5.6-b01",
-        "auto_service-5.6-b02"
-      ],
-      "expected_chunk_ids": [
-        "auto_service-5.6-b06"
       ]
     },
     {
@@ -503,15 +487,14 @@
         "qid": "q-niche-16",
         "question": "Какие скрытые расходы есть у селлера на маркетплейсе?",
         "difficulty": "easy",
-        "precision": 0.2,
         "recall": 1,
-        "f1": 0.33333333333333337,
-        "true_positives": 1,
-        "false_positives": 4,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.2,
+        "mrr": 0.5,
         "expected_count": 1,
         "retrieved_count": 5,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "marketplace_seller-6.3-b01",
@@ -520,6 +503,14 @@
         "marketplace_seller-6.2-b05",
         "marketplace_seller-6.7-b01"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "marketplace_seller-6.3-b01",
+        "marketplace_seller-6.3-b02",
+        "marketplace_seller-6.3",
+        "marketplace_seller-6.2-b05",
+        "marketplace_seller-6.7-b01"
+      ],
+      "top_rerank_score": 0.39264279,
       "expected_chunk_ids": [
         "marketplace_seller-6.3-b02"
       ]
@@ -531,15 +522,14 @@
         "qid": "q-niche-17",
         "question": "Как выросла комиссия маркетплейса в кейсе производителя корпусной мебели из Челябинска?",
         "difficulty": "medium",
-        "precision": 0.3333333333333333,
         "recall": 1,
-        "f1": 0.5,
-        "true_positives": 2,
-        "false_positives": 4,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.3333333333333333,
+        "mrr": 1,
         "expected_count": 2,
         "retrieved_count": 6,
-        "perfect_match": false
+        "matched_count": 2,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "marketplace_seller-6.2-b02",
@@ -549,6 +539,15 @@
         "marketplace_seller-6.2",
         "marketplace_seller-6.7-b01"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "marketplace_seller-6.2-b02",
+        "marketplace_seller-6.2-b06",
+        "marketplace_seller-6.2-b07-p1",
+        "marketplace_seller-6.2-b07-p2",
+        "marketplace_seller-6.2",
+        "marketplace_seller-6.7-b01"
+      ],
+      "top_rerank_score": 0.61477961,
       "expected_chunk_ids": [
         "marketplace_seller-6.2-b02",
         "marketplace_seller-6.2-b06"
@@ -561,15 +560,14 @@
         "qid": "q-niche-18",
         "question": "Что делать селлеру, если выручка ниже точки безубыточности три месяца подряд?",
         "difficulty": "medium",
-        "precision": 0.16666666666666666,
         "recall": 1,
-        "f1": 0.2857142857142857,
-        "true_positives": 1,
-        "false_positives": 5,
-        "false_negatives": 0,
-        "expected_count": 1,
+        "hit": true,
+        "precision": 0.3333333333333333,
+        "mrr": 1,
+        "expected_count": 2,
         "retrieved_count": 6,
-        "perfect_match": false
+        "matched_count": 2,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "marketplace_seller-6.2-b07-p1",
@@ -579,7 +577,17 @@
         "marketplace_seller-6.2-b05",
         "marketplace_seller-6.3-b01"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "marketplace_seller-6.2-b07-p1",
+        "marketplace_seller-6.2-b07-p2",
+        "marketplace_seller-6.2-b08-p1",
+        "marketplace_seller-6.2-b08-p2",
+        "marketplace_seller-6.2-b05",
+        "marketplace_seller-6.3-b01"
+      ],
+      "top_rerank_score": 0.6781402,
       "expected_chunk_ids": [
+        "marketplace_seller-6.2-b07-p1",
         "marketplace_seller-6.2-b07-p2"
       ]
     },
@@ -590,15 +598,14 @@
         "qid": "q-niche-19",
         "question": "Сколько стоит запустить онлайн-школу и какая прибыль в базовом сценарии?",
         "difficulty": "easy",
-        "precision": 0.125,
         "recall": 1,
-        "f1": 0.2222222222222222,
-        "true_positives": 1,
-        "false_positives": 7,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.125,
+        "mrr": 1,
         "expected_count": 1,
         "retrieved_count": 8,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "online_school-7.3-b01",
@@ -610,6 +617,17 @@
         "online_school-7.2-b04-p2",
         "online_school-7.2-b04-p3"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "online_school-7.3-b01",
+        "online_school-7.3-b03-p1",
+        "online_school-7.3-b03-p2",
+        "global-11-b01-p1",
+        "global-11-b01-p2",
+        "online_school-7.2-b04-p1",
+        "online_school-7.2-b04-p2",
+        "online_school-7.2-b04-p3"
+      ],
+      "top_rerank_score": 0.50357221,
       "expected_chunk_ids": [
         "online_school-7.3-b01"
       ]
@@ -621,15 +639,14 @@
         "qid": "q-niche-20",
         "question": "Как начинала онлайн-школа «100балльный репетитор»?",
         "difficulty": "easy",
-        "precision": 0.1111111111111111,
         "recall": 1,
-        "f1": 0.19999999999999998,
-        "true_positives": 1,
-        "false_positives": 8,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.1111111111111111,
+        "mrr": 1,
         "expected_count": 1,
         "retrieved_count": 9,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "online_school-7.2-b01",
@@ -642,6 +659,18 @@
         "online_school-7.2-b04-p2",
         "online_school-7.2-b04-p3"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "online_school-7.2-b01",
+        "online_school-7.2-b03-p1",
+        "online_school-7.2-b03-p2",
+        "online_school-7.2",
+        "online_school-7.7-b01-p1",
+        "online_school-7.7-b01-p2",
+        "online_school-7.2-b04-p1",
+        "online_school-7.2-b04-p2",
+        "online_school-7.2-b04-p3"
+      ],
+      "top_rerank_score": 0.57128365,
       "expected_chunk_ids": [
         "online_school-7.2-b01"
       ]
@@ -653,15 +682,14 @@
         "qid": "q-niche-21",
         "question": "Что делать, если продажи онлайн-школы упали?",
         "difficulty": "easy",
-        "precision": 0.14285714285714285,
         "recall": 1,
-        "f1": 0.25,
-        "true_positives": 1,
-        "false_positives": 6,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.14285714285714285,
+        "mrr": 0.14285714285714285,
         "expected_count": 1,
         "retrieved_count": 7,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "online_school-7.2-b03-p1",
@@ -672,6 +700,16 @@
         "online_school-7.2-b04-p3",
         "online_school-7.6-b05"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "online_school-7.2-b03-p1",
+        "online_school-7.2-b03-p2",
+        "online_school-7.2",
+        "online_school-7.2-b04-p1",
+        "online_school-7.2-b04-p2",
+        "online_school-7.2-b04-p3",
+        "online_school-7.6-b05"
+      ],
+      "top_rerank_score": 0.41443457,
       "expected_chunk_ids": [
         "online_school-7.6-b05"
       ]
@@ -683,15 +721,14 @@
         "qid": "q-niche-22",
         "question": "Сколько нужно на старт SMM-агентства?",
         "difficulty": "easy",
-        "precision": 0.16666666666666666,
         "recall": 1,
-        "f1": 0.2857142857142857,
-        "true_positives": 1,
-        "false_positives": 5,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.16666666666666666,
+        "mrr": 1,
         "expected_count": 1,
         "retrieved_count": 6,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "smm_agency-8.3-b01",
@@ -701,6 +738,15 @@
         "smm_agency-8.3-b03-p1",
         "smm_agency-8.3-b03-p2"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "smm_agency-8.3-b01",
+        "smm_agency-8.2-b08",
+        "smm_agency-8.3-b02",
+        "smm_agency-8.1-b01",
+        "smm_agency-8.3-b03-p1",
+        "smm_agency-8.3-b03-p2"
+      ],
+      "top_rerank_score": 0.59439533,
       "expected_chunk_ids": [
         "smm_agency-8.3-b01"
       ]
@@ -712,15 +758,14 @@
         "qid": "q-niche-23",
         "question": "Как развивалось SMM-агентство OMNIKA?",
         "difficulty": "easy",
-        "precision": 0.14285714285714285,
         "recall": 1,
-        "f1": 0.25,
-        "true_positives": 1,
-        "false_positives": 6,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.14285714285714285,
+        "mrr": 1,
         "expected_count": 1,
         "retrieved_count": 7,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "smm_agency-8.2-b01",
@@ -731,6 +776,16 @@
         "smm_agency-8.2",
         "smm_agency-8.3-b01"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "smm_agency-8.2-b01",
+        "smm_agency-8.2-b07-p1",
+        "smm_agency-8.2-b07-p2",
+        "smm_agency-8.7-b01-p1",
+        "smm_agency-8.7-b01-p2",
+        "smm_agency-8.2",
+        "smm_agency-8.3-b01"
+      ],
+      "top_rerank_score": 0.39558776,
       "expected_chunk_ids": [
         "smm_agency-8.2-b01"
       ]
@@ -742,15 +797,14 @@
         "qid": "q-niche-24",
         "question": "Как передавать сведения о рекламе в ОРД по ежемесячному отчёту?",
         "difficulty": "medium",
-        "precision": 0.16666666666666666,
         "recall": 1,
-        "f1": 0.2857142857142857,
-        "true_positives": 1,
-        "false_positives": 5,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.16666666666666666,
+        "mrr": 1,
         "expected_count": 1,
         "retrieved_count": 6,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "smm_agency-8.6-b03",
@@ -760,6 +814,15 @@
         "smm_agency-8.5-b01-p2",
         "smm_agency-8.5-b01-p3"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "smm_agency-8.6-b03",
+        "global-B0.2-b01",
+        "global-B0.2",
+        "smm_agency-8.5-b01-p1",
+        "smm_agency-8.5-b01-p2",
+        "smm_agency-8.5-b01-p3"
+      ],
+      "top_rerank_score": 0.65518492,
       "expected_chunk_ids": [
         "smm_agency-8.6-b03"
       ]
@@ -771,15 +834,14 @@
         "qid": "q-niche-25",
         "question": "Какие скрытые расходы у собственного интернет-магазина?",
         "difficulty": "easy",
-        "precision": 0.14285714285714285,
         "recall": 1,
-        "f1": 0.25,
-        "true_positives": 1,
-        "false_positives": 6,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.14285714285714285,
+        "mrr": 0.25,
         "expected_count": 1,
         "retrieved_count": 7,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "own_online_store-9.3",
@@ -790,6 +852,16 @@
         "own_online_store-9.3-b03-p2",
         "own_online_store-9.2-b02"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "own_online_store-9.3",
+        "own_online_store-9.3-b01-p1",
+        "own_online_store-9.3-b01-p2",
+        "own_online_store-9.3-b02",
+        "own_online_store-9.3-b03-p1",
+        "own_online_store-9.3-b03-p2",
+        "own_online_store-9.2-b02"
+      ],
+      "top_rerank_score": 0.38366493,
       "expected_chunk_ids": [
         "own_online_store-9.3-b02"
       ]
@@ -801,15 +873,14 @@
         "qid": "q-niche-26",
         "question": "Как Влад из Санкт-Петербурга развивал магазин Tray?",
         "difficulty": "easy",
-        "precision": 0.2,
         "recall": 1,
-        "f1": 0.33333333333333337,
-        "true_positives": 1,
-        "false_positives": 4,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.2,
+        "mrr": 1,
         "expected_count": 1,
         "retrieved_count": 5,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "own_online_store-9.2-b01",
@@ -818,36 +889,16 @@
         "own_online_store-9.7-b01-p1",
         "own_online_store-9.7-b01-p2"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "own_online_store-9.2-b01",
+        "own_online_store-9.2-b05",
+        "own_online_store-9.2",
+        "own_online_store-9.7-b01-p1",
+        "own_online_store-9.7-b01-p2"
+      ],
+      "top_rerank_score": 0.58707582,
       "expected_chunk_ids": [
         "own_online_store-9.2-b01"
-      ]
-    },
-    {
-      "qid": "q-niche-27",
-      "question": "Что делать при сбое сайта или оплаты в интернет-магазине?",
-      "metrics": {
-        "qid": "q-niche-27",
-        "question": "Что делать при сбое сайта или оплаты в интернет-магазине?",
-        "difficulty": "easy",
-        "precision": 0.2,
-        "recall": 1,
-        "f1": 0.33333333333333337,
-        "true_positives": 1,
-        "false_positives": 4,
-        "false_negatives": 0,
-        "expected_count": 1,
-        "retrieved_count": 5,
-        "perfect_match": false
-      },
-      "retrieved_chunk_ids": [
-        "own_online_store-9.6-b07",
-        "own_online_store-9.6-b09",
-        "own_online_store-9.6-b02",
-        "own_online_store-9.6-b08",
-        "own_online_store-9.6"
-      ],
-      "expected_chunk_ids": [
-        "own_online_store-9.6-b07"
       ]
     },
     {
@@ -857,15 +908,14 @@
         "qid": "q-niche-28",
         "question": "Какие отраслевые бенчмарки по наценке в удалённой бухгалтерии?",
         "difficulty": "medium",
-        "precision": 0.25,
         "recall": 1,
-        "f1": 0.4,
-        "true_positives": 1,
-        "false_positives": 3,
-        "false_negatives": 0,
-        "expected_count": 1,
+        "hit": true,
+        "precision": 0.5,
+        "mrr": 1,
+        "expected_count": 2,
         "retrieved_count": 4,
-        "perfect_match": false
+        "matched_count": 2,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "remote_accounting-10.3-b03-p1",
@@ -873,8 +923,16 @@
         "remote_accounting-10.3",
         "remote_accounting-10.3-b01"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "remote_accounting-10.3-b03-p1",
+        "remote_accounting-10.3-b03-p2",
+        "remote_accounting-10.3",
+        "remote_accounting-10.3-b01"
+      ],
+      "top_rerank_score": 0.35412784,
       "expected_chunk_ids": [
-        "remote_accounting-10.3-b03-p1"
+        "remote_accounting-10.3-b03-p1",
+        "remote_accounting-10.3-b03-p2"
       ]
     },
     {
@@ -884,15 +942,14 @@
         "qid": "q-niche-29",
         "question": "Сколько заработала «Бухгалтер в кармане» Ирины Коленской?",
         "difficulty": "easy",
-        "precision": 0.16666666666666666,
         "recall": 1,
-        "f1": 0.2857142857142857,
-        "true_positives": 1,
-        "false_positives": 5,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.16666666666666666,
+        "mrr": 1,
         "expected_count": 1,
         "retrieved_count": 6,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "remote_accounting-10.2-b01",
@@ -902,6 +959,15 @@
         "remote_accounting-10.3-b03-p1",
         "remote_accounting-10.3-b03-p2"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "remote_accounting-10.2-b01",
+        "remote_accounting-10.2-b06",
+        "remote_accounting-10.4",
+        "remote_accounting-10.1-b01",
+        "remote_accounting-10.3-b03-p1",
+        "remote_accounting-10.3-b03-p2"
+      ],
+      "top_rerank_score": 0.48009802,
       "expected_chunk_ids": [
         "remote_accounting-10.2-b01"
       ]
@@ -913,15 +979,14 @@
         "qid": "q-niche-30",
         "question": "Как выполнять требования 115-ФЗ в бухгалтерской практике?",
         "difficulty": "medium",
-        "precision": 0.14285714285714285,
         "recall": 1,
-        "f1": 0.25,
-        "true_positives": 1,
-        "false_positives": 6,
-        "false_negatives": 0,
+        "hit": true,
+        "precision": 0.14285714285714285,
+        "mrr": 1,
         "expected_count": 1,
         "retrieved_count": 7,
-        "perfect_match": false
+        "matched_count": 1,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "remote_accounting-10.6-b05",
@@ -932,6 +997,16 @@
         "remote_accounting-10.6",
         "remote_accounting-10.6-b07"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "remote_accounting-10.6-b05",
+        "remote_accounting-10.6-b01",
+        "remote_accounting-10.4-b01-p1",
+        "remote_accounting-10.4-b01-p2",
+        "remote_accounting-10.4-b01-p3",
+        "remote_accounting-10.6",
+        "remote_accounting-10.6-b07"
+      ],
+      "top_rerank_score": 0.51138417,
       "expected_chunk_ids": [
         "remote_accounting-10.6-b05"
       ]
@@ -943,15 +1018,14 @@
         "qid": "q-hard-01",
         "question": "Какой штраф по ст. 14.5 КоАП за расчёт без применения онлайн-кассы?",
         "difficulty": "hard",
-        "precision": 0.25,
         "recall": 1,
-        "f1": 0.4,
-        "true_positives": 1,
-        "false_positives": 3,
-        "false_negatives": 0,
-        "expected_count": 1,
+        "hit": true,
+        "precision": 0.5,
+        "mrr": 0.5,
+        "expected_count": 2,
         "retrieved_count": 4,
-        "perfect_match": false
+        "matched_count": 2,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
         "global-B0.6-b01",
@@ -959,8 +1033,16 @@
         "coffee_shop-1.8-b01-p2",
         "coffee_shop-1.8"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "global-B0.6-b01",
+        "coffee_shop-1.8-b01-p1",
+        "coffee_shop-1.8-b01-p2",
+        "coffee_shop-1.8"
+      ],
+      "top_rerank_score": 0.33891359,
       "expected_chunk_ids": [
-        "coffee_shop-1.8-b01-p1"
+        "coffee_shop-1.8-b01-p1",
+        "coffee_shop-1.8-b01-p2"
       ]
     },
     {
@@ -970,14 +1052,13 @@
         "qid": "q-hard-02",
         "question": "Что делает бариста при открытии смены по регламенту и какие KPI у бариста в кадровой матрице?",
         "difficulty": "hard",
+        "recall": 0.3333333333333333,
+        "hit": true,
         "precision": 0.2,
-        "recall": 0.5,
-        "f1": 0.28571428571428575,
-        "true_positives": 1,
-        "false_positives": 4,
-        "false_negatives": 1,
-        "expected_count": 2,
+        "mrr": 0.5,
+        "expected_count": 3,
         "retrieved_count": 5,
+        "matched_count": 1,
         "perfect_match": false
       },
       "retrieved_chunk_ids": [
@@ -987,9 +1068,66 @@
         "coffee_shop-1.6-b09",
         "coffee_shop-1.6-b05"
       ],
+      "retrieved_chunk_ids_ordered": [
+        "coffee_shop-1.4",
+        "coffee_shop-1.6-b01",
+        "coffee_shop-1.6-b08",
+        "coffee_shop-1.6-b09",
+        "coffee_shop-1.6-b05"
+      ],
+      "top_rerank_score": 0.59995729,
       "expected_chunk_ids": [
         "coffee_shop-1.6-b01",
-        "coffee_shop-1.4-b01-p1"
+        "coffee_shop-1.4-b01-p1",
+        "coffee_shop-1.4-b01-p2"
+      ]
+    },
+    {
+      "qid": "q-hard-03",
+      "question": "Сколько нужно вложить, чтобы открыть бизнес с нуля, и какие форматы самые дешёвые по старту?",
+      "metrics": {
+        "qid": "q-hard-03",
+        "question": "Сколько нужно вложить, чтобы открыть бизнес с нуля, и какие форматы самые дешёвые по старту?",
+        "difficulty": "hard",
+        "recall": 0,
+        "hit": false,
+        "precision": 0,
+        "mrr": 0,
+        "expected_count": 2,
+        "retrieved_count": 11,
+        "matched_count": 0,
+        "perfect_match": false
+      },
+      "retrieved_chunk_ids": [
+        "own_online_store-9.3-b01-p1",
+        "own_online_store-9.3-b01-p2",
+        "pickup_point-2.3-b03-p1",
+        "pickup_point-2.3-b03-p2",
+        "marketplace_seller-6.3-b03-p1",
+        "marketplace_seller-6.3-b03-p2",
+        "remote_accounting-10.3-b03-p1",
+        "remote_accounting-10.3-b03-p2",
+        "coffee_shop-1.3-b01-p1",
+        "coffee_shop-1.3-b01-p2",
+        "coffee_shop-1.3-moscow"
+      ],
+      "retrieved_chunk_ids_ordered": [
+        "own_online_store-9.3-b01-p1",
+        "own_online_store-9.3-b01-p2",
+        "pickup_point-2.3-b03-p1",
+        "pickup_point-2.3-b03-p2",
+        "marketplace_seller-6.3-b03-p1",
+        "marketplace_seller-6.3-b03-p2",
+        "remote_accounting-10.3-b03-p1",
+        "remote_accounting-10.3-b03-p2",
+        "coffee_shop-1.3-b01-p1",
+        "coffee_shop-1.3-b01-p2",
+        "coffee_shop-1.3-moscow"
+      ],
+      "top_rerank_score": 0.16055392,
+      "expected_chunk_ids": [
+        "global-11-b01-p1",
+        "global-11-b01-p2"
       ]
     },
     {
@@ -999,14 +1137,13 @@
         "qid": "q-hard-04",
         "question": "Чем отличается прибыль кофейни в Москве от кофейни в регионе?",
         "difficulty": "hard",
-        "precision": 0.125,
         "recall": 0.5,
-        "f1": 0.2,
-        "true_positives": 1,
-        "false_positives": 7,
-        "false_negatives": 1,
-        "expected_count": 2,
+        "hit": true,
+        "precision": 0.25,
+        "mrr": 0.25,
+        "expected_count": 4,
         "retrieved_count": 8,
+        "matched_count": 2,
         "perfect_match": false
       },
       "retrieved_chunk_ids": [
@@ -1019,45 +1156,62 @@
         "global-11-b01-p1",
         "global-11-b01-p2"
       ],
-      "expected_chunk_ids": [
+      "retrieved_chunk_ids_ordered": [
+        "coffee_shop-1.1-b01",
+        "coffee_shop-1.3-b04-p1",
+        "coffee_shop-1.3-b04-p2",
+        "coffee_shop-1.3-b01-p1",
         "coffee_shop-1.3-b01-p2",
+        "coffee_shop-1.3-moscow",
+        "global-11-b01-p1",
+        "global-11-b01-p2"
+      ],
+      "top_rerank_score": 0.38385733,
+      "expected_chunk_ids": [
+        "coffee_shop-1.3-b01-p1",
+        "coffee_shop-1.3-b01-p2",
+        "coffee_shop-1.3-b02-p1",
         "coffee_shop-1.3-b02-p2"
       ]
     },
     {
-      "qid": "q-hard-05",
-      "question": "Какую CRM-систему лучше выбрать для кофейни и сколько она стоит?",
+      "qid": "q-hard-06",
+      "question": "Где кофейня чаще всего ошибается с деньгами и как не попасть на штрафы от проверяющих?",
       "metrics": {
-        "qid": "q-hard-05",
-        "question": "Какую CRM-систему лучше выбрать для кофейни и сколько она стоит?",
+        "qid": "q-hard-06",
+        "question": "Где кофейня чаще всего ошибается с деньгами и как не попасть на штрафы от проверяющих?",
         "difficulty": "hard",
-        "precision": 0,
-        "recall": 0,
-        "f1": 0,
-        "true_positives": 0,
-        "false_positives": 14,
-        "false_negatives": 0,
-        "expected_count": 0,
-        "retrieved_count": 14,
-        "perfect_match": false
+        "recall": 1,
+        "hit": true,
+        "precision": 0.5,
+        "mrr": 0.25,
+        "expected_count": 3,
+        "retrieved_count": 6,
+        "matched_count": 3,
+        "perfect_match": true
       },
       "retrieved_chunk_ids": [
-        "coffee_shop-1.3-b02-p1",
-        "coffee_shop-1.3-b02-p2",
-        "coffee_shop-1.3-b01-p1",
-        "coffee_shop-1.3-b01-p2",
-        "coffee_shop-1.3-moscow",
-        "coffee_shop-1.5-b01-p1",
-        "coffee_shop-1.5-b01-p2",
-        "coffee_shop-1.5-b01-p3",
-        "coffee_shop-1.5-b01-p4",
-        "coffee_shop-1.5-b01-p5",
-        "coffee_shop-1.5-b01-p6",
+        "coffee_shop-1.2",
         "coffee_shop-1.2-b07-p1",
         "coffee_shop-1.2-b07-p2",
-        "coffee_shop-1.3"
+        "coffee_shop-1.7-b01",
+        "coffee_shop-1.8-b01-p1",
+        "coffee_shop-1.8-b01-p2"
       ],
-      "expected_chunk_ids": []
+      "retrieved_chunk_ids_ordered": [
+        "coffee_shop-1.2",
+        "coffee_shop-1.2-b07-p1",
+        "coffee_shop-1.2-b07-p2",
+        "coffee_shop-1.7-b01",
+        "coffee_shop-1.8-b01-p1",
+        "coffee_shop-1.8-b01-p2"
+      ],
+      "top_rerank_score": 0.20017323,
+      "expected_chunk_ids": [
+        "coffee_shop-1.7-b01",
+        "coffee_shop-1.8-b01-p1",
+        "coffee_shop-1.8-b01-p2"
+      ]
     }
   ]
 }
