@@ -1,5 +1,3 @@
-// Публичный API retrieval-системы: наружу торчит только эта точка.
-// Оркестратор знает порядок шагов, шаги знают только свои входы/выходы.
 import { isNicheCode } from './config/niches.config';
 import { RetrieveInput, RetrievalResult } from './types/retrieval.types';
 import { detectNiche } from './steps/classification/classify';
